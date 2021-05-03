@@ -1,0 +1,109 @@
+@import '../../styles/_variables';
+
+.platform-header-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    height: 82px;
+    position: relative;
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.platform-header-logo-icon {
+    display: flex;
+    position: absolute;
+    width: 119px;
+    height: 98px;
+    background-image: url(./header-icons/logo.svg);
+    left: 116px;
+    top: 32px;
+}
+
+.platform-header-link {
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    &:hover {
+        text-decoration: none;
+        color: $white;
+    }
+}
+
+.platform-header-nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: 432px;
+}
+
+.platform-header-nav-interview,
+.platform-header-nav-staff,
+.platform-header-nav-methodology {
+    display: flex;
+    flex-direction: row;
+    margin-right: 33px;
+    justify-content: center;
+    align-items: center;
+}
+.platform-header-nav-interview {
+    width: 82px;
+}
+.platform-header-nav-staff {
+    width: 114px;
+}
+.platform-header-nav-methodology {
+    width: 142px;
+}
+
+
+.platform-header-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.platform-interview-icon {
+    background-image: url(./header-icons/interview.svg);
+}
+
+.platform-staff-icon {
+    background-image: url(./header-icons/staff.svg);
+}
+
+.platform-methodology-icon {
+    background-image: url(./header-icons/metodology.svg); 
+}
+
+.platform-profile-name {
+    color: $white;
+}
+
+.platform-profile {
+    display: flex;
+    flex-direction: row;
+    margin-right: 77px;
+    justify-content: center;
+    align-items: center;
+}
+
+.platform-profile-photo {
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+
+.platform- header-logo-icon {
+    display: flex;
+    position: absolute;
+    width: 119px;
+    height: 98px;
+    background-image: url(./header-icons/logo.svg);
+    left: 116px;
+    top: 32px;
+}

@@ -1,0 +1,46 @@
+.get-started-button {
+  width: 195px;
+  height: 73px;
+  padding: 0 5px 0 5px;
+  border-radius: 12px;
+  background: #17bcb2;
+  color: #ffffff;
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: #13a9a0;
+  }
+  &:active {
+    background: #109c94;
+  }
+}
+
+
+//mobile 
+
+.get-started-button-mobile {
+  width: 106px;
+  height: 37px;
+  padding: 0 5px 0 5px;
+  border-radius: 12px;
+  background: #17bcb2;
+  color: #ffffff;
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: #13a9a0;
+  }
+  &:active {
+    background: #109c94;
+  }
+}

@@ -1,0 +1,38 @@
+<svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M55 110C85.3757 110 110 85.3757 110 55C110 24.6243 85.3757 0 55 0C24.6243 0 0 24.6243 0 55C0 85.3757 24.6243 110 55 110Z" fill="url(#paint0_linear)"/>
+<path d="M85.9375 1.71875H24.0625V15.4688H85.9375V1.71875Z" fill="white"/>
+<path d="M73.9062 25.7812H36.0938V32.6562H73.9062V25.7812Z" fill="white"/>
+<path d="M73.9062 39.5312H36.0938V46.4062H73.9062V39.5312Z" fill="white"/>
+<path d="M73.9062 53.2812H36.0938V60.1562H73.9062V53.2812Z" fill="white"/>
+<path d="M73.9062 67.0312H36.0938V73.9062H73.9062V67.0312Z" fill="white"/>
+<path d="M73.9062 80.7812H36.0938V87.6562H73.9062V80.7812Z" fill="white"/>
+<path d="M73.9062 97.9688H36.0938V108.281H73.9062V97.9688Z" fill="#FFB957"/>
+<path d="M108.281 97.9688H84.2188V108.281H108.281V97.9688Z" fill="white"/>
+<path d="M25.7812 97.9688H1.71875V108.281H25.7812V97.9688Z" fill="white"/>
+<path d="M85.9375 1.71875H24.0625V15.4688H85.9375V1.71875Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M73.9062 25.7812H36.0938V32.6562H73.9062V25.7812Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M73.9062 39.5312H36.0938V46.4062H73.9062V39.5312Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M73.9062 53.2812H36.0938V60.1562H73.9062V53.2812Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M73.9062 67.0312H36.0938V73.9062H73.9062V67.0312Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M73.9062 80.7812H36.0938V87.6562H73.9062V80.7812Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M73.9062 97.9688H36.0938V108.281H73.9062V97.9688Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M108.281 97.9688H84.2188V108.281H108.281V97.9688Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M25.7812 97.9688H1.71875V108.281H25.7812V97.9688Z" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M55 15.4688V25.7812" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M55 87.6562V97.9688" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M84.2188 103.125H73.9062" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M36.0938 103.125H25.7812" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M79.0625 29.2188C82.8609 29.2188 85.9375 32.2953 85.9375 36.0938C85.9375 39.8922 82.8609 42.9688 79.0625 42.9688" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M79.0625 56.7188C82.8609 56.7188 85.9375 59.7953 85.9375 63.5938C85.9375 67.3922 82.8609 70.4688 79.0625 70.4688" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M30.9375 56.7188C27.1391 56.7188 24.0625 53.6422 24.0625 49.8438C24.0625 46.0453 27.1391 42.9688 30.9375 42.9688" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M30.9375 84.2188C27.1391 84.2188 24.0625 81.1422 24.0625 77.3438C24.0625 73.5453 27.1391 70.4688 30.9375 70.4688" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M53.2812 8.59375H56.7188" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M60.1562 8.59375H63.5938" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M46.4062 8.59375H49.8438" stroke="#4D5152" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear" x1="110" y1="110" x2="54.9195" y2="-31.3509" gradientUnits="userSpaceOnUse">
+<stop stop-color="#36D4BE"/>
+<stop offset="1" stop-color="#F2BB31"/>
+</linearGradient>
+</defs>
+</svg>

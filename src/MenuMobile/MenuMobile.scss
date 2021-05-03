@@ -1,0 +1,60 @@
+@import "../styles/styles.scss";
+
+.menu-wrapper-mobile {
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+  background: linear-gradient(117.43deg, #4e7171 0%, #131a22 100%);
+  height: 812px;
+}
+
+.menu-logo-wrapper-mobile {
+  @include wrap-content-mobile;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  justify-content: space-between;
+  height: 210px;
+}
+
+.menu-logo-mobile {
+  background-image: url("./images/logo.svg");
+  width: 128px;
+  height: 103.62px;
+}
+
+.menu-close-button-mobile {
+  background-image: url("./images/close-button.svg");
+  width: 25px;
+  height: 25px;
+  background-position: center;
+}
+
+.menu-nav-wrapper-mobile {
+  @include wrap-content-mobile;
+  font-family: "Proxima Nova Thin", sans-serif;
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.menu-footer-wrapper-mobile {
+  @include wrap-content-mobile;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Proxima Nova Thin", sans-serif;
+  color: white;
+  height: 70px;
+}
+
+.menu-nav-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.menu-nav-mobile a {
+    margin-bottom: 20px;
+}

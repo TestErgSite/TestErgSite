@@ -1,0 +1,422 @@
+@import "../styles/styles.scss";
+
+.intro-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.block-1 {
+  background: url("./images/image 13.png");
+  height: 800px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  @include noselect;
+  position: relative;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.psy-comfort-org {
+  color: white;
+  @include wrap-content;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+}
+
+.psy-comfort-org-header {
+  margin-top: 150px;
+}
+
+.slogan {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 80px;
+  max-width: 875px;
+}
+
+.psy-comfort-org-subheader {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  max-width: 500px;
+  margin-top: 30px;
+  margin-bottom: 48px;
+}
+
+.block-2 {
+  height: 1429px;
+  width: 100%;
+}
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include wrap-content;
+  @include noselect;
+}
+
+.team-engagement-img {
+  background-image: url(./images/statistics-img-1.svg);
+  width: 673px;
+  height: 507px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.team-leader-engagement-img {
+  background-image: url(./images/statistics-img-2.svg);
+  width: 705px;
+  height: 580px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.team-engagement,
+.team-leader-engagement {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  font-size: 24px;
+  line-height: 32px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.team-engagement-procent {
+  font-weight: 600;
+  font-size: 128px;
+  line-height: 132px;
+}
+
+.team-leader-engagement-x {
+  font-weight: 600;
+  font-size: 128px;
+  line-height: 132px;
+}
+
+.team-engagement-wrapper,
+.team-leader-engagement-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-engagement-text {
+  width: 346px;
+  margin-bottom: 30px;
+}
+
+.team-leader-engagement-text {
+  width: 360px;
+  margin-bottom: 30px;
+}
+
+.block-3 {
+  width: 100%;
+  height: 800px;
+  background-image: url("./images/image\ 10.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.higher-engagment {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  @include noselect;
+  @include wrap-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.higher-engagment-header {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 80px;
+  color: #ffffff;
+}
+
+.higher-engagment-subheader {
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  width: 673px;
+}
+
+.higher-engagment-wrapper {
+  margin-top: 60px;
+}
+
+.indicators {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  padding-left: 62px;
+  padding-bottom: 40px;
+}
+
+.procent {
+  font-weight: 600;
+  font-size: 128px;
+  line-height: 132px;
+}
+
+.indicators-productivity,
+.indicators-turnover,
+.indicators-absenteeism {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.productivity,
+.turnover,
+.absenteeism {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.productivity {
+  &::before {
+    content: url(./images/polygon-top.svg);
+    position: absolute;
+    height: 47px;
+    width: 47px;
+    top: 75px;
+    left: -60px;
+  }
+}
+
+.turnover,
+.absenteeism {
+  &::before {
+    content: url(./images/polygon-bottom.svg);
+    position: absolute;
+    height: 47px;
+    width: 47px;
+    top: 72px;
+    left: -60px;
+  }
+}
+
+//mobile
+
+.intro-page-mobile {
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+}
+
+.block-1-mobile {
+  background: url("./images/block-1-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 375px;
+  height: 321px;
+  @include noselect;
+  position: relative;
+}
+
+.psy-comfort-org-mobile {
+  color: white;
+  @include wrap-content-mobile;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+}
+
+.team-engagement-wrapper-mobile,
+.team-leader-engagement-wrapper-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.slogan-mobile {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-top: 110px;
+}
+
+.psy-comfort-org-subheader-mobile {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.block-2-mobile {
+  height: 1050px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.statistics-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  @include wrap-content-mobile;
+  @include noselect;
+}
+
+.team-engagement-img-mobile {
+  background-image: url("./images/block-2-mobile.svg");
+  width: 327px;
+  height: 246.44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 40px;
+}
+
+.team-engagement-procent-mobile,
+.team-leader-engagement-x-mobile {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  margin-bottom: 10px;
+}
+
+.team-leader-engagement-img-mobile {
+  background-image: url("./images/block-2-mobile-2.svg");
+  width: 326.18px;
+  height: 268.21px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 40px;
+}
+
+.team-engagement-text-mobile,
+.team-leader-engagement-text-mobile {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 15px;
+}
+
+.team-leader-engagement-mobile {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  margin-top: -30px;
+}
+
+.block-3-mobile {
+  width: 375px;
+  height: 321px;
+  background-image: url("./images/block-3-mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.higher-engagment-mobile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  @include noselect;
+  @include wrap-content-mobile;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.higher-engagment-header-mobile {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+}
+
+.higher-engagment-subheader-mobile {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+}
+.higher-engagment-wrapper-mobile {
+  margin-top: 20px;
+}
+
+.procent-mobile {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+}
+
+.procent-wrapper-mobile {
+  display: flex;
+  flex-direction: row;
+}
+
+.procent-symb-mobile {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 10px;
+}
+
+.productivity-mobile,
+.turnover-mobile,
+.absenteeism-mobile {
+  font-weight: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.productivity-mobile {
+  &::before {
+    content: url("./images/top-mobile.svg");
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 45px;
+    left: -19px;
+  }
+}
+
+.turnover-mobile,
+.absenteeism-mobile {
+  &::before {
+    content: url("./images/bottom-mobile.svg");
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 45px;
+    left: -20px;
+  }
+}
+
+.indicators-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  padding-left: 20px;
+  padding-bottom: 40px;
+}

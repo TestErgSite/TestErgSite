@@ -1,0 +1,181 @@
+.charts {
+  width: 100%;
+  height: 238px;
+  border-radius: 0 0 60px 60px;
+  background: linear-gradient(117.43deg, #5d7072 0%, #42484e 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  z-index: 0;
+}
+
+.charts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.barometer {
+  background-image: url("./icons/barometer.svg");
+  background-position: center;
+  width: 254.06px;
+  height: 184.47px;
+  display: flex;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  transition: 0.5s ease-in-out opacity;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.enn {
+  background-image: url("./icons/enn.svg");
+  width: 161.06px;
+  height: 184.47px;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  transition: 0.5s ease-in-out opacity;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.mbti {
+  background-image: url("./icons/mbti.svg");
+  width: 273.64px;
+  height: 184.47px;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  transition: 0.5s ease-in-out opacity;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.org-chart {
+  background-image: url("./icons/tree.svg");
+  width: 844.08px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  border-radius: 60px 60px 0 0;
+  opacity: 0.1;
+  transition: 0.5s ease-in-out opacity;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.promt-tree {
+  top: 560px;
+  left: 260px;
+}
+
+.promt-block {
+  position: absolute;
+  background-color: white;
+  color: black;
+  z-index: 20;
+  display: flex;
+  width: 408px;
+  height: 109px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  z-index: 2;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.promt-block-tree-header {
+  color: black;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid white;
+    border-right: 20px solid transparent;
+    position: absolute;
+    top: -43px;
+    left: 165px;
+  }
+}
+
+.promt-block-text {
+  color: black;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.promt-charts {
+  position: absolute;
+  background-color: white;
+  color: black;
+  z-index: 20;
+  display: flex;
+  width: 246px;
+  height: 109px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  z-index: 2;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.promt-block-charts-header {
+  color: black;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 30px solid white;
+    border-left: 20px solid transparent;
+    position: absolute;
+    top: 78px;
+    left: 166px;
+  }
+}
+
+.promt-charts-text {
+  color: black;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.promt-barometer {
+  top: 420px;
+  left: -80px;
+}
+
+.promt-enn {
+  top: 420px;
+  left: 200px;
+}
+
+.promt-mbti {
+  top: 420px;
+  left: 550px;
+}

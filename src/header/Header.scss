@@ -1,0 +1,132 @@
+@import "../styles/styles.scss";
+
+.header {
+  display: flex;
+  min-width: 100%;
+  background: linear-gradient(117.43deg, #4e7171 0%, #131a22 100%);
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.header-wrapper {
+  @include wrap-content;
+  width: 1120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  height: 140px;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  cursor: pointer;
+}
+
+.logo-icon {
+  background-image: url("./icons/logo.svg");
+  width: 119px;
+  height: 98px;
+  background-position: center;
+}
+
+.nav {
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  min-width: 500px;
+  justify-content: space-between;
+}
+
+.nav div {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.nav .platform,
+.nav .about-app,
+.nav .log-in,
+.nav .get-started,
+.nav .study-page {
+  align-items: center;
+}
+
+svg {
+  fill: white;
+}
+
+.platform,
+.about-app,
+.log-in,
+.get-started,
+.study-page {
+  height: 47px;
+  padding: 0 10px 0 10px;
+  border-radius: 12px;
+
+  &:hover {
+    background: #17bcb2;
+  }
+
+  &:active {
+    background: #109c94;
+  }
+}
+
+.log-in,
+.get-started {
+  min-width: 85px;
+}
+
+//mobile
+.header-mobile {
+  display: flex;
+  width: 375px;
+  background: linear-gradient(117.43deg, #4e7171 0%, #131a22 100%);
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+}
+
+.header-wrapper-mobile {
+  @include wrap-content-mobile;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  height: 70px;
+  align-items: center;
+}
+
+.logo-mobile {
+  display: flex;
+  cursor: pointer;
+}
+
+.logo-icon-mobile {
+  background-image: url("./icons/logo-mobile.svg");
+  width: 59px;
+  height: 48px;
+  background-position: center;
+}
+
+.burger-button-mobile {
+  background-image: url('./icons/burger-button.svg');
+  width: 20px;
+  height: 20px;
+}
+
+.menu-molile {
+  width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
