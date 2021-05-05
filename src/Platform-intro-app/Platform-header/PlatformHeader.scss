@@ -1,109 +1,197 @@
-@import '../../styles/_variables';
+@import "../../styles/_variables";
 
 .platform-header-wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    height: 82px;
-    position: relative;
-    color: $white;
-    font-size: 12px;
-    font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  height: 82px;
+  position: relative;
+  color: $white;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .platform-header-logo-icon {
-    display: flex;
-    position: absolute;
-    width: 119px;
-    height: 98px;
-    background-image: url(./header-icons/logo.svg);
-    left: 116px;
-    top: 32px;
+  display: flex;
+  position: absolute;
+  width: 119px;
+  height: 98px;
+  background-image: url(./header-icons/logo.svg);
+  left: 116px;
+  top: 32px;
 }
 
 .platform-header-link {
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  &:hover {
+    text-decoration: none;
     color: $white;
-    display: flex;
-    flex-direction: row;
-    &:hover {
-        text-decoration: none;
-        color: $white;
-    }
+  }
 }
 
 .platform-header-nav {
-    display: flex;
-    flex-direction: row;
-    margin-left: 432px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 432px;
 }
 
 .platform-header-nav-interview,
 .platform-header-nav-staff,
 .platform-header-nav-methodology {
-    display: flex;
-    flex-direction: row;
-    margin-right: 33px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-right: 33px;
+  justify-content: center;
+  align-items: center;
 }
+
 .platform-header-nav-interview {
-    width: 82px;
+  width: 82px;
 }
 .platform-header-nav-staff {
-    width: 114px;
+  width: 114px;
 }
 .platform-header-nav-methodology {
-    width: 142px;
+  width: 142px;
 }
 
-
 .platform-header-icon {
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 24px;
-    height: 25px;
-    margin-right: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 25px;
+  margin-right: 8px;
 }
 
 .platform-interview-icon {
-    background-image: url(./header-icons/interview.svg);
+  background-image: url(./header-icons/interview.svg);
 }
 
 .platform-staff-icon {
-    background-image: url(./header-icons/staff.svg);
+  background-image: url(./header-icons/staff.svg);
 }
 
 .platform-methodology-icon {
-    background-image: url(./header-icons/metodology.svg); 
+  background-image: url(./header-icons/metodology.svg);
 }
 
 .platform-profile-name {
-    color: $white;
+  color: $white;
 }
 
 .platform-profile {
-    display: flex;
-    flex-direction: row;
-    margin-right: 77px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-right: 77px;
+  justify-content: center;
+  align-items: center;
 }
 
 .platform-profile-photo {
-    width: 32px;
-    height: 32px;
-    border: 1px solid white;
-    border-radius: 50%;
-    margin-left: 12px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-left: 12px;
 }
 
-.platform- header-logo-icon {
-    display: flex;
-    position: absolute;
-    width: 119px;
-    height: 98px;
-    background-image: url(./header-icons/logo.svg);
-    left: 116px;
-    top: 32px;
+.platform-header-logo-icon {
+  display: flex;
+  position: absolute;
+  width: 119px;
+  height: 98px;
+  background-image: url(./header-icons/logo.svg);
+  left: 116px;
+  top: 32px;
 }
+
+//mobile
+
+.platform-header-wrapper-mobile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  height: 18.62px;
+  position: relative;
+  color: $white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.platform-header-logo-icon-mobile {
+  display: flex;
+  position: absolute;
+  width: 27.04px;
+  height: 22.27px;
+  background-image: url(./header-icons/logo-mobile.svg);
+  left: 19px;
+  top: 10px;
+}
+
+.platform-header-nav-mobile {
+  display: flex;
+  flex-direction: row;
+  margin-left: 85px;
+}
+
+.platform-header-nav-interview-mobile,
+.platform-header-nav-staff-mobile,
+.platform-header-nav-methodology-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 3.18121px;
+  line-height: 4px;
+}
+
+.platform-interview-icon-mobile  {
+    background-image: url(./header-icons/interview-mobile.svg);
+  }
+  
+  .platform-staff-icon-mobile  {
+    background-image: url(./header-icons/staff-mobile.svg);
+  }
+  
+  .platform-methodology-icon-mobile  {
+    background-image: url(./header-icons/metodology-mobile.svg);
+  }
+
+  .platform-header-icon-mobile {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 8px;
+    height: 8px;
+    margin-right: 2px;
+  }
+
+  .platform-profile-mobile {
+    display: flex;
+    flex-direction: row;
+    margin-right: 22px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .platform-profile-name-mobile {
+    font-weight: normal;
+    font-size: 3.18121px;
+    line-height: 4px;
+  }
+
+  .platform-profile-photo-mobile {
+    width: 7.27px;
+    height: 7.27px;
+   background-image: url(./header-icons/profile-mobile.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+  }
+

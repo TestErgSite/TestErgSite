@@ -66,7 +66,7 @@
 }
 
 .toggle-arrow {
-  background-image: url("./arrow.svg");
+  background-image: url("./images/arrow.svg");
   width: 12.89px;
   height: 12.89px;
 }
@@ -85,3 +85,81 @@
 .toggle-arrow-right {
   transform: rotate(270deg);
 }
+
+//mobile
+
+.sidebar-wrapper-mobile {
+  width: 76px;
+  font-family: $font;
+  color: $white;
+  text-align: left;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 24px;
+  position: relative;
+  height: 180px;
+  z-index: 0;
+  margin-left: 1px;
+}
+
+.sidebar-department-mobile {
+  display: flex;
+  flex-direction: column;
+  font-family: "Proxima Nova Thin", sans-serif;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.dep-name-mobile {
+  font-weight: bold;
+  margin-left: 1px;
+  font-size: 3px;
+  line-height: 4px;
+}
+
+.department-mobile {
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+
+.user-snippet-wrapper-mobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2px;
+  margin-left: 5px;
+  width: 50px;
+  height: 10px;
+  position: relative;
+  &.bg {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    width: 47px;
+  }
+}
+
+.user-snippet-photo-mobile {
+  background-image: url('./images/avatar-mobile.svg');
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+}
+
+.user-snippet-pos-mobile {
+  margin-right: 4px;
+  font-weight: bold;
+  font-size: 3.18121px;
+  line-height: 4px;
+  padding-top: 2px;
+}
+
+.toggle-arrow-mobile {
+  background-image: url("./images/arrow-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 3.29px;
+  height: 2.29px;
+}
+

@@ -182,7 +182,7 @@ export const CaseStudyPage = () => {
 
                     <div className="comparison-item-mobile comparison-item-last">
                       <div className="standard-hcm-item-header-mobile hcm-education">
-                        {t("standard-hcm-header")}
+                        {t("hcm-education")}
                       </div>
                       <div className="standard-hcm-text-mobile standard-hcm-text-item-4">
                         {t("standard-hcm-text-item-4")}

@@ -3,14 +3,8 @@
   height: 238px;
   border-radius: 0 0 60px 60px;
   background: linear-gradient(117.43deg, #5d7072 0%, #42484e 100%);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   position: relative;
   z-index: 0;
-}
-
-.charts {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -178,4 +172,52 @@
 .promt-mbti {
   top: 420px;
   left: 550px;
+}
+
+//mobile
+
+.org-chart-mobile {
+  background-image: url("./icons/tree-mobile.svg");
+  width: 243px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 13px 13px 0 0;
+}
+
+.charts-mobile {
+  width: 100%;
+  height: 67px;
+  border-radius: 0 0 13px 13px;
+  background: linear-gradient(117.43deg, #5d7072 0%, #42484e 100%);
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.barometer-mobile {
+  width: 67.89px;
+  height: 52.04px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./icons/barometer-mobile.svg");
+}
+
+.enn-mobile {
+  width: 60.89px;
+  height: 52.04px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./icons/enn-mobile.svg");
+}
+
+.mbti-mobile {
+  width: 78px;
+  height: 52.04px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./icons/mbti-mobile.svg");
 }
