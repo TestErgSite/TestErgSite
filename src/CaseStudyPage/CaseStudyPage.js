@@ -5,19 +5,16 @@ import { Footer } from "../footer/Footer";
 import { Slideshow } from "../SliderMobile/SliderMobile";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
+import { Popup } from "../Popup/Popup";
+import { useSelector, useDispatch } from 'react-redux'
+import { handlePopup, hidePopupAsync } from "../redux/actions";
 
 export const CaseStudyPage = () => {
+
+  const DefaultCaseStudyPage = useMediaQuery({ query: "(min-width: 376px)" });
+  const MobileCaseStudyPage = useMediaQuery({ query: "(max-width: 375px)" });
+
   const { t } = useTranslation();
-
-  const MobileCaseStudyPage = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
-
-  const DefaultCaseStudyPage = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
-    return isNotMobile ? children : null;
-  };
 
   const [checkboxes, setValues] = useState({
     0: false,
@@ -47,11 +44,19 @@ export const CaseStudyPage = () => {
     });
   };
 
+  const isActive = useSelector((state) => state.isActive); 
+  const dispatch = useDispatch();
+
   return (
     <>
       <Header />
-      <MobileCaseStudyPage>
+      {MobileCaseStudyPage &&
         <div className="case-study-page-mobile">
+        <div
+            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          {isActive === "visible" || "animate" ? <Popup /> : null}
           <div className="case-study-page-block-1-mobile">
             <div className="case-study-page-wrapper-mobile">
               <div className="case-study-page-problem-mobile">
@@ -239,10 +244,15 @@ export const CaseStudyPage = () => {
             </div>
           </div>
         </div>
-      </MobileCaseStudyPage>
+  }
 
-      <DefaultCaseStudyPage>
+      {DefaultCaseStudyPage &&
         <div className="case-study-page">
+        <div
+            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          {isActive === "visible" || "animate" ? <Popup /> : null}
           <div className="case-study-page-block-1">
             <div className="case-study-page-wrapper">
               <div className="case-study-page-problem">
@@ -335,6 +345,7 @@ export const CaseStudyPage = () => {
           </div>
 
           <div className="case-study-page-block-4">
+     
             <div className="images-approach-wrapper">
               <div className="approach-img-1">
                 <div className="layout">
@@ -405,7 +416,7 @@ export const CaseStudyPage = () => {
 
                   <div className="comparison-item comparison-item-last">
                     <div className="standard-hcm-item-header hcm-education">
-                      {t("standard-hcm-header")}
+                      {t("hcm-education")}
                     </div>
                     <div className="standard-hcm-text standard-hcm-text-item-4">
                       {t("standard-hcm-text-item-4")}
@@ -453,8 +464,9 @@ export const CaseStudyPage = () => {
               </div>
             </div>
           </div>
+          
         </div>
-      </DefaultCaseStudyPage>
+     }
       <Footer />
     </>
   );

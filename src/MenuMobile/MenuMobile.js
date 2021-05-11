@@ -5,23 +5,27 @@ import "../i18n";
 import { Link } from "react-router-dom";
 import { ChangeLanguageButton } from "../changeLanguageButton/changeLanguageButton";
 import { useMediaQuery } from "react-responsive";
-import { GetStaerted } from "../get-started-button/GetStaerted";
+import { ContactUsButton } from "../contact-us-button/ContactUsButton";
 import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { Popup } from "../Popup/Popup";
+import { showPopupAsync, hidePopupAsync } from '../redux/actions'
 
 export const MenuMobile = () => {
   const { t } = useTranslation();
   let history = useHistory();
 
-  const MobileMenu = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
+  const MobileMenu = useMediaQuery({ query: '(max-width: 375px)' });
 
+  const isActive = useSelector((state) => state.isActive); 
+  const dispatch = useDispatch();
 
   return (
     <>
-      <MobileMenu>
+      {MobileMenu &&
         <div className="menu-wrapper-mobile">
+        <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
+        {isActive === "visible" || "animate" ? <Popup /> : null}
         <div className="menu-logo-wrapper-mobile">
         <Link to="/">
             <div className="menu-logo-mobile"></div>
@@ -39,19 +43,18 @@ export const MenuMobile = () => {
               <Link to="/study-page">
                 <div className="study-page">{t("study-page")}</div>
               </Link>
-              <Link to="/get-started">
-                <div className="get-started">{t("get-started")}</div>
+              <Link to="/demo">
+                <div className="demo">{t("demo")}</div>
               </Link>
-            
             </nav>
             </div>
 
             <div className="menu-footer-wrapper-mobile">
             <ChangeLanguageButton />
-            <GetStaerted />
+            <ContactUsButton handlePopup={()=> dispatch(showPopupAsync())}/>
             </div>
         </div>
-      </MobileMenu>
+    }
     </>
   );
 };

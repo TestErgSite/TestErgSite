@@ -2,7 +2,8 @@
 
 .ergonza-platform {
   width: 100%;
-  height: 2047px;
+  height: 1870px;
+  position: relative;
 }
 
 .ergonza-platform-wrapper {
@@ -22,19 +23,18 @@
   width: 100%;
   border-radius: 40px;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .ergonza-platform-header {
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 72px;
-  padding: 50px 0 50px 0;
+  @include font-header-black;
+  padding: 30px 0 10px 0;
 }
 
 .ergonza-platform-employers,
 .ergonza-platform-barometer,
 .ergonza-platform-org-chart {
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 
 .ergonza-platform-employers,
@@ -42,7 +42,7 @@
 .ergonza-platform-enneagram,
 .ergonza-platform-org-chart,
 .ergonza-platform-mbti {
-  height: 314px;
+  height: 240px;
 }
 
 .ergonza-platform-employers-header,
@@ -50,27 +50,35 @@
 .ergonza-platform-enneagram-header,
 .ergonza-platform-org-chart-header,
 .ergonza-platform-mbti-header {
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 34px;
+  @include font-header-2nd-level;
+}
+
+.ru .ergonza-platform-employers-header,
+.ru .ergonza-platform-barometer-header,
+.ru .ergonza-platform-enneagram-header,
+.ru .ergonza-platform-org-chart-header,
+.ru .ergonza-platform-mbti-header {
+  @include font-header-2nd-level;
+  font-size: 20px;
 }
 
 .ergonza-platform-employers-text,
 .ergonza-platform-barometer-text,
 .ergonza-platform-enneagram-text,
 .ergonza-platform-org-chart-text,
-.ergonza-platform-mbti-text {
-  font-size: 24px;
-  line-height: 32px;
+.ergonza-platform-mbti-text,
+.ergonza-platform-subheader {
+  @include font-text-black;
 }
 
 .ru .ergonza-platform-employers-text,
 .ru .ergonza-platform-barometer-text,
 .ru .ergonza-platform-enneagram-text,
 .ru .ergonza-platform-org-chart-text,
-.ru .ergonza-platform-mbti-text {
-  font-size: 22px;
-  line-height: 32px;
+.ru .ergonza-platform-mbti-text,
+.ru .ergonza-platform-subheader {
+  @include font-text-black;
+  font-size: 18px;
 }
 
 .ergonza-platform-employers-img {
@@ -117,20 +125,21 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 70px;
+  margin-top: 60px;
+  padding-left: 7px;
 }
 
 .ergonza-platform-item {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .ergonza-platform-info-col-1,
 .ergonza-platform-info-col-3 {
-  width: 41%;
+  width: 43%;
 }
 
 .ergonza-platform-info-col-2 {
-  width: 18%;
+  width: 14%;
 }
 
 .ergonza-platform-content {
@@ -202,11 +211,16 @@
   line-height: 32px;
 }
 
+.ergonza-platform-subheader {
+  margin: 0 0 30px 0;
+}
+
 //mobile
 
 .ergonza-platform-mobile {
   width: 375px;
   height: 1324px;
+  position: relative;
 }
 
 .ergonza-platform-wrapper-mobile {
@@ -218,7 +232,7 @@
 
 .ergonza-platform-header-mobile {
   @include font-header-mobile-black;
-  margin: 20px 0;
+  margin: 30px 0 10px 0;
 }
 
 .ergonza-platform-intro-mobile {
@@ -244,4 +258,87 @@
   margin-right: 18px;
   position: relative;
   z-index: 0;
+}
+
+.ergonza-platform-info-mobile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.ergonza-platform-employers-mobile,
+.ergonza-platform-barometer-mobile,
+.ergonza-platform-org-chart-mobile,
+.ergonza-platform-mbti-mobile,
+.ergonza-platform-enneagram-mobile {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.ergonza-platform-employers-img-mobile {
+  background-image: url("./images/mobile/img-1-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 72px;
+}
+
+.ergonza-platform-org-chart-img-mobile{
+  background-image: url("./images/mobile/img-2-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 72px;
+}
+
+.ergonza-platform-barometer-img-mobile {
+  background-image: url("./images/mobile/img-3-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 69px;
+  height: 57px;
+}
+
+.ergonza-platform-mbti-img-mobile {
+  background-image: url("./images/mobile/img-4-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 72px;
+}
+
+.ergonza-platform-enneagram-img-mobile {
+  background-image: url("./images/mobile/img-5-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 65px;
+}
+
+
+.ergonza-platform-employers-header-mobile,
+.ergonza-platform-org-chart-header-mobile,
+.ergonza-platform-barometer-header-mobile,
+.ergonza-platform-enneagram-header-mobile,
+.ergonza-platform-mbti-header-mobile {
+  @include font-header-mobile-black; 
+}
+
+.ergonza-platform-item-mobile {
+  margin-bottom: 10px;
+}
+
+.ergonza-platform-mbti-text-mobile,
+.ergonza-platform-enneagram-text-mobile,
+.ergonza-platform-barometer-text-mobile,
+.ergonza-platform-org-chart-text-mobile,
+.ergonza-platform-employers-text-mobile,
+.ergonza-platform-subheader-mobile {
+  @include font-text-mobile;
+}
+
+.ergonza-platform-subheader-mobile {
+  margin: 0 0 30px 0;
 }

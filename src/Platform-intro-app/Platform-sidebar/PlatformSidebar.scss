@@ -9,12 +9,19 @@
   width: 266px;
   height: 48px;
   position: relative;
+  margin-left: 21px;
+  &.bg {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 212px;
+  }
 }
 
 .user-snippet-photo {
   border: 1px solid white;
   width: 32px;
   height: 32px;
+  margin-left: 10px;
   border-radius: 8px;
   margin-right: 16px;
 }

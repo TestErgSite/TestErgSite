@@ -4,21 +4,15 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 
 export const HowItWorksStep1 = () => {
+
+  const DefaultHowItWorksStep1  = useMediaQuery({ query: '(min-width: 376px)' });
+  const MobileHowItWorksStep1  = useMediaQuery({ query: '(max-width: 375px)' });
+
   const { t } = useTranslation();
-
-  const MobileHowItWorksStep1 = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
-
-  const DefaultHowItWorksStep1 = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
-    return isNotMobile ? children : null;
-  };
 
   return (
     <>
-      <MobileHowItWorksStep1>
+    {MobileHowItWorksStep1 &&
     <div className="how-it-works-step-1-mobile">
       <div className="how-it-works-step-1-wrapper-mobile">
         <div className="organizational-structure-mobile">
@@ -38,10 +32,11 @@ export const HowItWorksStep1 = () => {
         <div className="organizational-structure-img-mobile"></div>
       </div>
     </div>
-    </MobileHowItWorksStep1>
+    }
   
-    <DefaultHowItWorksStep1>
+   {DefaultHowItWorksStep1 &&
     <div className="how-it-works-step-1">
+  
       <div className="how-it-works-step-1-wrapper">
         <div className="organizational-structure">
           <div className="organizational-structure-header">
@@ -60,7 +55,7 @@ export const HowItWorksStep1 = () => {
         <div className="organizational-structure-img"></div>
       </div>
     </div>
-    </DefaultHowItWorksStep1>
+   }
     </>
   );
 };

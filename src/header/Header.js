@@ -5,24 +5,23 @@ import "../i18n";
 import { Link } from "react-router-dom";
 import { ChangeLanguageButton } from "../changeLanguageButton/changeLanguageButton";
 import { useMediaQuery } from "react-responsive";
+import { useSelector, useDispatch } from 'react-redux'
+import { showPopupAsync, hidePopupAsync } from '../redux/actions'
 
 export const Header = () => {
   const { t } = useTranslation();
 
-  const MobileHeader = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
+  const DefaultHeader = useMediaQuery({ query: '(min-width: 376px)' });
+  const MobileHeader = useMediaQuery({ query: '(max-width: 375px)' });
 
-  const DefaultHeader = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
-    return isNotMobile ? children : null;
-  };
-
+  const isActive = useSelector((state) => state.isActive);
+  const dispatch = useDispatch();
+ 
   return (
     <>
-      <MobileHeader>
+      {MobileHeader &&
         <div className="header-mobile">
+        <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
           <div className="header-wrapper-mobile">
             <Link to="/">
               <div className="logo-mobile">
@@ -34,10 +33,11 @@ export const Header = () => {
             </Link>
           </div>
         </div>
-      </MobileHeader>
+    }
 
-      <DefaultHeader>
+      {DefaultHeader &&
         <div className="header">
+        <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
           <div className="header-wrapper">
             <Link to="/">
               <div className="logo">
@@ -54,14 +54,15 @@ export const Header = () => {
               <Link to="/study-page">
                 <div className="study-page">{t("study-page")}</div>
               </Link>
-              <Link to="/get-started">
-                <div className="get-started">{t("get-started")}</div>
+              <Link to="/demo">
+                <div className="demo">{t("demo")}</div>
               </Link>
+                <div className="contact-us" onClick={() => dispatch(showPopupAsync(isActive))}>{t("contact-us")}</div>
               <ChangeLanguageButton />
             </nav>
           </div>
         </div>
-      </DefaultHeader>
+      }
     </>
   );
 };

@@ -2,35 +2,39 @@ import "./Footer.scss";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "../i18n";
-import { GetStaerted } from "../get-started-button/GetStaerted";
+import { DemoButton } from "../demo-button/DemoButton";
 import { Link } from "react-router-dom";
 import { ChangeLanguageButton } from "../changeLanguageButton/changeLanguageButton";
 import { scrollUp } from '../utils/scrollUp';
 import { useMediaQuery } from "react-responsive";
+import { ContactUsButton } from "../contact-us-button/ContactUsButton";
+import { useSelector, useDispatch } from 'react-redux'
+import { showPopupAsync, hidePopupAsync } from '../redux/actions'
 
 export const Footer = () => {
+  const DefaultFooter = useMediaQuery({ query: '(min-width: 376px)' });
+  const MobileFooter = useMediaQuery({ query: '(max-width: 375px)' });
+  
   const { t } = useTranslation();
 
-  const MobileHeader = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
-
-  const DefaultHeader = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
-    return isNotMobile ? children : null;
-  };
+  const isActive = useSelector((state) => state.isActive);
+  const dispatch = useDispatch();
 
   return (
     <>
-    <MobileHeader>
+    {MobileFooter &&
     <div className="footer-mobile">
+    <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
+
       <div className="footer-wrapper-mobile">
         <div className="slogan-wrapper-mobile">
-          <span className="slogan-mobile footer-slogan-mobile">{t("psy-comfort-org-header")}</span>
-          <Link to="/get-started">
-            <GetStaerted />
+          <div className="slogan-mobile footer-slogan-mobile">{t("try-in-action")}</div>
+          <div className="mobile-buttons">
+          <Link to="/demo">
+            <DemoButton />
           </Link>
+          <ContactUsButton handlePopup={()=> dispatch(showPopupAsync())}/>
+          </div>
         </div>
         <div className="footer-info-mobile">
           <div className="footer-info-wrapper-mobile">
@@ -47,6 +51,7 @@ export const Footer = () => {
               <Link to="/study-page" onClick={scrollUp} className="study-page-link-mobile">
                 <div className="study-page study-page-footer-mobile">{t("study-page")}</div>
               </Link>
+           
               <ChangeLanguageButton/>
             </div>
             <div className="logo-wrapper-mobile">
@@ -56,26 +61,34 @@ export const Footer = () => {
               </div>
             </Link>
             <div className="copyright-mobile">
-              <span>&#169; 2020 Ergonza</span>
+            <div className="ergonza-2020-mobile">&#169; 2020 Ergonza</div>
+              <div className="ergonza-mail">info@ergonza.com</div>
             </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </MobileHeader>
-    <DefaultHeader>
+    }
+
+   {DefaultFooter &&
     <div className="footer">
+    <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
       <div className="footer-wrapper">
         <div className="slogan-wrapper">
-          <span className="slogan">{t("psy-comfort-org-header")}</span>
-          <Link to="/get-started">
-            <GetStaerted />
+          <div className="slogan">{t("try-in-action")}</div>
+          <div className="footer-buttons">
+          <Link to="/demo" className="footer-buttons-demo">
+            <DemoButton />
           </Link>
+
+            <ContactUsButton handlePopup={()=> dispatch(showPopupAsync())}/>
+     
+        </div>
         </div>
         <div className="footer-info">
           <div className="footer-info-wrapper">
-            <Link to="/">
+            <Link to="/" onClick={scrollUp}>
               <div className="logo">
                 <div className="logo-footer"></div>
               </div>
@@ -92,21 +105,29 @@ export const Footer = () => {
               <Link to="/study-page" onClick={scrollUp}>
                 <div className="study-page study-page-footer">{t("study-page")}</div>
               </Link>
-              <Link to="/get-started" onClick={scrollUp}>
-                <div className="get-started get-started-footer">
-                  {t("get-started")}
+              <Link to="/demo" onClick={scrollUp}>
+                <div className="demo demo-footer">
+                  {t("demo")}
                 </div>
               </Link>
+
+                <div className="contact-us contact-us-footer" onClick={()=> dispatch(showPopupAsync())}>
+                  {t("contact-us")}
+                </div>
+           
+             
               <ChangeLanguageButton footer={true}/>
+          
             </div>
             <div className="copyright">
-              <span>&#169; 2020 Ergonza</span>
+              <div className="ergonza-2020">&#169; 2020 Ergonza</div>
+              <div className="ergonza-mail">info@ergonza.com</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </DefaultHeader>
+}
     </>
   );
 };

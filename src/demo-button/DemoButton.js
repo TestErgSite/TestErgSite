@@ -1,10 +1,10 @@
-import "./GetStaerted.scss";
+import "./DemoButton.scss";
 import React from "react";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 
-export const GetStaerted = () => {
+export const DemoButton = () => {
 
   const MobileIntro = ({ children }) => {
     const isMobile = useMediaQuery({ maxWidth: 375 });
@@ -20,10 +20,10 @@ export const GetStaerted = () => {
   return(
     <>
     <MobileIntro>
-    <button className="get-started-button-mobile">{t("get-started")}</button>
+    <button className="demo-button-mobile">{t("demo")}</button>
     </MobileIntro>
     <DefaultIntro>
-    <button className="get-started-button">{t("get-started")}</button>
+    <button className="demo-button">{t("demo")}</button>
     </DefaultIntro>
     </>
   ) 

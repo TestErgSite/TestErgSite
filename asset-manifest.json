@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.86dfbf50.chunk.css",
-    "main.js": "/static/js/main.67317522.chunk.js",
-    "main.js.map": "/static/js/main.67317522.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0bf950a9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0bf950a9.js.map",
-    "static/js/2.6d0d153b.chunk.js": "/static/js/2.6d0d153b.chunk.js",
-    "static/js/2.6d0d153b.chunk.js.map": "/static/js/2.6d0d153b.chunk.js.map",
-    "static/js/3.f998ba29.chunk.js": "/static/js/3.f998ba29.chunk.js",
-    "static/js/3.f998ba29.chunk.js.map": "/static/js/3.f998ba29.chunk.js.map",
+    "main.css": "/static/css/main.42b91558.chunk.css",
+    "main.js": "/static/js/main.9393ff38.chunk.js",
+    "main.js.map": "/static/js/main.9393ff38.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f81c2b58.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f81c2b58.js.map",
+    "static/js/2.8e2664d4.chunk.js": "/static/js/2.8e2664d4.chunk.js",
+    "static/js/2.8e2664d4.chunk.js.map": "/static/js/2.8e2664d4.chunk.js.map",
+    "static/js/3.fe7fb042.chunk.js": "/static/js/3.fe7fb042.chunk.js",
+    "static/js/3.fe7fb042.chunk.js.map": "/static/js/3.fe7fb042.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.86dfbf50.chunk.css.map": "/static/css/main.86dfbf50.chunk.css.map",
-    "static/js/2.6d0d153b.chunk.js.LICENSE.txt": "/static/js/2.6d0d153b.chunk.js.LICENSE.txt",
+    "static/css/main.42b91558.chunk.css.map": "/static/css/main.42b91558.chunk.css.map",
+    "static/js/2.8e2664d4.chunk.js.LICENSE.txt": "/static/js/2.8e2664d4.chunk.js.LICENSE.txt",
     "static/media/PlatformSidebar.scss": "/static/media/avatar-mobile.69b32419.svg",
     "static/media/PlatfromOrgChart.scss": "/static/media/tree.b60ff732.svg",
     "static/media/IntroPage.scss": "/static/media/top-mobile.80f6bc88.svg",
     "static/media/Header.scss": "/static/media/logo.5b013b83.svg",
     "static/media/MenuMobile.scss": "/static/media/logo.630836b9.svg",
+    "static/media/Popup.scss": "/static/media/close.78ba85c2.svg",
     "static/media/CaseStudyPage.scss": "/static/media/img-3.4e4f3977.png",
     "static/media/Platfrom.scss": "/static/media/img-5.029ac865.svg",
     "static/media/SliderMobile.scss": "/static/media/img-4.02793c02.svg",
@@ -28,9 +29,9 @@
     "static/media/Footer.scss": "/static/media/logo-footer.e5578d51.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0bf950a9.js",
-    "static/js/2.6d0d153b.chunk.js",
-    "static/css/main.86dfbf50.chunk.css",
-    "static/js/main.67317522.chunk.js"
+    "static/js/runtime-main.f81c2b58.js",
+    "static/js/2.8e2664d4.chunk.js",
+    "static/css/main.42b91558.chunk.css",
+    "static/js/main.9393ff38.chunk.js"
   ]
 }

@@ -1,5 +1,7 @@
+//mobile
+
 @mixin font-header-mobile-black {
-  font-family: 'Proxima Nova Thin', sans-serif;
+  font-family: "Proxima Nova Thin", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -7,7 +9,7 @@
 }
 
 @mixin font-header-mobile-white {
-  font-family: 'Proxima Nova Thin', sans-serif;
+  font-family: "Proxima Nova Thin", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -15,36 +17,91 @@
 }
 
 @mixin font-text-mobile {
-  font-family: 'Proxima Nova Thin', sans-serif;
+  font-family: "Proxima Nova Thin", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
 }
 
+@mixin wrap-content-mobile {
+  width: 315px;
+  padding: 0 20px 0 20px;
+  font-family: "Proxima Nova Thin", sans-serif;
+  margin: 0 auto;
+  height: 100%;
+}
+
+//default
+
 @mixin wrap-content {
-    max-width: 1120px;
-    padding: 0 20px 0 20px;
-    font-family: 'Proxima Nova Thin', sans-serif;
-    margin: 0 auto;
-    height: 100%;
+  max-width: 1120px;
+  padding: 0 20px 0 20px;
+  font-family: "Proxima Nova Thin", sans-serif;
+  margin: 0 auto;
+  height: 100%;
 }
 
 @mixin noselect {
-    -webkit-touch-callout: none; 
-      -webkit-user-select: none; 
-       -khtml-user-select: none; 
-         -moz-user-select: none; 
-          -ms-user-select: none; 
-              user-select: none; 
-  } 
-
-  //mobile 
-  @mixin wrap-content-mobile {
-    width: 315px;
-    padding: 0 20px 0 20px;
-    font-family: 'Proxima Nova Thin', sans-serif;
-    margin: 0 auto;
-    height: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-    
+
+@mixin font-header-black {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 70px;
+  color: #000000;
+}
+
+@mixin font-header-white {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 70px;
+  color: #ffffff;
+}
+
+@mixin font-header-2nd-level {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  color: #000000;
+}
+
+@mixin font-text-black {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+}
+
+@mixin font-text-white {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+//only for header block
+@mixin font-header {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  color: #ffffff;
+}

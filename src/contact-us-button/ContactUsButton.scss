@@ -1,0 +1,45 @@
+.contact-us-button {
+  width: 180px;
+  height: 60px;
+    padding: 0 5px 0 5px;
+    border-radius: 12px;
+    background: #17bcb2;
+    color: #ffffff;
+    font-family: "Proxima Nova Thin", sans-serif;
+    font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: #13a9a0;
+    }
+    &:active {
+      background: #109c94;
+    }
+  }
+  
+  //mobile 
+  
+  .contact-us-button-mobile{
+    width: 109px;
+    height: 47px;
+    padding: 0 5px 0 5px;
+    border-radius: 12px;
+    background: #17bcb2;
+    color: #ffffff;
+    font-family: "Proxima Nova Thin", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: #13a9a0;
+    }
+    &:active {
+      background: #109c94;
+    }
+  }

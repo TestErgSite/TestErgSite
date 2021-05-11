@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 }
 
 .block-1 {
@@ -40,23 +41,18 @@
 }
 
 .slogan {
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 80px;
+  @include font-header-white;
   max-width: 875px;
 }
 
 .psy-comfort-org-subheader {
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
+  @include font-text-white;
   max-width: 500px;
-  margin-top: 30px;
-  margin-bottom: 48px;
+  margin: 20px 0;
 }
 
 .block-2 {
-  height: 1429px;
+  height: 1329px;
   width: 100%;
 }
 
@@ -89,22 +85,16 @@
   display: flex;
   flex-direction: row;
   position: relative;
-  font-size: 24px;
-  line-height: 32px;
+  @include font-text-black;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-.team-engagement-procent {
-  font-weight: 600;
-  font-size: 128px;
-  line-height: 132px;
-}
-
+.team-engagement-procent,
 .team-leader-engagement-x {
   font-weight: 600;
-  font-size: 128px;
+  font-size: 100px;
   line-height: 132px;
 }
 
@@ -114,14 +104,17 @@
   flex-direction: column;
 }
 
+.team-leader-engagement-text,
 .team-engagement-text {
-  width: 346px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.team-engagement-text {
+  width: 247px;
 }
 
 .team-leader-engagement-text {
   width: 360px;
-  margin-bottom: 30px;
 }
 
 .block-3 {
@@ -147,21 +140,17 @@
 }
 
 .higher-engagment-header {
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 80px;
-  color: #ffffff;
+  @include font-header-white;
 }
 
 .higher-engagment-subheader {
-  font-size: 24px;
-  line-height: 32px;
-  color: #ffffff;
+  @include font-text-white;
+  margin: 20px 0;
   width: 673px;
 }
 
 .higher-engagment-wrapper {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .indicators {
@@ -175,8 +164,8 @@
 
 .procent {
   font-weight: 600;
-  font-size: 128px;
-  line-height: 132px;
+  font-size: 100px;
+  line-height: 120px;
 }
 
 .indicators-productivity,
@@ -190,9 +179,7 @@
 .productivity,
 .turnover,
 .absenteeism {
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
+  @include font-text-white;
 }
 
 .productivity {
@@ -201,7 +188,7 @@
     position: absolute;
     height: 47px;
     width: 47px;
-    top: 75px;
+    top: 55px;
     left: -60px;
   }
 }
@@ -213,7 +200,7 @@
     position: absolute;
     height: 47px;
     width: 47px;
-    top: 72px;
+    top: 57px;
     left: -60px;
   }
 }
@@ -224,6 +211,7 @@
   display: flex;
   flex-direction: column;
   max-width: 375px;
+  position: relative;
 }
 
 .block-1-mobile {
@@ -257,7 +245,7 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  margin-top: 110px;
+  margin-top: 16px;
 }
 
 .psy-comfort-org-subheader-mobile {
@@ -359,7 +347,7 @@
   color: #ffffff;
 }
 .higher-engagment-wrapper-mobile {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .procent-mobile {
@@ -418,5 +406,22 @@
   justify-content: space-between;
   color: white;
   padding-left: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 35px;
 }
+
+.opacity {
+  opacity: 0;
+}
+
+.overlay {
+  background: #000;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100%;
+  z-index: 100;
+  transition: opacity 0.4s ease-out;
+}
+

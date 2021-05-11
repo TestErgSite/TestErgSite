@@ -17,11 +17,17 @@ svg {
   position: relative;
 }
 
+.change-lang-footer {
+  margin-bottom: 19px;
+  height: 40px;
+}
+
 .language-wrapper {
   display: flex;
   flex-direction: row;
   cursor: pointer;
   align-items: center;
+  padding-left: 5px;
 }
 
 .drop-down {
@@ -52,6 +58,7 @@ svg {
   visibility: visible;
   opacity: 1;
   position: absolute;
+  z-index: 200;
 }
 
 .rus,
@@ -131,4 +138,12 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.language-mobile {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  align-items: center;
+  display: flex;
 }

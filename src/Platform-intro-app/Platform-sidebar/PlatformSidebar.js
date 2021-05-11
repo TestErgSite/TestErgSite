@@ -27,7 +27,7 @@ class PlatformSidebar extends React.Component {
     return (
       <>
       <MediaQuery minDeviceWidth={376}>
-      <div className="user-snippet-wrapper">
+      <div className={`user-snippet-wrapper ${bg}`}>
         <div className="user-snippet-photo"></div>
         <div className="user-snippet-pos">{position}</div>
       </div>
@@ -118,17 +118,17 @@ class PlatformSidebar extends React.Component {
         >
           <div className="sidebar-department">
             <div className="department">
-              <div className="toggle-arrow-mobile"></div>
+              <div className="toggle-arrow"></div>
               <div className="dep-name">Компания</div>
             </div>
             {this.renderUser("CEO")}
           </div>
           <div className="sidebar-department sidebar-department-2">
             <div className="department">
-              <div className="toggle-arrow-mobile"></div>
+              <div className="toggle-arrow"></div>
               <div className="dep-name">Отдел</div>
             </div>
-            {this.renderUser("Сотрудник")}
+            {this.renderUser("Сотрудник", "bg")}
             {this.renderUser("Сотрудник")}
             {this.renderUser("Сотрудник")}
             {this.renderUser("Сотрудник")}
@@ -138,25 +138,25 @@ class PlatformSidebar extends React.Component {
 
           <div className="sidebar-department sidebar-department-2">
             <div className="department">
-              <div className="toggle-arrow-mobile toggle-arrow-right"></div>
+              <div className="toggle-arrow toggle-arrow-right"></div>
               <div className="dep-name">Отдел</div>
             </div>
           </div>
           <div className="sidebar-department sidebar-department-2">
             <div className="department">
-              <div className="toggle-arrow-mobile toggle-arrow-right"></div>
+              <div className="toggle-arrow toggle-arrow-right"></div>
               <div className="dep-name">Отдел</div>
             </div>
           </div>
           <div className="sidebar-department sidebar-department-2">
             <div className="department">
-              <div className="toggle-arrow-mobile toggle-arrow-right"></div>
+              <div className="toggle-arrow toggle-arrow-right"></div>
               <div className="dep-name">Отдел</div>
             </div>
           </div>
           <div className="sidebar-department sidebar-department-2">
             <div className="department">
-              <div className="toggle-arrow-mobile toggle-arrow-right"></div>
+              <div className="toggle-arrow toggle-arrow-right"></div>
               <div className="dep-name">Отдел</div>
             </div>
           </div>

@@ -5,11 +5,9 @@
   min-width: 100%;
   background: white;
   box-sizing: border-box;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  user-select: none;
   height: 1097px;
   flex-direction: column;
+  position: relative;
 }
 
 .how-it-works-layout-wrapper {
@@ -23,12 +21,9 @@
 }
 
 .how-it-works-layout-header {
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 80px;
-  color: black;
+  @include font-header-black;
   margin-top: 100px;
-  padding-right: 670px;
+  padding-right: 700px;
 }
 
 .how-it-works-guide {
@@ -120,6 +115,10 @@
 
 .how-it-works-layout-mobile {
   width: 375px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .how-it-works-layout-wrapper-mobile {

@@ -8,6 +8,7 @@
   -moz-user-select: none;
   -khtml-user-select: none;
   user-select: none;
+  position: relative;
 }
 
 .header-wrapper {
@@ -17,7 +18,7 @@
   flex-direction: row;
   justify-content: space-between;
   color: white;
-  height: 140px;
+  height: 120px;
   align-items: center;
 }
 
@@ -35,8 +36,7 @@
 
 .nav {
   display: flex;
-  font-weight: 600;
-  font-size: 20px;
+  @include font-header;
   line-height: 24px;
   min-width: 500px;
   justify-content: space-between;
@@ -52,7 +52,8 @@
 .nav .platform,
 .nav .about-app,
 .nav .log-in,
-.nav .get-started,
+.nav .demo,
+.contact-us,
 .nav .study-page {
   align-items: center;
 }
@@ -64,7 +65,8 @@ svg {
 .platform,
 .about-app,
 .log-in,
-.get-started,
+.demo,
+.contact-us,
 .study-page {
   height: 47px;
   padding: 0 10px 0 10px;
@@ -80,7 +82,8 @@ svg {
 }
 
 .log-in,
-.get-started {
+.demo 
+.contact-us {
   min-width: 85px;
 }
 
@@ -91,6 +94,7 @@ svg {
   background: linear-gradient(117.43deg, #4e7171 0%, #131a22 100%);
   box-sizing: border-box;
   -moz-user-select: none;
+  position: relative;
   -khtml-user-select: none;
 }
 

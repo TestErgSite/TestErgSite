@@ -2,27 +2,32 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "../i18n";
 import "./IntroPage.scss";
-import { GetStaerted } from "../get-started-button/GetStaerted";
+import { DemoButton } from "../demo-button/DemoButton";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import { Popup } from "../Popup/Popup";
+import { useSelector, useDispatch } from "react-redux";
+import { hidePopupAsync } from "../redux/actions";
 
-export const IntoPage = (props) => {
+export const IntroPage = (props) => {
+  const DefaultIntroPage = useMediaQuery({ query: "(min-width: 376px)" });
+  const MobileIntroPage = useMediaQuery({ query: "(max-width: 375px)" });
+
   const { t } = useTranslation();
 
-  const MobileIntro = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
-
-  const DefaultIntro = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
-    return isNotMobile ? children : null;
-  };
+  const isActive = useSelector((state) => state.isActive);
+  const dispatch = useDispatch();
 
   return (
     <>
-      <MobileIntro>
-      <div className="intro-page-mobile">
+      {MobileIntroPage && (
+        <div className="intro-page-mobile">
+          <div
+            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          {isActive === "visible" || "animate" ? <Popup /> : null}
+
           <div className="block-1-mobile">
             <div className="layout">
               <div className="psy-comfort-org-mobile">
@@ -32,8 +37,8 @@ export const IntoPage = (props) => {
                 <div className="psy-comfort-org-subheader-mobile">
                   {t("psy-comfort-org-subheader")}
                 </div>
-                <Link to="/get-started">
-                  <GetStaerted />
+                <Link to="/demo">
+                  <DemoButton />
                 </Link>
               </div>
             </div>
@@ -43,28 +48,27 @@ export const IntoPage = (props) => {
             <div className="statistics-mobile">
               <div className="team-engagement-mobile">
                 <div className="team-engagement-wrapper-mobile">
-                  <span className="team-engagement-procent-mobile">70%</span>
+                  <span className="team-engagement-procent-mobile">+70%</span>
                   <span className="team-engagement-text-mobile">
                     {t("team-engagement")}
                   </span>
-                  <Link to="/get-started">
-                    <GetStaerted />
+                  <Link to="/demo">
+                    <DemoButton />
                   </Link>
                 </div>
                 <div className="team-engagement-img-mobile"></div>
               </div>
               <div className="team-leader-engagement-mobile">
-              <div className="team-leader-engagement-wrapper-mobile">
+                <div className="team-leader-engagement-wrapper-mobile">
                   <span className="team-leader-engagement-x-mobile">12x</span>
                   <span className="team-leader-engagement-text-mobile">
                     {t("team-leader-engagement")}
                   </span>
-                  <Link to="/get-started">
-                    <GetStaerted />
+                  <Link to="/demo">
+                    <DemoButton />
                   </Link>
                 </div>
                 <div className="team-leader-engagement-img-mobile"></div>
-               
               </div>
             </div>
           </div>
@@ -83,28 +87,45 @@ export const IntoPage = (props) => {
 
                 <div className="indicators-mobile">
                   <div className="indicators-turnover">
-                    <div className="procent-wrapper-mobile"><span className="procent-mobile">24</span><span className="procent-symb-mobile">%</span></div>
+                    <div className="procent-wrapper-mobile">
+                      <span className="procent-mobile">24</span>
+                      <span className="procent-symb-mobile">%</span>
+                    </div>
                     <span className="turnover-mobile">{t("turnover")}</span>
                   </div>
                   <div className="indicators-productivity">
-                    <div className="procent-wrapper-mobile"><span className="procent-mobile">17</span><span className="procent-symb-mobile">%</span></div>
-                    <span className="productivity-mobile">{t("productivity")}</span>
+                    <div className="procent-wrapper-mobile">
+                      <span className="procent-mobile">17</span>
+                      <span className="procent-symb-mobile">%</span>
+                    </div>
+                    <span className="productivity-mobile">
+                      {t("productivity")}
+                    </span>
                   </div>
                   <div className="indicators-absenteeism">
-                    <div  className="procent-wrapper-mobile"><span className="procent-mobile">41</span><span className="procent-symb-mobile">%</span></div>
-                    <span className="absenteeism-mobile">{t("absenteeism")}</span>
+                    <div className="procent-wrapper-mobile">
+                      <span className="procent-mobile">41</span>
+                      <span className="procent-symb-mobile">%</span>
+                    </div>
+                    <span className="absenteeism-mobile">
+                      {t("absenteeism")}
+                    </span>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
-      </MobileIntro>
+      )}
 
-      <DefaultIntro>
+      {DefaultIntroPage && (
         <div className="intro-page">
+          <div
+            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          {isActive === "visible" || "animate" ? <Popup /> : null}
+
           <div className="block-1">
             <div className="layout">
               <div className="psy-comfort-org">
@@ -114,8 +135,8 @@ export const IntoPage = (props) => {
                 <div className="psy-comfort-org-subheader">
                   {t("psy-comfort-org-subheader")}
                 </div>
-                <Link to="/get-started">
-                  <GetStaerted />
+                <Link to="/demo">
+                  <DemoButton />
                 </Link>
               </div>
             </div>
@@ -124,12 +145,12 @@ export const IntoPage = (props) => {
             <div className="statistics">
               <div className="team-engagement">
                 <div className="team-engagement-wrapper">
-                  <span className="team-engagement-procent">70%</span>
+                  <span className="team-engagement-procent">+70%</span>
                   <span className="team-engagement-text">
                     {t("team-engagement")}
                   </span>
-                  <Link to="/get-started">
-                    <GetStaerted />
+                  <Link to="/demo">
+                    <DemoButton />
                   </Link>
                 </div>
                 <div className="team-engagement-img"></div>
@@ -141,8 +162,8 @@ export const IntoPage = (props) => {
                   <span className="team-leader-engagement-text">
                     {t("team-leader-engagement")}
                   </span>
-                  <Link to="/get-started">
-                    <GetStaerted />
+                  <Link to="/demo">
+                    <DemoButton />
                   </Link>
                 </div>
               </div>
@@ -177,7 +198,7 @@ export const IntoPage = (props) => {
             </div>
           </div>
         </div>
-      </DefaultIntro>
+      )}
     </>
   );
 };

@@ -26,6 +26,7 @@ export const Slideshow = () => {
   };
 
   const onCheckboxClick = (i) => {
+    console.log('hello');
     setValues({
       0: false,
       1: false,

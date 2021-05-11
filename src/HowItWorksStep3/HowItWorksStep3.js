@@ -4,20 +4,14 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 
 export const HowItWorksStep3 = () => {
+  const DefaultHowItWorksStep3 = useMediaQuery({ query: "(min-width: 376px)" });
+  const MobileHowItWorksStep3 = useMediaQuery({ query: "(max-width: 375px)" });
+
   const { t } = useTranslation();
 
-  const MobileHowItWorksStep3 = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
-
-  const DefaultHowItWorksStep3 = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
-    return isNotMobile ? children : null;
-  };
   return (
     <>
-      <MobileHowItWorksStep3>
+      {MobileHowItWorksStep3 && (
         <div className="how-it-works-step-3-mobile">
           <div className="how-it-works-step-3-wrapper-mobile">
             <div className="ready-to-use-tool-mobile">
@@ -37,9 +31,9 @@ export const HowItWorksStep3 = () => {
             <div className="ready-to-use-tool-img-mobile"></div>
           </div>
         </div>
-      </MobileHowItWorksStep3>
+      )}
 
-      <DefaultHowItWorksStep3>
+      {DefaultHowItWorksStep3 && (
         <div className="how-it-works-step-3">
           <div className="how-it-works-step-3-wrapper">
             <div className="ready-to-use-tool">
@@ -59,7 +53,7 @@ export const HowItWorksStep3 = () => {
             <div className="ready-to-use-tool-img"></div>
           </div>
         </div>
-      </DefaultHowItWorksStep3>
+      )}
     </>
   );
 };

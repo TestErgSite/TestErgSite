@@ -32,7 +32,7 @@ export const ChangeLanguageButton = (props) => {
     return (
       <>
       <MobileLanguageButton>
-      <div className="language">
+      <div className="language-mobile">
         <div className="language-wrapper" onClick={toggle}>
           <div className="language-icon-mobile"></div>
           <div className="pick-language-mobile">{t("pick-language")}</div>
@@ -56,7 +56,7 @@ export const ChangeLanguageButton = (props) => {
       </div>
       </MobileLanguageButton>
       <DefaultLanguageButton>
-      <div className="language">
+      <div className={`language ${props ? 'change-lang-footer' : ''}`}>
         <div className="language-wrapper" onClick={toggle}>
           <div className="language-icon"></div>
           <div className="pick-language">{t("pick-language")}</div>

@@ -6,8 +6,7 @@ const initialState = {
     enn: false,
     side: true,
   },
-  lang: null,
-  size: null
+  isActive: 'none',
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,19 +19,13 @@ const reducer = (state = initialState, action) => {
           [action.payload.currentElement]: action.payload.boolean,
         },
       };
-  
-      case "SET_LANGUAGE":
+   
+        case "HANDLE_POPUP":
+          console.log(action.payload.isActive)
           return {
             ...state,
-           lang: action.payload.lang
-          }
-     
-          case "SET_MEDIA_QUERY":
-            return {
-              ...state,
-             size: action.payload.size
-            }
-    
+            isActive: action.payload.isActive
+          };
 
     default:
       return state;

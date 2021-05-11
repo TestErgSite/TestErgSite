@@ -8,21 +8,29 @@ export const setStateToPromt = (currentElement, boolean) => {
     };
   };
   
-  export const setLanguage = (lang) => {
+  export const handlePopup = (isActive) => {
     return {
-      type: "SET_LANGUAGE",
+      type: "HANDLE_POPUP",
       payload: {
-        lang
+        isActive
       },
+    };
+  }
+
+  export const showPopupAsync = () => {
+    return (dispatch) => {
+        dispatch(handlePopup('visible'))
+        setTimeout(() => {
+          dispatch(handlePopup('animate'))
+        }, 300)
     };
   };
 
-
-  export const setMediaQuery = (size) => {
-    return {
-      type: "SET_MEDIA_QUERY",
-      payload: {
-        size
-      },
+  export const hidePopupAsync = () => {
+    return (dispatch) => {
+        dispatch(handlePopup('visible'))
+        setTimeout(() => {
+          dispatch(handlePopup('none'))
+        }, 300);
     };
   };
