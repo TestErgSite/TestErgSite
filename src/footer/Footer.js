@@ -1,5 +1,5 @@
 import "./Footer.scss";
-import React from "react";
+import React, { useState } from 'react';
 import { useTranslation } from "react-i18next";
 import "../i18n";
 import { DemoButton } from "../demo-button/DemoButton";
@@ -19,6 +19,40 @@ export const Footer = () => {
 
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
+
+  const [navs, setHover] = useState({
+    1: true,
+    2: true,
+    3: true,
+    4: true,
+    5: true,
+    6: true
+  });
+
+  const handleHover = (i) => {
+    setHover({
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+      5: false,
+      6: false,
+      ...{
+        [i]: true,
+      },
+    });
+  }
+
+  const handleHoverOff = () => {
+    setHover({
+      1: true,
+      2: true,
+      3: true,
+      4: true,
+      5: true,
+      6: true
+    });
+  }
 
   return (
     <>
@@ -40,6 +74,9 @@ export const Footer = () => {
           <div className="footer-info-wrapper-mobile">
            
             <div className="nav-footer">
+            <Link to="/" onClick={scrollUp}>
+                <div className="home">{t("home")}</div>
+              </Link>
               <Link to="/platform" onClick={scrollUp} className="platform-link-mobile">
                 <div className="platform platform-footer-mobile">{t("platform")}</div>
               </Link>
@@ -93,35 +130,36 @@ export const Footer = () => {
                 <div className="logo-footer"></div>
               </div>
             </Link>
-            <div className="nav-footer">
-              <Link to="/platform" onClick={scrollUp}>
-                <div className="platform platform-footer">{t("platform")}</div>
+            <div className="nav-footer" onMouseLeave={() => handleHoverOff()}>
+            <Link to="/" onClick={scrollUp} onMouseOver={() => handleHover(1)}>
+                <div className={`home home-footer ${navs[1] ? '' : 'hovered'}`}>{t("home")}</div>
               </Link>
-              <Link to="/about-app">
-                <div className="about-app about-app-footer" onClick={scrollUp}>
+              <Link to="/platform" onClick={scrollUp} onMouseOver={() => handleHover(2)}>
+                <div className={`platform platform-footer ${navs[2] ? '' : 'hovered'}`}>{t("platform")}</div>
+              </Link>
+              <Link to="/about-app" onMouseOver={() => handleHover(3)}>
+                <div className={`about-app about-app-footer ${navs[3] ? '' : 'hovered'}`} onClick={scrollUp}>
                   {t("about-app")}
                 </div>
               </Link>
-              <Link to="/study-page" onClick={scrollUp}>
-                <div className="study-page study-page-footer">{t("study-page")}</div>
+              <Link to="/study-page" onClick={scrollUp} onMouseOver={() => handleHover(4)}>
+                <div className={`study-page study-page-footer ${navs[4] ? '' : 'hovered'}`}>{t("study-page")}</div>
               </Link>
-              <Link to="/demo" onClick={scrollUp}>
-                <div className="demo demo-footer">
+              <Link to="/demo" onClick={scrollUp} onMouseOver={() => handleHover(5)}>
+                <div className={`demo demo-footer ${navs[5] ? '' : 'hovered'}`}>
                   {t("demo")}
                 </div>
               </Link>
 
-                <div className="contact-us contact-us-footer" onClick={()=> dispatch(showPopupAsync())}>
+                <div className={`contact-us contact-us-footer ${navs[6] ? '' : 'hovered'}`} onClick={()=> dispatch(showPopupAsync())} onMouseOver={() => handleHover(6)}>
                   {t("contact-us")}
-                </div>
-           
-             
-              <ChangeLanguageButton footer={true}/>
+                </div>             
           
             </div>
             <div className="copyright">
               <div className="ergonza-2020">&#169; 2020 Ergonza</div>
               <div className="ergonza-mail">info@ergonza.com</div>
+              <ChangeLanguageButton footer={true} />
             </div>
           </div>
         </div>

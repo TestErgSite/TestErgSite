@@ -7,33 +7,42 @@ import { ChangeLanguageButton } from "../changeLanguageButton/changeLanguageButt
 import { useMediaQuery } from "react-responsive";
 import { ContactUsButton } from "../contact-us-button/ContactUsButton";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { Popup } from "../Popup/Popup";
-import { showPopupAsync, hidePopupAsync } from '../redux/actions'
+import { showPopupAsync, hidePopupAsync } from "../redux/actions";
 
 export const MenuMobile = () => {
   const { t } = useTranslation();
   let history = useHistory();
 
-  const MobileMenu = useMediaQuery({ query: '(max-width: 375px)' });
+  const MobileMenu = useMediaQuery({ query: "(max-width: 375px)" });
 
-  const isActive = useSelector((state) => state.isActive); 
+  const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
 
   return (
     <>
-      {MobileMenu &&
+      {MobileMenu && (
         <div className="menu-wrapper-mobile">
-        <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
-        {isActive === "visible" || "animate" ? <Popup /> : null}
-        <div className="menu-logo-wrapper-mobile">
-        <Link to="/">
-            <div className="menu-logo-mobile"></div>
-        </Link>   
-            <div className="menu-close-button-mobile" onClick={history.goBack}></div>
-        </div>
-        <div className="menu-nav-wrapper-mobile">
-        <nav className="menu-nav-mobile">
+          <div
+            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          {isActive === "visible" || "animate" ? <Popup /> : null}
+          <div className="menu-logo-wrapper-mobile">
+            <Link to="/">
+              <div className="menu-logo-mobile"></div>
+            </Link>
+            <div
+              className="menu-close-button-mobile"
+              onClick={history.goBack}
+            ></div>
+          </div>
+          <div className="menu-nav-wrapper-mobile">
+            <nav className="menu-nav-mobile">
+              <Link to="/">
+                <div className="home">{t("home")}</div>
+              </Link>
               <Link to="/platform">
                 <div className="platform">{t("platform")}</div>
               </Link>
@@ -47,15 +56,14 @@ export const MenuMobile = () => {
                 <div className="demo">{t("demo")}</div>
               </Link>
             </nav>
-            </div>
+          </div>
 
-            <div className="menu-footer-wrapper-mobile">
+          <div className="menu-footer-wrapper-mobile">
             <ChangeLanguageButton />
-            <ContactUsButton handlePopup={()=> dispatch(showPopupAsync())}/>
-            </div>
+            <ContactUsButton handlePopup={() => dispatch(showPopupAsync())} />
+          </div>
         </div>
-    }
+      )}
     </>
   );
 };
-

@@ -25,13 +25,51 @@
   }
 }
 
-.get-started-form {
+.form-send-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.back-home {
+  width: 180px;
+  height: 60px;
+  padding: 0 5px 0 5px;
+  border-radius: 12px;
+  background: #17bcb2;
+  color: #ffffff;
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  &:hover {
+    background: #13a9a0;
+  }
+  &:active {
+    background: #109c94;
+  }
+}
+
+.get-started-form,
+.form-send {
   font-family: "Proxima Nova Thin", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 34px;
   position: relative;
+}
+
+.form-send {
+  text-align: center;
+  margin-top: 70px;
 }
 
 .close-popup {
@@ -42,8 +80,17 @@
     background-repeat: no-repeat;
     background-position: center;
     right: -4px;
-    top: 9px;
+    top: -10px;
     cursor: pointer;
+}
+
+.close-form {
+  right: -4px;
+  top: -51px;
+}
+
+.ru .close-form {
+  top: -35px;
 }
 
 .popup-input {

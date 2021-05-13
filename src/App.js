@@ -6,12 +6,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { HowItWorks } from "./HowItWorks/HowItWorks";
 import { CaseStudyPage } from "./CaseStudyPage/CaseStudyPage";
 import { Platfrom } from "./Platfrom/Platfrom";
-import { connect } from "react-redux";
 import { MenuMobile } from "./MenuMobile/MenuMobile";
 
 import "./i18n";
 
-function App() {
+export const App = () => {
   const { i18n } = useTranslation();
   const lang = i18n.language;
 
@@ -28,12 +27,3 @@ function App() {
   );
 }
 
-const mapStateToProps = (state) => {
-
-};
-
-const mapDispatchToProps = {
-
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);

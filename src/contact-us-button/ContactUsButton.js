@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 
 export const ContactUsButton = (props) => {
-  console.log(props.showPopup);
 
   const DefaultContactUsButton = useMediaQuery({ query: "(min-width: 376px)" });
   const MobileContactUsButton = useMediaQuery({ query: "(max-width: 375px)" });

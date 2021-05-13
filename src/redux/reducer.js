@@ -21,7 +21,6 @@ const reducer = (state = initialState, action) => {
       };
    
         case "HANDLE_POPUP":
-          console.log(action.payload.isActive)
           return {
             ...state,
             isActive: action.payload.isActive

@@ -81,5 +81,8 @@
     "company": "Company",
     "send": "Send",
     "try-in-action": "Try ergonza in action!",
-    "ergonza-platform-subheader": "That how it looks:"
+    "ergonza-platform-subheader": "That how it looks:",
+    "home": "Home",
+    "form-send": "Thanks, we will contact you soon.",
+    "back-home": "Homepage"
 }

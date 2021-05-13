@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import { Popup } from "../Popup/Popup";
 import { useSelector, useDispatch } from 'react-redux'
-import { handlePopup, hidePopupAsync } from "../redux/actions";
+import { hidePopupAsync } from "../redux/actions";
 
 export const CaseStudyPage = () => {
 

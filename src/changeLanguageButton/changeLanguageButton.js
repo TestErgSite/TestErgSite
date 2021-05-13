@@ -9,7 +9,6 @@ export const ChangeLanguageButton = (props) => {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (ln) => {
-    console.log('changing lang to ', ln);
     i18n.changeLanguage(ln);
     localStorage.setItem('lang', ln);
   };

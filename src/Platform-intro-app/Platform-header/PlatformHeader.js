@@ -1,10 +1,8 @@
 import "./PlatformHeader.scss";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { useTranslation } from "react-i18next";
 
 export const PlatformHeader = () => {
-  const { t } = useTranslation();
 
   const MobilePlatformHeader = ({ children }) => {
     const isMobile = useMediaQuery({ maxWidth: 375 });

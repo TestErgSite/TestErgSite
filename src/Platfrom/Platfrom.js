@@ -9,7 +9,7 @@ import PlatfromOrgChart  from "../Platform-intro-app/Platform-org-chart/Platfrom
 import { useMediaQuery } from "react-responsive";
 import { Popup } from "../Popup/Popup";
 import { useSelector, useDispatch } from 'react-redux'
-import { handlePopup, hidePopupAsync } from "../redux/actions";
+import { hidePopupAsync } from "../redux/actions";
 
 export const Platfrom = () => {
   const DefaultPlatform = useMediaQuery({ query: "(min-width: 376px)" });
