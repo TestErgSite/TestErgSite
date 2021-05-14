@@ -130,7 +130,7 @@ flex-direction: column;
 
 .footer-mobile {
   width: 375px;
-  height: 380px;
+  height: 400px;
   background: linear-gradient(117.43deg, #4e7171 0%, #131a22 100%);
   position: relative;
 }
@@ -161,14 +161,14 @@ flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  height: 185px;
+  height: 180px;
   margin: 0 auto;
   &::after {
     content: "";
     width: 328px;
     background-color: rgba(255, 255, 255, 0.4);
     height: 1px;
-    top: 179px;
+    top: 170px;
     left: -40px;
     position: absolute;
   }
@@ -176,7 +176,7 @@ flex-direction: column;
 
 .footer-info-mobile {
   width: 100%;
-  height: 179px;
+  height: 208px;
   display: flex;
   align-items: center;
 }
@@ -201,7 +201,8 @@ flex-direction: column;
 .log-in-footer-mobile,
 .demo-footer-mobile,
 .study-page-footer-mobile,
-.contact-us-footer-mobile {
+.contact-us-footer-mobile,
+.home-footer-mobile {
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
@@ -231,7 +232,8 @@ flex-direction: column;
 .platform-link-mobile,
 .about-app-link-mobile,
 .study-page-link-mobile,
-.demo-link-mobile {
+.demo-link-mobile,
+.home-link-mobile {
   display: flex;
   height: 40px;
   width: 100%;
@@ -243,4 +245,11 @@ flex-direction: column;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+}
+
+.logo-footer-mobile-wrapper {
+  display: flex;
+  cursor: pointer;
+  width: 104px;
+  height: 100%;
 }

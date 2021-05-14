@@ -84,5 +84,6 @@
     "ergonza-platform-subheader": "That how it looks:",
     "home": "Home",
     "form-send": "Thanks, we will contact you soon.",
-    "back-home": "Homepage"
+    "back-home": "Homepage",
+    "empty-field": "This field is required"
 }

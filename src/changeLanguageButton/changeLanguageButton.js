@@ -6,6 +6,9 @@ import "./changeLanguageButton.scss";
 import { useMediaQuery } from "react-responsive";
 
 export const ChangeLanguageButton = (props) => {
+  const DefaultLanguageButton = useMediaQuery({ query: '(min-width: 376px)' });
+  const MobileLanguageButton = useMediaQuery({ query: '(max-width: 375px)' });
+
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (ln) => {
@@ -13,26 +16,17 @@ export const ChangeLanguageButton = (props) => {
     localStorage.setItem('lang', ln);
   };
 
-  const DropDownMenu = (props) => {
+  const DropDownMenu = (footerDefault, footerMobile) => {
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
     const toggle = () => setIsActive(!isActive);
 
-    const MobileLanguageButton = ({ children }) => {
-      const isMobile = useMediaQuery({ maxWidth: 375 });
-      return isMobile ? children : null;
-    };
-  
-    const DefaultLanguageButton = ({ children }) => {
-      const isNotMobile = useMediaQuery({ minWidth: 376 });
-      return isNotMobile ? children : null;
-    };
 
     return (
       <>
-      <MobileLanguageButton>
+      {MobileLanguageButton &&
       <div className="language-mobile">
-        <div className="language-wrapper" onClick={toggle}>
+        <div className={`language-wrapper ${footerMobile ? 'language-wrapper-footer-mobile' : ''}`} onClick={toggle}>
           <div className="language-icon-mobile"></div>
           <div className="pick-language-mobile">{t("pick-language")}</div>
         </div>
@@ -53,15 +47,15 @@ export const ChangeLanguageButton = (props) => {
           </div>
         </div>
       </div>
-      </MobileLanguageButton>
-      <DefaultLanguageButton>
-      <div className={`language ${props ? 'change-lang-footer' : ''}`}>
+    }
+      {DefaultLanguageButton &&
+      <div className={`language ${footerDefault ? 'change-lang-footer' : ''}`}>
         <div className="language-wrapper" onClick={toggle}>
           <div className="language-icon"></div>
           <div className="pick-language">{t("pick-language")}</div>
         </div>
         <div
-          className={`drop-down ${isActive ? "active" : ""} ${props ? "drop-down-footer" : ""}`}
+          className={`drop-down ${isActive ? "active" : ""} ${footerDefault ? "drop-down-footer" : ""}`}
           ref={dropdownRef}
         >
           <div
@@ -77,10 +71,10 @@ export const ChangeLanguageButton = (props) => {
           </div>
         </div>
       </div>
-      </DefaultLanguageButton>
+   }
       </>
     );
   };
 
-  return DropDownMenu(props.footer);
+  return DropDownMenu(props.footer, props.footerMobile);
 };

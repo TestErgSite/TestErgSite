@@ -4,7 +4,6 @@
   position: fixed;
   z-index: 101;
   width: 452px;
-  height: 378px;
   background: #ffffff;
   border-radius: 40px;
   top: 100px;
@@ -14,6 +13,7 @@
   justify-content: space-around;
   padding: 30px 30px;
   box-sizing: border-box;
+  height: 407px;
   visibility: hidden;
   transition: top 0.3s ease-out, opacity 0.3s ease-out;
   &.visible {
@@ -67,6 +67,10 @@
   position: relative;
 }
 
+.get-started-form {
+  padding-bottom: 15px;
+}
+
 .form-send {
   text-align: center;
   margin-top: 70px;
@@ -111,6 +115,19 @@
   }
 }
 
+.empty-div {
+  height: 20px;
+  width: 100%;
+}
+
+.empty-field {
+  color: red;
+  height: 20px;
+  width: 100%;
+  font-size: 12px;
+  font-family: "Proxima Nova Thin", sans-serif;
+}
+
 .popup-button {
   width: 180px;
   height: 60px;
@@ -131,6 +148,11 @@
     background: #109c94;
   }
 }
+
+.warn {
+  border: 1px solid red;
+}
+
 
 //mobile 
 
@@ -176,4 +198,14 @@
   &:active {
     background: #109c94;
   }
+}
+
+.close-form-mobile {
+  right: -1px;
+    top: -34px;
+}
+
+.ru .close-form-mobile {
+  right: -2px;
+    top: -19px;
 }

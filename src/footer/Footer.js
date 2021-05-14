@@ -74,8 +74,8 @@ export const Footer = () => {
           <div className="footer-info-wrapper-mobile">
            
             <div className="nav-footer">
-            <Link to="/" onClick={scrollUp}>
-                <div className="home">{t("home")}</div>
+            <Link to="/" onClick={scrollUp} className="home-link-mobile">
+                <div className="home home-footer-mobile">{t("home")}</div>
               </Link>
               <Link to="/platform" onClick={scrollUp} className="platform-link-mobile">
                 <div className="platform platform-footer-mobile">{t("platform")}</div>
@@ -89,11 +89,11 @@ export const Footer = () => {
                 <div className="study-page study-page-footer-mobile">{t("study-page")}</div>
               </Link>
            
-              <ChangeLanguageButton/>
+              <ChangeLanguageButton footerMobile={true}/>
             </div>
             <div className="logo-wrapper-mobile">
             <Link to="/">
-              <div className="logo">
+              <div className="logo-footer-mobile-wrapper">
                 <div className="logo-footer-mobile"></div>
               </div>
             </Link>

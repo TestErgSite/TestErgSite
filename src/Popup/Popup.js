@@ -20,6 +20,10 @@ export const Popup = () => {
   const [companyInput, setCompanyInput] = useState("");
   const [isFormSend, setFormSend] = useState(false);
 
+  const [isNameEmpty, setNameEmpty] = useState(false);
+  const [isEmailEmpty, setEmailEmpty] = useState(false);
+  const [isCompanyEmpty, setCompanyEmpty] = useState(false);
+
   const handleInput = (val, input) => {
     if (input === "name") {
       setNameInput(val);
@@ -33,11 +37,55 @@ export const Popup = () => {
   };
 
   const onSendingForm = () => {
-    if (!nameInput || !emailInput || !companyInput) {
-      console.log("empty");
-    } else {
-      console.log("full");
+    if (companyInput && nameInput && emailInput) {
       setFormSend(true);
+    }
+    if (!nameInput) {
+      setNameEmpty(true);
+      if (!emailInput) {
+        setEmailEmpty(true);
+      } else {
+        setEmailEmpty(false);
+      }
+      if (!companyInput) {
+        setCompanyEmpty(true);
+      } else {
+        setCompanyEmpty(false);
+      }
+    } else {
+      setNameEmpty(false);
+    }
+
+    if (!emailInput) {
+      setEmailEmpty(true);
+      if (!nameInput) {
+        setNameEmpty(true);
+      } else {
+        setNameEmpty(false);
+      }
+      if (!companyInput) {
+        setCompanyEmpty(true);
+      } else {
+        setCompanyEmpty(false);
+      }
+    } else {
+      setEmailEmpty(false);
+    }
+
+    if (!companyInput) {
+      setCompanyEmpty(true);
+      if (!emailInput) {
+        setEmailEmpty(true);
+      } else {
+        setEmailEmpty(false);
+      }
+      if (!nameInput) {
+        setNameEmpty(true);
+      } else {
+        setNameEmpty(false);
+      }
+    } else {
+      setCompanyEmpty(false);
     }
   };
 
@@ -50,39 +98,71 @@ export const Popup = () => {
               isActive === "visible" ? "visible" : ""
             }  ${isActive === "animate" ? "visible animate" : ""}`}
           >
-            <div className="get-started-form">
-              {t("contact-us")}
-              <div
-                className="close-popup"
-                onClick={() => dispatch(hidePopupAsync())}
-              ></div>
-            </div>
-            <input
-              className="name popup-input"
-              placeholder={`${t("name")}`}
-              value={nameInput}
-              onChange={(e) => handleInput(e.target.value, "name")}
-            ></input>
-            <input
-              className="email popup-input"
-              placeholder="Email"
-              value={emailInput}
-              onChange={(e) => handleInput(e.target.value, "email")}
-            ></input>
-            <input
-              className="company popup-input"
-              placeholder={`${t("company")}`}
-              value={companyInput}
-              onChange={(e) => handleInput(e.target.value, "company")}
-            ></input>
-            <button
-              type="submit"
-              type="button"
-              className="popup-button-mobile"
-              onClick={() => onSendingForm()}
-            >
-              {t("send")}
-            </button>
+            {isFormSend ? (
+              <div className="form-send-wrapper">
+                <div className="form-send">{t("form-send")}</div>
+                <div
+                  className="close-popup close-form-mobile"
+                  onClick={() => dispatch(hidePopupAsync())}
+                ></div>
+                <Link to="/" onClick={() => dispatch(hidePopupAsync())}>
+                  <div className="back-home">{t("back-home")}</div>
+                </Link>
+              </div>
+            ) : (
+              <>
+                <div className="get-started-form">
+                  {t("contact-us")}
+                  <div
+                    className="close-popup"
+                    onClick={() => dispatch(hidePopupAsync())}
+                  ></div>
+                </div>
+                <input
+                  className={`name popup-input ${isNameEmpty ? "warn" : ""}`}
+                  placeholder={`${t("name")}`}
+                  value={nameInput}
+                  onChange={(e) => handleInput(e.target.value, "name")}
+                ></input>
+                {isNameEmpty ? (
+                  <div className="empty-field">{t("empty-field")}</div>
+                ) : (
+                  <div className="empty-div"></div>
+                )}
+                <input
+                  className={`email popup-input ${isEmailEmpty ? "warn" : ""}`}
+                  placeholder="Email"
+                  value={emailInput}
+                  onChange={(e) => handleInput(e.target.value, "email")}
+                ></input>
+                {isEmailEmpty ? (
+                  <div className="empty-field">{t("empty-field")}</div>
+                ) : (
+                  <div className="empty-div"></div>
+                )}
+                <input
+                  className={`company popup-input ${
+                    isCompanyEmpty ? "warn" : ""
+                  }`}
+                  placeholder={`${t("company")}`}
+                  value={companyInput}
+                  onChange={(e) => handleInput(e.target.value, "company")}
+                ></input>
+                {isCompanyEmpty ? (
+                  <div className="empty-field">{t("empty-field")}</div>
+                ) : (
+                  <div className="empty-div"></div>
+                )}
+                <button
+                  type="submit"
+                  type="button"
+                  className="popup-button-mobile"
+                  onClick={() => onSendingForm()}
+                >
+                  {t("send")}
+                </button>
+              </>
+            )}
           </form>
         </div>
       )}
@@ -115,24 +195,42 @@ export const Popup = () => {
                   ></div>
                 </div>
                 <input
-                  className="name popup-input"
+                  className={`name popup-input ${isNameEmpty ? "warn" : ""}`}
                   placeholder={`${t("name")}`}
                   value={nameInput}
                   onChange={(e) => handleInput(e.target.value, "name")}
                 ></input>
+                {isNameEmpty ? (
+                  <div className="empty-field">{t("empty-field")}</div>
+                ) : (
+                  <div className="empty-div"></div>
+                )}
                 <input
-                  className="email popup-input"
+                  className={`email popup-input ${isEmailEmpty ? "warn" : ""}`}
                   placeholder="Email"
                   type="email"
                   value={emailInput}
                   onChange={(e) => handleInput(e.target.value, "email")}
                 ></input>
+                {isEmailEmpty ? (
+                  <div className="empty-field">{t("empty-field")}</div>
+                ) : (
+                  <div className="empty-div"></div>
+                )}
                 <input
-                  className="company popup-input"
+                  className={`company popup-input ${
+                    isCompanyEmpty ? "warn" : ""
+                  }`}
                   placeholder={`${t("company")}`}
                   value={companyInput}
                   onChange={(e) => handleInput(e.target.value, "company")}
                 ></input>
+                {isCompanyEmpty ? (
+                  <div className="empty-field">{t("empty-field")}</div>
+                ) : (
+                  <div className="empty-div"></div>
+                )}
+                {}
                 <button
                   type="submit"
                   type="button"

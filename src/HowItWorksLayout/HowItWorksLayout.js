@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import "./HowItWorksLayout.scss";
 import { HowItWorksStep1 } from "../HowItWorksStep1/HowItWorksStep1";
 import { HowItWorksStep2 } from "../HowItWorksStep2/HowItWorksStep2";
@@ -23,11 +23,24 @@ export const HowItWorksLayout = () => {
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
 
-  const [checkboxes, setValues] = useState({
-    1: true,
-    2: false,
-    3: false,
-  });
+  const [timeoutId, setTimeoutId] = useState();
+  const [activeCheckbox, setActiveCheckbox] = useState(1);
+
+  const stopTimeout = useCallback(() => {
+    clearTimeout(timeoutId);
+  }, [timeoutId]);
+
+  const timeoutCallback = useCallback(() => {
+    const id = setTimeout(() => {
+      setActiveCheckbox((activeCheckbox) => activeCheckbox === 3 ? 1 : (activeCheckbox + 1));
+      timeoutCallback();
+    }, 4000);
+    setTimeoutId(id);
+  }, [activeCheckbox, setActiveCheckbox]);
+
+  useEffect(() => {
+    timeoutCallback();
+  }, []);
 
   const renderCheckbox = (i) => {
     return (
@@ -37,7 +50,8 @@ export const HowItWorksLayout = () => {
             <div
               onClick={() => onCheckboxClick(i)}
               className={
-                "how-it-works-checkbox " + (checkboxes[i] ? "active" : "")
+                "how-it-works-checkbox " +
+                (activeCheckbox === i ? "active" : "")
               }
             >
               <div className="how-it-works-checkbox__inner"></div>
@@ -45,7 +59,7 @@ export const HowItWorksLayout = () => {
             <div
               className={
                 `how-it-works-checkbox-num-mobile num-${i}-mobile ` +
-                (checkboxes[i] ? "active" : "")
+                (activeCheckbox === i ? "active" : "")
               }
             >
               {i}
@@ -57,7 +71,8 @@ export const HowItWorksLayout = () => {
             <div
               onClick={() => onCheckboxClick(i)}
               className={
-                "how-it-works-checkbox " + (checkboxes[i] ? "active" : "")
+                "how-it-works-checkbox " +
+                (activeCheckbox === i ? "active" : "")
               }
             >
               <div className="how-it-works-checkbox__inner"></div>
@@ -65,7 +80,7 @@ export const HowItWorksLayout = () => {
             <div
               className={
                 `how-it-works-checkbox-num num-${i} ` +
-                (checkboxes[i] ? "active" : "")
+                (activeCheckbox === i ? "active" : "")
               }
             >
               {i}
@@ -77,22 +92,19 @@ export const HowItWorksLayout = () => {
   };
 
   const onCheckboxClick = (i) => {
-    setValues({
-      1: false,
-      2: false,
-      3: false,
-      ...{
-        [i]: true,
-      },
-    });
+    setActiveCheckbox(i);
+    stopTimeout();
   };
 
   return (
     <>
-      {MobileHowItWorksLayout &&
+      {MobileHowItWorksLayout && (
         <div className="how-it-works-layout-mobile">
-        <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
-        {isActive === "visible" || "animate" ? <Popup /> : null}
+          <div
+            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          {isActive === "visible" || "animate" ? <Popup /> : null}
           <div className="how-it-works-layout-wrapper-mobile">
             <div className="how-it-works-layout-header-mobile">
               {t("how-it-works-layout-header")}
@@ -105,16 +117,19 @@ export const HowItWorksLayout = () => {
               {renderCheckbox(3)}
             </div>
           </div>
-          {checkboxes[1] ? <HowItWorksStep1 /> : null}
-          {checkboxes[2] ? <HowItWorksStep2 /> : null}
-          {checkboxes[3] ? <HowItWorksStep3 /> : null}
+          {activeCheckbox === 1 ? <HowItWorksStep1 /> : null}
+          {activeCheckbox === 2 ? <HowItWorksStep2 /> : null}
+          {activeCheckbox === 3 ? <HowItWorksStep3 /> : null}
         </div>
-      }
+      )}
 
-  {DefaultHowItWorksLayout &&
+      {DefaultHowItWorksLayout && (
         <div className="how-it-works-layout">
-        <div className={`opacity ${isActive !== "none" ? "overlay" : ""}`} onClick={() => dispatch(hidePopupAsync())}></div>
-        {isActive === "visible" || "animate" ? <Popup /> : null}
+          <div
+            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          {isActive === "visible" || "animate" ? <Popup /> : null}
           <div className="how-it-works-layout-wrapper">
             <div className="how-it-works-layout-header">
               {t("how-it-works-layout-header")}
@@ -127,11 +142,11 @@ export const HowItWorksLayout = () => {
               {renderCheckbox(3)}
             </div>
           </div>
-          {checkboxes[1] ? <HowItWorksStep1 /> : null}
-          {checkboxes[2] ? <HowItWorksStep2 /> : null}
-          {checkboxes[3] ? <HowItWorksStep3 /> : null}
+          {activeCheckbox === 1 ? <HowItWorksStep1 /> : null}
+          {activeCheckbox === 2 ? <HowItWorksStep2 /> : null}
+          {activeCheckbox === 3 ? <HowItWorksStep3 /> : null}
         </div>
-      }
+      )}
     </>
   );
 };
