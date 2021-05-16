@@ -173,6 +173,7 @@ export const Popup = () => {
             className={`form ${isActive === "visible" ? "visible" : ""}  ${
               isActive === "animate" ? "visible animate" : ""
             }`}
+            action="mailto:aleks.liadova@gmail.com" method="post"
           >
             {isFormSend ? (
               <div className="form-send-wrapper">
