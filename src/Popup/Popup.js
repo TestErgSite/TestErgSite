@@ -15,10 +15,11 @@ export const Popup = () => {
   const dispatch = useDispatch();
   const isActive = useSelector((state) => state.isActive);
 
-  const [nameInput, setNameInput] = useState("");
-  const [emailInput, setEmailInput] = useState("");
-  const [companyInput, setCompanyInput] = useState("");
+  const [nameInput, setNameInput] = useState("sasha");
+  const [emailInput, setEmailInput] = useState("aleks.liadova@gmail.com");
+  const [companyInput, setCompanyInput] = useState("kekovskaya company");
   const [isFormSend, setFormSend] = useState(false);
+  const [isRequestSuccess, setRequest] = useState(false);
 
   const [isNameEmpty, setNameEmpty] = useState(false);
   const [isEmailEmpty, setEmailEmpty] = useState(false);
@@ -36,10 +37,34 @@ export const Popup = () => {
     }
   };
 
-  const onSendingForm = () => {
+  const onSendingForm = (event) => {
+    event.preventDefault();
     if (companyInput && nameInput && emailInput) {
+      
       setFormSend(true);
+
+      let userInfo = {
+        name: nameInput,
+        email: emailInput,
+        company: companyInput,
+      };
+  
+      //request
+      fetch("/telegram", {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userInfo),
+      })
+        .then((res) => {
+          setRequest(true);
+          res.json();
+        })
+        .catch((err) => console.log(err));
     }
+
     if (!nameInput) {
       setNameEmpty(true);
       if (!emailInput) {
@@ -97,8 +122,13 @@ export const Popup = () => {
             className={`form-mobile ${
               isActive === "visible" ? "visible" : ""
             }  ${isActive === "animate" ? "visible animate" : ""}`}
+            onSubmit={onSendingForm}
+            action="/telegram"
+            method="post"
+            id="teleframForm"
+            encType="application/x-www-form-urlencoded"
           >
-            {isFormSend ? (
+               {isFormSend && isRequestSuccess ? (
               <div className="form-send-wrapper">
                 <div className="form-send">{t("form-send")}</div>
                 <div
@@ -155,9 +185,7 @@ export const Popup = () => {
                 )}
                 <button
                   type="submit"
-                  type="button"
                   className="popup-button-mobile"
-                  onClick={() => onSendingForm()}
                 >
                   {t("send")}
                 </button>
@@ -173,9 +201,13 @@ export const Popup = () => {
             className={`form ${isActive === "visible" ? "visible" : ""}  ${
               isActive === "animate" ? "visible animate" : ""
             }`}
-            action="mailto:aleks.liadova@gmail.com" method="post"
+            onSubmit={onSendingForm}
+            action="/telegram"
+            method="post"
+            id="teleframForm"
+            encType="application/x-www-form-urlencoded"
           >
-            {isFormSend ? (
+            {isFormSend && isRequestSuccess ? (
               <div className="form-send-wrapper">
                 <div className="form-send">{t("form-send")}</div>
                 <div
@@ -199,6 +231,7 @@ export const Popup = () => {
                   className={`name popup-input ${isNameEmpty ? "warn" : ""}`}
                   placeholder={`${t("name")}`}
                   value={nameInput}
+                  type="text"
                   onChange={(e) => handleInput(e.target.value, "name")}
                 ></input>
                 {isNameEmpty ? (
@@ -224,6 +257,7 @@ export const Popup = () => {
                   }`}
                   placeholder={`${t("company")}`}
                   value={companyInput}
+                  type="text"
                   onChange={(e) => handleInput(e.target.value, "company")}
                 ></input>
                 {isCompanyEmpty ? (
@@ -234,9 +268,7 @@ export const Popup = () => {
                 {}
                 <button
                   type="submit"
-                  type="button"
                   className="popup-button-mobile"
-                  onClick={() => onSendingForm()}
                 >
                   {t("send")}
                 </button>

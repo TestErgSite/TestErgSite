@@ -2,7 +2,8 @@
 
 .header {
   display: flex;
-  min-width: 100%;
+  width: 100%;
+
   background: linear-gradient(117.43deg, #4e7171d3 0%, #131a22f3 100%);
   box-sizing: border-box;
   -moz-user-select: none;
@@ -11,6 +12,7 @@
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 20;
   height: 110px;
   transition: height 0.3s ease-out, background 0.3s ease-out;
@@ -28,6 +30,7 @@
   flex-direction: row;
   justify-content: space-between;
   color: white;
+  box-sizing: border-box;
   align-items: center;
 }
 

@@ -13,6 +13,7 @@ export const Header = () => {
   const { t } = useTranslation();
 
   const DefaultHeader = useMediaQuery({ query: "(min-width: 376px)" });
+  const DefaultHeaderForResize = useMediaQuery({ query: "(max-width: 1128px)" });
   const MobileHeader = useMediaQuery({ query: "(max-width: 375px)" });
 
   const isActive = useSelector((state) => state.isActive);
@@ -61,6 +62,7 @@ export const Header = () => {
       )}
 
       {DefaultHeader && (
+        <>
         <div className={`header ${isSticky ? "header-scrolled" : ""}`}>
           <div
             className="opacity"
@@ -102,7 +104,10 @@ export const Header = () => {
             </nav>
           </div>
         </div>
+        </>
       )}
+      
+  
     </>
   );
 };
