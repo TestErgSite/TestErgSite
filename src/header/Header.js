@@ -12,9 +12,8 @@ import { scrollUp } from "../utils/scrollUp";
 export const Header = () => {
   const { t } = useTranslation();
 
-  const DefaultHeader = useMediaQuery({ query: "(min-width: 376px)" });
-  const DefaultHeaderForResize = useMediaQuery({ query: "(max-width: 1128px)" });
-  const MobileHeader = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultHeader = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobileHeader = useMediaQuery({ query: "(max-width: 428px)" });
 
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();

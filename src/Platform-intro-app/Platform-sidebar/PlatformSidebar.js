@@ -26,14 +26,14 @@ class PlatformSidebar extends React.Component {
   renderUser(position, bg='') {
     return (
       <>
-      <MediaQuery minDeviceWidth={376}>
+      <MediaQuery minDeviceWidth={429}>
       <div className={`user-snippet-wrapper ${bg}`}>
         <div className="user-snippet-photo"></div>
         <div className="user-snippet-pos">{position}</div>
       </div>
       </MediaQuery>
       
-      <MediaQuery maxDeviceWidth={375}>
+      <MediaQuery maxDeviceWidth={428}>
       <div className={`user-snippet-wrapper-mobile ${bg}`}>
         <div className="user-snippet-photo-mobile"></div>
         <div className="user-snippet-pos-mobile">{position}</div>
@@ -46,7 +46,7 @@ class PlatformSidebar extends React.Component {
   render() {
     return (
       <>
-       <MediaQuery maxDeviceWidth={375}>
+       <MediaQuery maxDeviceWidth={428}>
         <div
           className={`sidebar-wrapper-mobile ${this.props.side ? 'removeHov' : ''}`}
         >
@@ -97,7 +97,7 @@ class PlatformSidebar extends React.Component {
         </div>
         </MediaQuery>
 
-       <MediaQuery minDeviceWidth={376}>
+       <MediaQuery minDeviceWidth={429}>
         {this.props.side ? (
           <div className="promt-list-of-employers promt-block">
             <div className="promt-block-header">List of Employers</div>

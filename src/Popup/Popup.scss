@@ -153,6 +153,29 @@
   border: 1px solid red;
 }
 
+.swal-button {
+ background-color: #17bcb2;
+ &:not([disabled]):hover {
+  background-color: #13a9a0;;
+ }
+ &:active {
+  background-color: #109c94;
+ }
+}
+
+.swal-button--confirm {
+ background-color: #17bcb2;
+ &:not([disabled]):hover {
+  background-color: #13a9a0;;
+ }
+ &:active {
+  background-color: #109c94;
+ }
+}
+
+.swal-modal {
+  vertical-align: middle;
+}
 
 //mobile 
 

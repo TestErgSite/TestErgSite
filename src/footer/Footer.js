@@ -12,8 +12,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { showPopupAsync, hidePopupAsync } from '../redux/actions'
 
 export const Footer = () => {
-  const DefaultFooter = useMediaQuery({ query: '(min-width: 376px)' });
-  const MobileFooter = useMediaQuery({ query: '(max-width: 375px)' });
+  const DefaultFooter = useMediaQuery({ query: '(min-width: 429px)' });
+  const MobileFooter = useMediaQuery({ query: '(max-width: 428px)' });
   
   const { t } = useTranslation();
 
@@ -64,8 +64,8 @@ export const Footer = () => {
         <div className="slogan-wrapper-mobile">
           <div className="slogan-mobile footer-slogan-mobile">{t("try-in-action")}</div>
           <div className="mobile-buttons">
-          <Link to="/demo">
-            <DemoButton />
+          <Link to="/demo" >
+            <DemoButton/>
           </Link>
           <ContactUsButton handlePopup={()=> dispatch(showPopupAsync())}/>
           </div>

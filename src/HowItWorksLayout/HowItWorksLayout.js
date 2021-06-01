@@ -10,13 +10,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { hidePopupAsync } from "../redux/actions";
 
 export const HowItWorksLayout = () => {
-  const DefaultCheckbox = useMediaQuery({ query: "(min-width: 376px)" });
-  const MobileCheckbox = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultCheckbox = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobileCheckbox = useMediaQuery({ query: "(max-width: 428px)" });
 
   const DefaultHowItWorksLayout = useMediaQuery({
-    query: "(min-width: 376px)",
+    query: "(min-width: 429px)",
   });
-  const MobileHowItWorksLayout = useMediaQuery({ query: "(max-width: 375px)" });
+  const MobileHowItWorksLayout = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
 
@@ -55,14 +55,14 @@ export const HowItWorksLayout = () => {
               }
             >
               <div className="how-it-works-checkbox__inner"></div>
-            </div>
-            <div
+              <div
               className={
                 `how-it-works-checkbox-num-mobile num-${i}-mobile ` +
                 (activeCheckbox === i ? "active" : "")
               }
             >
               {i}
+            </div>
             </div>
           </>
         )}

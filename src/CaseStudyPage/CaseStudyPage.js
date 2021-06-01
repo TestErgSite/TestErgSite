@@ -11,8 +11,8 @@ import { hidePopupAsync } from "../redux/actions";
 
 export const CaseStudyPage = () => {
 
-  const DefaultCaseStudyPage = useMediaQuery({ query: "(min-width: 376px)" });
-  const MobileCaseStudyPage = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultCaseStudyPage = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobileCaseStudyPage = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
 

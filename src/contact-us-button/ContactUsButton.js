@@ -6,8 +6,8 @@ import { useMediaQuery } from "react-responsive";
 
 export const ContactUsButton = (props) => {
 
-  const DefaultContactUsButton = useMediaQuery({ query: "(min-width: 376px)" });
-  const MobileContactUsButton = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultContactUsButton = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobileContactUsButton = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
   return (

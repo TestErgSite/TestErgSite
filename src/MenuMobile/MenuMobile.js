@@ -15,7 +15,7 @@ export const MenuMobile = () => {
   const { t } = useTranslation();
   let history = useHistory();
 
-  const MobileMenu = useMediaQuery({ query: "(max-width: 375px)" });
+  const MobileMenu = useMediaQuery({ query: "(max-width: 428px)" });
 
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();

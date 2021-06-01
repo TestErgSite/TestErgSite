@@ -25,5 +25,5 @@ app.use(function (req, res, next) {
     res.redirect("/", 302);
   });
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 80;
 app.listen(port);

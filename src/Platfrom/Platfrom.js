@@ -12,8 +12,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { hidePopupAsync } from "../redux/actions";
 
 export const Platfrom = () => {
-  const DefaultPlatform = useMediaQuery({ query: "(min-width: 376px)" });
-  const MobilePlatform = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultPlatform = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobilePlatform = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
 

@@ -5,8 +5,8 @@ import { useMediaQuery } from "react-responsive";
 
 export const HowItWorksStep2 = () => {
 
-  const DefaultHowItWorksStep2  = useMediaQuery({ query: '(min-width: 376px)' });
-  const MobileHowItWorksStep2  = useMediaQuery({ query: '(max-width: 375px)' });
+  const DefaultHowItWorksStep2  = useMediaQuery({ query: '(min-width: 429px)' });
+  const MobileHowItWorksStep2  = useMediaQuery({ query: '(max-width: 428px)' });
 
   const { t } = useTranslation();
 

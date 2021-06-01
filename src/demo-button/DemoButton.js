@@ -6,25 +6,19 @@ import { useMediaQuery } from "react-responsive";
 
 export const DemoButton = () => {
 
-  const MobileIntro = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
-    return isMobile ? children : null;
-  };
-
-  const DefaultIntro = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
-    return isNotMobile ? children : null;
-  };
+  const DefaultDemoButton = useMediaQuery({ query: '(min-width: 429px)' });
+  const MobileDemoButton = useMediaQuery({ query: '(max-width: 428px)' });
 
   const { t } = useTranslation();
+  
   return(
     <>
-    <MobileIntro>
+    {MobileDemoButton &&
     <button className="demo-button-mobile">{t("demo")}</button>
-    </MobileIntro>
-    <DefaultIntro>
+    }
+    {DefaultDemoButton &&
     <button className="demo-button">{t("demo")}</button>
-    </DefaultIntro>
+    }
     </>
   ) 
 }

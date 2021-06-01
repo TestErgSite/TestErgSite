@@ -23,7 +23,7 @@ class PlatfromOrgChart extends React.Component {
   render() {
     return (
       <>
-        <MediaQuery maxDeviceWidth={375}>
+        <MediaQuery maxDeviceWidth={428}>
           <div className="org-chart-mobile"></div>
 
           <div className="charts-mobile">
@@ -34,7 +34,7 @@ class PlatfromOrgChart extends React.Component {
           </div>
         </MediaQuery>
 
-        <MediaQuery minDeviceWidth={376}>
+        <MediaQuery minDeviceWidth={429}>
           <div
             className="org-chart"
             onMouseOver={(e) => {

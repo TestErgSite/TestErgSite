@@ -10,8 +10,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { hidePopupAsync } from "../redux/actions";
 
 export const IntroPage = (props) => {
-  const DefaultIntroPage = useMediaQuery({ query: "(min-width: 376px)" });
-  const MobileIntroPage = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultIntroPage = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobileIntroPage = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
 

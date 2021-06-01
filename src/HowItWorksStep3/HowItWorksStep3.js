@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 
 export const HowItWorksStep3 = () => {
-  const DefaultHowItWorksStep3 = useMediaQuery({ query: "(min-width: 376px)" });
-  const MobileHowItWorksStep3 = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultHowItWorksStep3 = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobileHowItWorksStep3 = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
 

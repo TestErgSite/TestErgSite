@@ -56,6 +56,7 @@
   justify-content: center;
   box-sizing: border-box;
   transition: background 0.2s ease, border-color;
+  position: relative;
 
   &__inner {
     display: flex;
@@ -115,7 +116,7 @@
 //mobile 
 
 .how-it-works-layout-mobile {
-  width: 375px;
+  width: 100%;
   position: relative;
   box-sizing: border-box;
   display: flex;
@@ -149,23 +150,23 @@ margin: 35px 0;
 }
 
 .num-1-mobile {
-  left: 31px;
+  left: 10px;
   &.active {
-    left: 23px;
+    left: 0px;
   }
 }
 
 .num-2-mobile {
-  left: 181px;
+  left: 10px;
   &.active {
-    left: 175px;
+    left: 0px;
   }
 }
 
 .num-3-mobile {
-  left: 331px;
+  left: 10px;
   &.active {
-    left: 323px;
+    left: 0px;
   }
 }
 

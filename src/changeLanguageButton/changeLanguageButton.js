@@ -6,8 +6,8 @@ import "./changeLanguageButton.scss";
 import { useMediaQuery } from "react-responsive";
 
 export const ChangeLanguageButton = (props) => {
-  const DefaultLanguageButton = useMediaQuery({ query: '(min-width: 376px)' });
-  const MobileLanguageButton = useMediaQuery({ query: '(max-width: 375px)' });
+  const DefaultLanguageButton = useMediaQuery({ query: '(min-width: 429px)' });
+  const MobileLanguageButton = useMediaQuery({ query: '(max-width: 428px)' });
 
   const { t, i18n } = useTranslation();
 

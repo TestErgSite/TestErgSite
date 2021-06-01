@@ -7,6 +7,7 @@ module.exports.sendMsg = (req, res) => {
   sendMesOnMail(req, res);
 };
 
+
 function sendMesOnTelegram(req, res) {
   //токен и id чата берутся из config.json
   let reqBody = req.body;
@@ -47,7 +48,10 @@ function sendMesOnMail(req, res) {
   let reqBody = req.body;
 
   var transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    requireTLS: true,
     auth: {
       user: "mytestaccpleaseignore@gmail.com",
       pass: "12345678Qq",
@@ -56,7 +60,7 @@ function sendMesOnMail(req, res) {
 
   var mail = {
     from: "mytestaccpleaseignore@gmail.com",
-    to: reqBody.email,
+    to: "aleks.liadova@gmail.com",
     subject: "Ergonza",
     html: `<b>Name:</b> ${reqBody.name}<br><b>Email:</b> ${reqBody.email}<br><b>Company:</b> ${reqBody.company}`,
   };

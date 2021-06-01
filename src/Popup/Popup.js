@@ -5,19 +5,20 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopupAsync } from "../redux/actions";
 import { Link } from "react-router-dom";
+import swal from 'sweetalert';
 
 export const Popup = () => {
-  const DefaultPopup = useMediaQuery({ query: "(min-width: 376px)" });
-  const MobilePopup = useMediaQuery({ query: "(max-width: 375px)" });
+  const DefaultPopup = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobilePopup = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const isActive = useSelector((state) => state.isActive);
 
-  const [nameInput, setNameInput] = useState("sasha");
-  const [emailInput, setEmailInput] = useState("aleks.liadova@gmail.com");
-  const [companyInput, setCompanyInput] = useState("kekovskaya company");
+  const [nameInput, setNameInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [companyInput, setCompanyInput] = useState("");
   const [isFormSend, setFormSend] = useState(false);
   const [isRequestSuccess, setRequest] = useState(false);
 
@@ -62,7 +63,7 @@ export const Popup = () => {
           setRequest(true);
           res.json();
         })
-        .catch((err) => console.log(err));
+        .catch((err) => swal('Произошла ошибка при отправке. Пожалуйста, повторите запрос.'));
     }
 
     if (!nameInput) {

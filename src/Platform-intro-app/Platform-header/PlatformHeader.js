@@ -5,12 +5,12 @@ import { useMediaQuery } from "react-responsive";
 export const PlatformHeader = () => {
 
   const MobilePlatformHeader = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 375 });
+    const isMobile = useMediaQuery({ maxWidth: 428 });
     return isMobile ? children : null;
   };
 
   const DefaultPlatformHeader = ({ children }) => {
-    const isNotMobile = useMediaQuery({ minWidth: 376 });
+    const isNotMobile = useMediaQuery({ minWidth: 429 });
     return isNotMobile ? children : null;
   };
 
