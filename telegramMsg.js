@@ -7,7 +7,6 @@ module.exports.sendMsg = (req, res) => {
   sendMesOnMail(req, res);
 };
 
-
 function sendMesOnTelegram(req, res) {
   //токен и id чата берутся из config.json
   let reqBody = req.body;
@@ -29,9 +28,9 @@ function sendMesOnTelegram(req, res) {
     `https://api.telegram.org/bot${config.telegram.token}/sendMessage?chat_id=${config.telegram.chat}&parse_mode=html&text=${msg}`,
     function (error, response, body) {
       //не забываем обработать ответ
-      console.log("error:", error);
-      console.log("statusCode:", response && response.statusCode);
-      console.log("body:", body);
+      // console.log("error:", error);
+      // console.log("statusCode:", response && response.statusCode);
+      // console.log("body:", body);
       if (response.statusCode === 200) {
         console.log(
           res.status(200).json({ status: "ok", message: "Успешно отправлено!" })
@@ -47,14 +46,14 @@ function sendMesOnTelegram(req, res) {
 function sendMesOnMail(req, res) {
   let reqBody = req.body;
 
-  var transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    requireTLS: true,
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
-      user: "mytestaccpleaseignore@gmail.com",
-      pass: "12345678Qq",
+      user: "mytestaccpleaseignore@gmail.com", // generated ethereal user
+      pass: "pcfkmdeutbkenpej", // generated ethereal password
     },
   });
 
@@ -67,7 +66,7 @@ function sendMesOnMail(req, res) {
 
   transporter.sendMail(mail, function (error, info) {
     if (error) {
-      console.log(error);
+      console.log("Email error: " + error);
     } else {
       console.log("Email sent: " + request.body.email);
     }
