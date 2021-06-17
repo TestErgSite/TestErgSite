@@ -17,6 +17,7 @@ export const Footer = () => {
   
   const { t } = useTranslation();
 
+  const url = useSelector((state) => state.url);
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
 
@@ -64,9 +65,9 @@ export const Footer = () => {
         <div className="slogan-wrapper-mobile">
           <div className="slogan-mobile footer-slogan-mobile">{t("try-in-action")}</div>
           <div className="mobile-buttons">
-          <Link to="/demo" >
+         
             <DemoButton/>
-          </Link>
+     
           <ContactUsButton handlePopup={()=> dispatch(showPopupAsync())}/>
           </div>
         </div>
@@ -115,9 +116,9 @@ export const Footer = () => {
         <div className="slogan-wrapper">
           <div className="slogan">{t("try-in-action")}</div>
           <div className="footer-buttons">
-          <Link to="/demo" className="footer-buttons-demo">
+
             <DemoButton />
-          </Link>
+
 
             <ContactUsButton handlePopup={()=> dispatch(showPopupAsync())}/>
      
@@ -145,8 +146,8 @@ export const Footer = () => {
               <Link to="/study-page" onClick={scrollUp} onMouseOver={() => handleHover(4)}>
                 <div className={`study-page study-page-footer ${navs[4] ? '' : 'hovered'}`}>{t("study-page")}</div>
               </Link>
-              <Link to="/demo" onClick={scrollUp} onMouseOver={() => handleHover(5)}>
-                <div className={`demo demo-footer ${navs[5] ? '' : 'hovered'}`}>
+              <Link to={{ pathname: url }} target="_blank" onMouseOver={() => handleHover(5)}>
+              <div className={`demo demo-footer ${navs[5] ? '' : 'hovered'}`}>
                   {t("demo")}
                 </div>
               </Link>

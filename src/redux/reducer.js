@@ -7,6 +7,7 @@ const initialState = {
     side: true,
   },
   isActive: 'none',
+  url: "http://www.beta.ergonza.org/"
 };
 
 const reducer = (state = initialState, action) => {

@@ -59,7 +59,7 @@ function sendMesOnMail(req, res) {
 
   var mail = {
     from: "mytestaccpleaseignore@gmail.com",
-    to: "aleks.liadova@gmail.com",
+    to: "dmitriy_shikhov@ergonza.com",
     subject: "Ergonza",
     html: `<b>Name:</b> ${reqBody.name}<br><b>Email:</b> ${reqBody.email}<br><b>Company:</b> ${reqBody.company}`,
   };

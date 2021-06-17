@@ -17,6 +17,7 @@ export const MenuMobile = () => {
 
   const MobileMenu = useMediaQuery({ query: "(max-width: 428px)" });
 
+  const url = useSelector((state) => state.url);
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
 
@@ -41,19 +42,21 @@ export const MenuMobile = () => {
           <div className="menu-nav-wrapper-mobile">
             <nav className="menu-nav-mobile">
               <Link to="/">
-                <div className="home">{t("home")}</div>
+                <div className="home mob-hov">{t("home")}</div>
               </Link>
               <Link to="/platform">
-                <div className="platform">{t("platform")}</div>
+                <div className="platform mob-hov">{t("platform")}</div>
               </Link>
               <Link to="/about-app">
-                <div className="about-app">{t("about-app")}</div>
+                <div className="about-app mob-hov">{t("about-app")}</div>
               </Link>
               <Link to="/study-page">
-                <div className="study-page">{t("study-page")}</div>
+                <div className="study-page mob-hov">{t("study-page")}</div>
               </Link>
-              <Link to="/demo">
-                <div className="demo">{t("demo")}</div>
+              <Link to={{ pathname: url }} target="_blank">
+                <div className="demo mob-hov" >
+                  {t("demo")}
+                </div>
               </Link>
             </nav>
           </div>

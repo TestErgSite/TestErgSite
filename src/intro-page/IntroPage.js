@@ -37,9 +37,9 @@ export const IntroPage = (props) => {
                 <div className="psy-comfort-org-subheader-mobile">
                   {t("psy-comfort-org-subheader")}
                 </div>
-                <Link to="/demo">
+               
                   <DemoButton />
-                </Link>
+              
               </div>
             </div>
           </div>
@@ -52,9 +52,9 @@ export const IntroPage = (props) => {
                   <span className="team-engagement-text-mobile">
                     {t("team-engagement")}
                   </span>
-                  <Link to="/demo">
+               
                     <DemoButton />
-                  </Link>
+             
                 </div>
                 <div className="team-engagement-img-mobile"></div>
               </div>
@@ -64,9 +64,9 @@ export const IntroPage = (props) => {
                   <span className="team-leader-engagement-text-mobile">
                     {t("team-leader-engagement")}
                   </span>
-                  <Link to="/demo">
+              
                     <DemoButton />
-                  </Link>
+               
                 </div>
                 <div className="team-leader-engagement-img-mobile"></div>
               </div>
@@ -135,9 +135,8 @@ export const IntroPage = (props) => {
                 <div className="psy-comfort-org-subheader">
                   {t("psy-comfort-org-subheader")}
                 </div>
-                <Link to="/demo">
-                  <DemoButton />
-                </Link>
+
+                <DemoButton />
               </div>
             </div>
           </div>
@@ -149,9 +148,8 @@ export const IntroPage = (props) => {
                   <span className="team-engagement-text">
                     {t("team-engagement")}
                   </span>
-                  <Link to="/demo">
-                    <DemoButton />
-                  </Link>
+
+                  <DemoButton />
                 </div>
                 <div className="team-engagement-img"></div>
               </div>
@@ -162,9 +160,8 @@ export const IntroPage = (props) => {
                   <span className="team-leader-engagement-text">
                     {t("team-leader-engagement")}
                   </span>
-                  <Link to="/demo">
-                    <DemoButton />
-                  </Link>
+
+                  <DemoButton />
                 </div>
               </div>
             </div>

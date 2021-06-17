@@ -16,6 +16,7 @@ export const Header = () => {
   const MobileHeader = useMediaQuery({ query: "(max-width: 428px)" });
 
   const isActive = useSelector((state) => state.isActive);
+  const url = useSelector((state) => state.url);
   const dispatch = useDispatch();
 
   const [isSticky, setSticky] = useState(false);
@@ -88,8 +89,8 @@ export const Header = () => {
               <Link to="/study-page" onClick={scrollUp}>
                 <div className="study-page">{t("study-page")}</div>
               </Link>
-              <Link to="/demo">
-                <div className="demo" onClick={scrollUp}>
+              <Link to={{ pathname: url }} target="_blank" onClick={scrollUp}>
+                <div className="demo">
                   {t("demo")}
                 </div>
               </Link>

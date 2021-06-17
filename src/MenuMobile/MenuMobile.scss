@@ -59,3 +59,15 @@
 .menu-nav-mobile a {
     margin-bottom: 20px;
 }
+
+.mob-hov {
+  display: flex;
+  align-items: center;
+  height: 57px;
+  &:hover {
+    display: flex;
+    align-items: center;
+    height: 57px;
+    align-items: center;
+  }
+}
