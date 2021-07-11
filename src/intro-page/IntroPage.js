@@ -9,11 +9,15 @@ import { Popup } from "../Popup/Popup";
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopupAsync } from "../redux/actions";
 
-export const IntroPage = (props) => {
+export const IntroPage = () => {
   const DefaultIntroPage = useMediaQuery({ query: "(min-width: 429px)" });
   const MobileIntroPage = useMediaQuery({ query: "(max-width: 428px)" });
 
+  const { i18n } = useTranslation();
   const { t } = useTranslation();
+  const lang = i18n.language;
+
+  console.log(lang, "lang");
 
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
@@ -37,11 +41,49 @@ export const IntroPage = (props) => {
                 <div className="psy-comfort-org-subheader-mobile">
                   {t("psy-comfort-org-subheader")}
                 </div>
-               
-                  <DemoButton />
-              
+
+                <DemoButton />
               </div>
             </div>
+          </div>
+
+          <div className="video-mobile">
+            {lang === "en" ? (
+              <div className="video-en-v-mobile">
+                <div className="video-description-mobile">
+                  Brief description how ergonza can help your organization
+                </div>
+                <div className="iframe">
+                  <iframe
+                    width="auto"
+                    height="auto"
+                    src="https://www.youtube.com/embed/BfutTRRIHzE"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            ) : (
+              <div className="video-ru-v-mobile">
+                <div className="video-description-mobile">
+                  Краткое описание как ergonza может быть полезна для Вашей
+                  организации
+                </div>
+                <div className="iframe">
+                  <iframe
+                  width="auto"
+                    height="auto"
+                    src="https://www.youtube.com/embed/yun1wG6KgP0"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="block-2-mobile">
@@ -52,9 +94,8 @@ export const IntroPage = (props) => {
                   <span className="team-engagement-text-mobile">
                     {t("team-engagement")}
                   </span>
-               
-                    <DemoButton />
-             
+
+                  <DemoButton />
                 </div>
                 <div className="team-engagement-img-mobile"></div>
               </div>
@@ -64,9 +105,8 @@ export const IntroPage = (props) => {
                   <span className="team-leader-engagement-text-mobile">
                     {t("team-leader-engagement")}
                   </span>
-              
-                    <DemoButton />
-               
+
+                  <DemoButton />
                 </div>
                 <div className="team-leader-engagement-img-mobile"></div>
               </div>
@@ -140,6 +180,46 @@ export const IntroPage = (props) => {
               </div>
             </div>
           </div>
+
+          <div className="video">
+            {lang === "en" ? (
+              <div className="video-en-v">
+                <div className="video-description">
+                  Brief description how ergonza can help your organization
+                </div>
+                <div className="iframe">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/BfutTRRIHzE"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            ) : (
+              <div className="video-ru-v">
+                <div className="video-description">
+                  Краткое описание как ergonza может быть полезна для Вашей
+                  организации
+                </div>
+                <div className="iframe">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/yun1wG6KgP0"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            )}
+          </div>
+
           <div className="block-2">
             <div className="statistics">
               <div className="team-engagement">

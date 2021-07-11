@@ -206,6 +206,48 @@
   }
 }
 
+.video {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 560px;
+  padding-top: 75px;
+  box-sizing: border-box;
+}
+
+.video-en-v,
+.video-ru-v{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  @include wrap-content;
+  @include noselect;
+}
+
+.iframe {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-description {
+  display: flex;
+  width: 50%;
+  @include font-text-black;
+  font-weight: 600;
+  font-size: 54px;
+  padding-left: 60px;
+  line-height: 70px;
+}
+
+.en .video-description {
+  line-height: 85px;
+}
+
 //mobile
 
 .intro-page-mobile {
@@ -224,6 +266,30 @@
   height: 321px;
   @include noselect;
   position: relative;
+}
+
+.video-mobile {
+  @include wrap-content-mobile;
+  height: 300px;
+  padding-top: 40px;
+}
+
+.video-en-v-mobile,
+.video-ru-v-mobile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  @include wrap-content;
+  @include noselect;
+}
+
+.video-description-mobile {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  margin-bottom: 20px;
 }
 
 .psy-comfort-org-mobile {
