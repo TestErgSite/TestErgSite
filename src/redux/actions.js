@@ -34,3 +34,30 @@ export const setStateToPromt = (currentElement, boolean) => {
         }, 300);
     };
   };
+
+  export const handlePopupDemo = (demo) => {
+    return {
+      type: "HANDLE_POPUP_DEMO",
+      payload: {
+        demo
+      },
+    };
+  }
+
+  export const showPopupDemoAsync = () => {
+    return (dispatch) => {
+        dispatch(handlePopupDemo('visible'))
+        setTimeout(() => {
+          dispatch(handlePopupDemo('animate'))
+        }, 300)
+    };
+  };
+
+  export const hidePopupDemoAsync = () => {
+    return (dispatch) => {
+        dispatch(handlePopupDemo('visible'))
+        setTimeout(() => {
+          dispatch(handlePopupDemo('none'))
+        }, 300);
+    };
+  };

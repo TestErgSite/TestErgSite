@@ -3,28 +3,36 @@ import React from "react";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch  } from "react-redux";
+import { showPopupDemoAsync } from "../redux/actions";
 
 export const DemoButton = () => {
   const DefaultDemoButton = useMediaQuery({ query: "(min-width: 429px)" });
   const MobileDemoButton = useMediaQuery({ query: "(max-width: 428px)" });
 
   const url = useSelector((state) => state.url);
+  const demo = useSelector((state) => state.demo);
 
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   return (
     <>
       {MobileDemoButton && (
-        <Link to={{ pathname: url }} target="_blank">
-          <button className="demo-button-mobile">{t("demo")}</button>
-        </Link>
+        <button
+          className="demo-button-mobile"
+          onClick={() => dispatch(showPopupDemoAsync(demo))}
+        >
+          {t("demo")}
+        </button>
       )}
       {DefaultDemoButton && (
-        <Link to={{ pathname: url }} target="_blank" className="footer-buttons-demo">
-          <button className="demo-button">{t("demo")}</button>
-        </Link>
+        <button
+          className="demo-button"
+          onClick={() => dispatch(showPopupDemoAsync(demo))}
+        >
+          {t("demo")}
+        </button>
       )}
     </>
   );

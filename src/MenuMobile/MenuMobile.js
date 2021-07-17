@@ -9,7 +9,8 @@ import { ContactUsButton } from "../contact-us-button/ContactUsButton";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Popup } from "../Popup/Popup";
-import { showPopupAsync, hidePopupAsync } from "../redux/actions";
+import { PopupDemo } from '../PopupDemo/PopupDemo';
+import { showPopupAsync, hidePopupAsync, hidePopupDemoAsync, showPopupDemoAsync } from "../redux/actions";
 
 export const MenuMobile = () => {
   const { t } = useTranslation();
@@ -17,6 +18,7 @@ export const MenuMobile = () => {
 
   const MobileMenu = useMediaQuery({ query: "(max-width: 428px)" });
 
+  const demo = useSelector((state) => state.demo);
   const url = useSelector((state) => state.url);
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
@@ -30,6 +32,13 @@ export const MenuMobile = () => {
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           {isActive === "visible" || "animate" ? <Popup /> : null}
+
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
+
           <div className="menu-logo-wrapper-mobile">
             <Link to="/">
               <div className="menu-logo-mobile"></div>
@@ -53,11 +62,11 @@ export const MenuMobile = () => {
               <Link to="/study-page">
                 <div className="study-page mob-hov">{t("study-page")}</div>
               </Link>
-              <Link to={{ pathname: url }} target="_blank">
-                <div className="demo mob-hov" >
+      
+                <div className="demo mob-hov" onClick={() => dispatch(showPopupDemoAsync(demo))}>
                   {t("demo")}
                 </div>
-              </Link>
+            
             </nav>
           </div>
 

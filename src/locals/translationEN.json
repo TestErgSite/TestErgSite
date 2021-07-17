@@ -85,5 +85,7 @@
     "home": "Home",
     "form-send": "Thanks for your interest! We will contact you soon.",
     "back-home": "Homepage",
-    "empty-field": "This field is required"
+    "empty-field": "This field is required",
+    "mob-v": "Mobile version",
+    "des-v": "Desktop version"
 }

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopupAsync } from "../redux/actions";
 import { Link } from "react-router-dom";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 export const Popup = () => {
   const DefaultPopup = useMediaQuery({ query: "(min-width: 429px)" });
@@ -41,7 +41,6 @@ export const Popup = () => {
   const onSendingForm = (event) => {
     event.preventDefault();
     if (companyInput && nameInput && emailInput) {
-      
       setFormSend(true);
 
       let userInfo = {
@@ -49,7 +48,7 @@ export const Popup = () => {
         email: emailInput,
         company: companyInput,
       };
-  
+
       //request
       fetch("/telegram", {
         method: "post",
@@ -63,7 +62,9 @@ export const Popup = () => {
           setRequest(true);
           res.json();
         })
-        .catch((err) => swal('Произошла ошибка при отправке. Пожалуйста, повторите запрос.'));
+        .catch((err) =>
+          swal("Произошла ошибка при отправке. Пожалуйста, повторите запрос.")
+        );
     }
 
     if (!nameInput) {
@@ -129,7 +130,7 @@ export const Popup = () => {
             id="teleframForm"
             encType="application/x-www-form-urlencoded"
           >
-               {isFormSend && isRequestSuccess ? (
+            {isFormSend && isRequestSuccess ? (
               <div className="form-send-wrapper">
                 <div className="form-send">{t("form-send")}</div>
                 <div
@@ -184,10 +185,7 @@ export const Popup = () => {
                 ) : (
                   <div className="empty-div"></div>
                 )}
-                <button
-                  type="submit"
-                  className="popup-button-mobile"
-                >
+                <button type="submit" className="popup-button-mobile">
                   {t("send")}
                 </button>
               </>
@@ -267,10 +265,7 @@ export const Popup = () => {
                   <div className="empty-div"></div>
                 )}
                 {}
-                <button
-                  type="submit"
-                  className="popup-button-mobile"
-                >
+                <button type="submit" className="popup-button-mobile">
                   {t("send")}
                 </button>
               </>

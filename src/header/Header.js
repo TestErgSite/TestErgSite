@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ChangeLanguageButton } from "../changeLanguageButton/changeLanguageButton";
 import { useMediaQuery } from "react-responsive";
 import { useSelector, useDispatch } from "react-redux";
-import { showPopupAsync, hidePopupAsync } from "../redux/actions";
+import { showPopupAsync, hidePopupAsync, showPopupDemoAsync } from "../redux/actions";
 import { scrollUp } from "../utils/scrollUp";
 
 export const Header = () => {
@@ -16,6 +16,7 @@ export const Header = () => {
   const MobileHeader = useMediaQuery({ query: "(max-width: 428px)" });
 
   const isActive = useSelector((state) => state.isActive);
+  const demo = useSelector((state) => state.demo);
   const url = useSelector((state) => state.url);
   const dispatch = useDispatch();
 
@@ -45,7 +46,7 @@ export const Header = () => {
       {MobileHeader && (
         <div className="header-mobile">
           <div
-            className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+            className={`opacity ${isActive !== "none"  ? "overlay" : ""}`}
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           <div className="header-wrapper-mobile">
@@ -89,11 +90,11 @@ export const Header = () => {
               <Link to="/study-page" onClick={scrollUp}>
                 <div className="study-page">{t("study-page")}</div>
               </Link>
-              <Link to={{ pathname: url }} target="_blank" onClick={scrollUp}>
-                <div className="demo">
+           
+                <div className="demo" onClick={() => dispatch(showPopupDemoAsync(demo))}>
                   {t("demo")}
                 </div>
-              </Link>
+            
               <div
                 className="contact-us"
                 onClick={() => dispatch(showPopupAsync(isActive))}

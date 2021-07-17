@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 import "../i18n";
 import "./IntroPage.scss";
 import { DemoButton } from "../demo-button/DemoButton";
-import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { Popup } from "../Popup/Popup";
+import { PopupDemo } from '../PopupDemo/PopupDemo';
 import { useSelector, useDispatch } from "react-redux";
-import { hidePopupAsync } from "../redux/actions";
+import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
 
 export const IntroPage = () => {
   const DefaultIntroPage = useMediaQuery({ query: "(min-width: 429px)" });
@@ -20,12 +20,19 @@ export const IntroPage = () => {
   console.log(lang, "lang");
 
   const isActive = useSelector((state) => state.isActive);
+  const demo = useSelector((state) => state.demo);
   const dispatch = useDispatch();
 
   return (
     <>
       {MobileIntroPage && (
         <div className="intro-page-mobile">
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
+
           <div
             className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
             onClick={() => dispatch(hidePopupAsync())}
@@ -73,7 +80,7 @@ export const IntroPage = () => {
                 </div>
                 <div className="iframe">
                   <iframe
-                  width="auto"
+                    width="auto"
                     height="auto"
                     src="https://www.youtube.com/embed/yun1wG6KgP0"
                     title="YouTube video player"
@@ -160,6 +167,12 @@ export const IntroPage = () => {
 
       {DefaultIntroPage && (
         <div className="intro-page">
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
+
           <div
             className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
             onClick={() => dispatch(hidePopupAsync())}

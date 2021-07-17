@@ -7,7 +7,9 @@ const initialState = {
     side: true,
   },
   isActive: 'none',
-  url: "http://www.beta.ergonza.org/"
+  demo: 'none',
+  url: "http://www.beta.ergonza.org/",
+  urlMobile: "https://spotted-pin-1440.glideapp.io/"
 };
 
 const reducer = (state = initialState, action) => {
@@ -25,6 +27,13 @@ const reducer = (state = initialState, action) => {
           return {
             ...state,
             isActive: action.payload.isActive
+          };
+
+        case "HANDLE_POPUP_DEMO":
+          console.log(action.payload.demo)
+          return {
+            ...state,
+            demo: action.payload.demo
           };
 
     default:

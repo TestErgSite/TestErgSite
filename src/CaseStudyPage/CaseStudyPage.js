@@ -7,7 +7,8 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import { Popup } from "../Popup/Popup";
 import { useSelector, useDispatch } from 'react-redux'
-import { hidePopupAsync } from "../redux/actions";
+import { PopupDemo } from '../PopupDemo/PopupDemo';
+import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
 
 export const CaseStudyPage = () => {
 
@@ -15,6 +16,10 @@ export const CaseStudyPage = () => {
   const MobileCaseStudyPage = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
+
+  const isActive = useSelector((state) => state.isActive); 
+  const demo = useSelector((state) => state.demo);
+  const dispatch = useDispatch();
 
   const [checkboxes, setValues] = useState({
     0: false,
@@ -44,9 +49,6 @@ export const CaseStudyPage = () => {
     });
   };
 
-  const isActive = useSelector((state) => state.isActive); 
-  const dispatch = useDispatch();
-
   return (
     <>
       <Header />
@@ -57,6 +59,13 @@ export const CaseStudyPage = () => {
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           {isActive === "visible" || "animate" ? <Popup /> : null}
+
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
+
           <div className="case-study-page-block-1-mobile">
             <div className="case-study-page-wrapper-mobile">
               <div className="case-study-page-problem-mobile">
@@ -253,6 +262,13 @@ export const CaseStudyPage = () => {
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           {isActive === "visible" || "animate" ? <Popup /> : null}
+
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
+
           <div className="case-study-page-block-1">
             <div className="case-study-page-wrapper">
               <div className="case-study-page-problem">

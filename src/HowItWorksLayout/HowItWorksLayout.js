@@ -7,7 +7,8 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import { Popup } from "../Popup/Popup";
 import { useSelector, useDispatch } from "react-redux";
-import { hidePopupAsync } from "../redux/actions";
+import { PopupDemo } from '../PopupDemo/PopupDemo';
+import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
 
 export const HowItWorksLayout = () => {
   const DefaultCheckbox = useMediaQuery({ query: "(min-width: 429px)" });
@@ -21,6 +22,7 @@ export const HowItWorksLayout = () => {
   const { t } = useTranslation();
 
   const isActive = useSelector((state) => state.isActive);
+  const demo = useSelector((state) => state.demo);
   const dispatch = useDispatch();
 
   const [timeoutId, setTimeoutId] = useState();
@@ -105,6 +107,13 @@ export const HowItWorksLayout = () => {
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           {isActive === "visible" || "animate" ? <Popup /> : null}
+
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
+
           <div className="how-it-works-layout-wrapper-mobile">
             <div className="how-it-works-layout-header-mobile">
               {t("how-it-works-layout-header")}
@@ -130,6 +139,13 @@ export const HowItWorksLayout = () => {
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           {isActive === "visible" || "animate" ? <Popup /> : null}
+
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
+
           <div className="how-it-works-layout-wrapper">
             <div className="how-it-works-layout-header">
               {t("how-it-works-layout-header")}

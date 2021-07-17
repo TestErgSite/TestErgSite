@@ -8,8 +8,9 @@ import PlatformSidebar from "../Platform-intro-app/Platform-sidebar/PlatformSide
 import PlatfromOrgChart  from "../Platform-intro-app/Platform-org-chart/PlatfromOrgChart";
 import { useMediaQuery } from "react-responsive";
 import { Popup } from "../Popup/Popup";
+import { PopupDemo } from '../PopupDemo/PopupDemo';
 import { useSelector, useDispatch } from 'react-redux'
-import { hidePopupAsync } from "../redux/actions";
+import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
 
 export const Platfrom = () => {
   const DefaultPlatform = useMediaQuery({ query: "(min-width: 429px)" });
@@ -19,6 +20,7 @@ export const Platfrom = () => {
 
   const isActive = useSelector((state) => state.isActive); 
   const dispatch = useDispatch();
+  const demo = useSelector((state) => state.demo);
 
     return (
       <>
@@ -31,6 +33,13 @@ export const Platfrom = () => {
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           {isActive === "visible" || "animate" ? <Popup /> : null}
+
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+            {demo === "visible" || "animate" ? <PopupDemo /> : null}
+            
           <div className="ergonza-platform-wrapper-mobile">
             <div className="ergonza-platform-header-mobile">
               {t("ergonza-platform-header")}
@@ -114,6 +123,12 @@ export const Platfrom = () => {
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
           {isActive === "visible" || "animate" ? <Popup /> : null}
+
+          <div
+            className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupDemoAsync())}
+          ></div>
+          {demo === "visible" || "animate" ? <PopupDemo /> : null}
 
           <div className="ergonza-platform-wrapper">
             <div className="ergonza-platform-header">
