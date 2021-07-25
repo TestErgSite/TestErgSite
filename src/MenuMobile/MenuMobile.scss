@@ -8,13 +8,14 @@
   height: 100vh;
   position: relative;
   box-sizing: border-box;
+  padding: 10px 0 25px 0;
 }
 
 .menu-logo-wrapper-mobile {
   @include wrap-content-mobile;
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 20px 0;
   justify-content: space-between;
   height: 20%;
   box-sizing: border-box;
