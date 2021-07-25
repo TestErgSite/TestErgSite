@@ -128,8 +128,8 @@ export const Footer = () => {
                     </div>
                   </Link>
                   <div className="copyright-mobile">
-                    <div className="ergonza-2020-mobile">
-                      &#169; 2020 Ergonza
+                    <div className="ergonza-year-mobile">
+                      &#169; {new Date().getFullYear()}  Ergonza
                     </div>
                     <div className="ergonza-mail">info@ergonza.com</div>
                   </div>
@@ -239,7 +239,7 @@ export const Footer = () => {
                   </div>
                 </div>
                 <div className="copyright">
-                  <div className="ergonza-2020">
+                  <div className="ergonza-year">
                     &#169; {new Date().getFullYear()} Ergonza
                   </div>
                   <div className="ergonza-mail">info@ergonza.com</div>
