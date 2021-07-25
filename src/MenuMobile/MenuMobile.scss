@@ -13,9 +13,9 @@
   @include wrap-content-mobile;
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
+  padding: 20px;
   justify-content: space-between;
-  height: 210px;
+  height: 20%;
 }
 
 .menu-logo-mobile {
@@ -38,6 +38,7 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
+  height: 68%;
 }
 
 .menu-footer-wrapper-mobile {
@@ -47,7 +48,7 @@
   justify-content: space-between;
   font-family: "Proxima Nova Thin", sans-serif;
   color: white;
-  height: 115px;
+  height: 12%;
 }
 
 .menu-nav-mobile {
