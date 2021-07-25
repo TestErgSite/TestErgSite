@@ -1,14 +1,19 @@
 @import "../styles/styles.scss";
 
 .menu-wrapper-mobile {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   background: linear-gradient(117.43deg, #4e7171 0%, #131a22 100%);
   height: 100vh;
   position: relative;
+  display: flex;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 90%;
   box-sizing: border-box;
-  padding: 10px 0 25px 0;
 }
 
 .menu-logo-wrapper-mobile {
