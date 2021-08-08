@@ -66,9 +66,9 @@ export const IntroPage = () => {
                     height="auto"
                     src="https://www.youtube.com/embed/BfutTRRIHzE"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               </div>
@@ -84,9 +84,9 @@ export const IntroPage = () => {
                     height="auto"
                     src="https://www.youtube.com/embed/yun1wG6KgP0"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               </div>
@@ -206,9 +206,9 @@ export const IntroPage = () => {
                     height="315"
                     src="https://www.youtube.com/embed/BfutTRRIHzE"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               </div>
@@ -224,9 +224,9 @@ export const IntroPage = () => {
                     height="315"
                     src="https://www.youtube.com/embed/yun1wG6KgP0"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               </div>
