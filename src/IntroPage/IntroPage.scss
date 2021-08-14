@@ -225,6 +225,7 @@
   box-sizing: border-box;
   @include wrap-content;
   @include noselect;
+  padding: 0;
 }
 
 .iframe {
@@ -246,6 +247,10 @@
 
 .en .video-description {
   line-height: 85px;
+}
+
+.ru .video-description {
+  font-size: 53px;
 }
 
 //mobile

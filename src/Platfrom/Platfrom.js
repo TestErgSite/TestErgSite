@@ -52,17 +52,16 @@ export const Platfrom = () => {
                 {lang === "en" ? (
                   <div className="video-en-v-mobile video-v-mobile-p">
                     <div className="video-description-mobile">
-                      Brief description how ergonza can help your organization
+                    A small video tutorial about performance of ergonza platform
                     </div>
                     <div className="iframe">
-                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   </div>
                 ) : (
                   <div className="video-ru-v-mobile video-v-mobile-p">
                     <div className="video-description-mobile">
-                      Краткое описание как ergonza может быть полезна для Вашей
-                      организации
+                    Небольшая видеоинструкция о работе платформы ergonza
                     </div>
                     <div className="iframe">
                     <iframe width="auto" height="auto" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
@@ -165,17 +164,16 @@ export const Platfrom = () => {
                 {lang === "en" ? (
                   <div className="video-en-v video-platform">
                     <div className="video-description">
-                      Brief description how ergonza can help your organization
+                    A small video tutorial about performance of ergonza platform
                     </div>
                     <div className="iframe">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   </div>
                 ) : (
                   <div className="video-ru-v video-platform">
                     <div className="video-description">
-                      Краткое описание как ergonza может быть полезна для Вашей
-                      организации
+                    Небольшая видеоинструкция о работе платформы ergonza
                     </div>
                     <div className="iframe">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
