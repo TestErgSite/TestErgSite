@@ -364,14 +364,14 @@ export const CaseStudyPage = () => {
      
             <div className="images-approach-wrapper">
               <div className="approach-img-1">
-                <div className="layout">
+                <div className="layout-img">
                   <div className="approach-text-item-1">
                     {t("approach-text-item-1")}
                   </div>
                 </div>
               </div>
               <div className="approach-img-2">
-                <div className="layout">
+                <div className="layout-img">
                   <div className="approach-text-item-2">
                     {t("approach-text-item-2")}
                   </div>
@@ -380,14 +380,14 @@ export const CaseStudyPage = () => {
             </div>
             <div className="images-approach-wrapper">
               <div className="approach-img-3">
-                <div className="layout">
+                <div className="layout-img">
                   <div className="approach-text-item-3">
                     {t("approach-text-item-3")}
                   </div>
                 </div>
               </div>
               <div className="approach-img-4">
-                <div className="layout">
+                <div className="layout-img">
                   <div className="approach-text-item-4">
                     {t("approach-text-item-4")}
                   </div>
