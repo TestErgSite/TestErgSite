@@ -3,7 +3,6 @@ import React from "react";
 import { HomePage } from "./Homepage/Homepage";
 import { useTranslation } from "react-i18next";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { HowItWorks } from "./HowItWorks/HowItWorks";
 import { CaseStudyPage } from "./CaseStudyPage/CaseStudyPage";
 import { Platfrom } from "./Platfrom/Platfrom";
 import { MenuMobile } from "./MenuMobile/MenuMobile";
