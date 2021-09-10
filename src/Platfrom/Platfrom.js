@@ -166,9 +166,6 @@ export const Platfrom = () => {
               <div className="ergonza-platform-header">
                 {t("ergonza-platform-header")}
               </div>
-              <div className="ergonza-platform-subheader">
-                {t("ergonza-platform-subheader")}
-              </div>
               <div className="ergonza-platform-intro">
                 <PlatformHeader />
                 <div className="ergonza-platform-content">
