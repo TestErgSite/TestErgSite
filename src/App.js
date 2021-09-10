@@ -18,7 +18,6 @@ export const App = () => {
     <Router>
       <div className={`wrapper ${lang}`}>
         <Route path="/" exact component={HomePage} />
-        <Route path="/about-app" exact component={HowItWorks} />
         <Route path="/study-page" exact component={CaseStudyPage} />
         <Route path="/platform" exact component={Platfrom} />
         <Route path="/menu" exact component={MenuMobile} />
