@@ -1,45 +1,49 @@
 .contact-us-button {
   width: 180px;
   height: 60px;
-    padding: 0 5px 0 5px;
-    border-radius: 12px;
-    background: #17bcb2;
-    color: #ffffff;
-    font-family: "Proxima Nova Thin", sans-serif;
-    font-weight: 600;
-  font-size: 20px;
+  padding: 0 5px 0 5px;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
   line-height: 29px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    &:hover {
-      background: #13a9a0;
-    }
-    &:active {
-      background: #109c94;
-    }
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #ffffff;
+  backdrop-filter: blur(20px);
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background: #13a9a0;
   }
-  
-  //mobile 
-  
-  .contact-us-button-mobile{
-    width: 109px;
-    height: 47px;
-    padding: 0 5px 0 5px;
-    border-radius: 12px;
-    background: #17bcb2;
-    color: #ffffff;
-    font-family: "Proxima Nova Thin", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    &:hover {
-      background: #13a9a0;
-    }
-    &:active {
-      background: #109c94;
-    }
+  &:active {
+    background: #109c94;
   }
+}
+
+//mobile
+
+.contact-us-button-mobile {
+  width: 109px;
+  height: 47px;
+  padding: 0 5px 0 5px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #ffffff;
+  backdrop-filter: blur(20px);
+  color: #ffffff;
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  outline: none;
+  margin-left: 11px;
+  cursor: pointer;
+  &:hover {
+    background: #13a9a0;
+  }
+  &:active {
+    background: #109c94;
+  }
+}

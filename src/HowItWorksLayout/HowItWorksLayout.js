@@ -36,7 +36,7 @@ export const HowItWorksLayout = () => {
     const id = setTimeout(() => {
       setActiveCheckbox((activeCheckbox) => activeCheckbox === 3 ? 1 : (activeCheckbox + 1));
       timeoutCallback();
-    }, 4000);
+    }, 5000);
     setTimeoutId(id);
   }, [activeCheckbox, setActiveCheckbox]);
 

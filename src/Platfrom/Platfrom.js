@@ -12,6 +12,7 @@ import { Popup } from "../Popup/Popup";
 import { PopupDemo } from "../PopupDemo/PopupDemo";
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
+import { HowItWorksLayout } from "../HowItWorksLayout/HowItWorksLayout";
 
 export const Platfrom = () => {
   const DefaultPlatform = useMediaQuery({ query: "(min-width: 429px)" });
@@ -30,6 +31,22 @@ export const Platfrom = () => {
       {MobilePlatform && (
         <>
           <Header />
+          <HowItWorksLayout />
+          <div className="video-mobile v-p-m">
+                {lang === "en" ? (
+                  <div className="video-en-v-mobile video-v-mobile-p">
+                    <div className="iframe">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="video-ru-v-mobile video-v-mobile-p">
+                    <div className="iframe">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    </div>
+                  </div>
+                )}
+              </div>
           <div className="ergonza-platform-mobile">
             <div
               className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
@@ -46,32 +63,6 @@ export const Platfrom = () => {
             <div className="ergonza-platform-wrapper-mobile">
               <div className="ergonza-platform-header-mobile">
                 {t("ergonza-platform-header")}
-              </div>
-
-              <div className="video-mobile v-p-m">
-                {lang === "en" ? (
-                  <div className="video-en-v-mobile video-v-mobile-p">
-                    <div className="video-description-mobile">
-                    A small video tutorial about performance of ergonza platform
-                    </div>
-                    <div className="iframe">
-                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="video-ru-v-mobile video-v-mobile-p">
-                    <div className="video-description-mobile">
-                    Небольшая видеоинструкция о работе платформы ergonza
-                    </div>
-                    <div className="iframe">
-                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="ergonza-platform-subheader-mobile">
-                {t("ergonza-platform-subheader")}
               </div>
               <div className="ergonza-platform-intro-mobile">
                 <PlatformHeader />
@@ -142,6 +133,22 @@ export const Platfrom = () => {
       {DefaultPlatform && (
         <>
           <Header />
+          <HowItWorksLayout />
+          <div className="video v-p">
+                {lang === "en" ? (
+                  <div className="video-en-v video-platform">
+                    <div className="iframe">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="video-ru-v video-platform">
+                    <div className="iframe">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    </div>
+                  </div>
+                )}
+              </div>
           <div className="ergonza-platform">
             <div
               className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
@@ -159,29 +166,6 @@ export const Platfrom = () => {
               <div className="ergonza-platform-header">
                 {t("ergonza-platform-header")}
               </div>
-
-              <div className="video v-p">
-                {lang === "en" ? (
-                  <div className="video-en-v video-platform">
-                    <div className="video-description">
-                    A small video tutorial about performance of ergonza platform
-                    </div>
-                    <div className="iframe">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="video-ru-v video-platform">
-                    <div className="video-description">
-                    Небольшая видеоинструкция о работе платформы ergonza
-                    </div>
-                    <div className="iframe">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nmKyJeEioow" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                    </div>
-                  </div>
-                )}
-              </div>
-
               <div className="ergonza-platform-subheader">
                 {t("ergonza-platform-subheader")}
               </div>

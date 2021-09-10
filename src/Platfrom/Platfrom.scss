@@ -217,7 +217,7 @@
 
 .video-platform {
   padding: 0;
-  height: 400px;
+  height: 700px;
 }
 
 .v-p {
@@ -235,16 +235,20 @@
 .v-p-m {
   padding: 40px 0 40px 0;
   width: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .v-p-m .iframe {
   width: 100%;
+  height: 100%;
   justify-content: start;
   display: flex;
 }
 
 .video-v-mobile-p {
   padding: 0;
+  height: 208px;
 }
 
 .ergonza-platform-wrapper-mobile {

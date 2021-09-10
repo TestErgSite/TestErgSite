@@ -32,8 +32,6 @@ export const Footer = () => {
     2: true,
     3: true,
     4: true,
-    5: true,
-    6: true,
   });
 
   const handleHover = (i) => {
@@ -42,8 +40,6 @@ export const Footer = () => {
       2: false,
       3: false,
       4: false,
-      5: false,
-      6: false,
       ...{
         [i]: true,
       },
@@ -56,8 +52,6 @@ export const Footer = () => {
       2: true,
       3: true,
       4: true,
-      5: true,
-      6: true,
     });
   };
 
@@ -99,14 +93,6 @@ export const Footer = () => {
                   >
                     <div className="platform platform-footer-mobile">
                       {t("platform")}
-                    </div>
-                  </Link>
-                  <Link to="/about-app" className="about-app-link-mobile">
-                    <div
-                      className="about-app about-app-footer-mobile"
-                      onClick={scrollUp}
-                    >
-                      {t("about-app")}
                     </div>
                   </Link>
                   <Link
@@ -219,24 +205,6 @@ export const Footer = () => {
                       {t("study-page")}
                     </div>
                   </Link>
-
-                  <div
-                    className={`demo demo-footer ${navs[5] ? "" : "hovered"}`}
-                    onClick={() => dispatch(showPopupDemoAsync(demo))}
-                    onMouseOver={() => handleHover(5)}
-                  >
-                    {t("demo")}
-                  </div>
-
-                  <div
-                    className={`contact-us contact-us-footer ${
-                      navs[6] ? "" : "hovered"
-                    }`}
-                    onClick={() => dispatch(showPopupAsync())}
-                    onMouseOver={() => handleHover(6)}
-                  >
-                    {t("contact-us")}
-                  </div>
                 </div>
                 <div className="copyright">
                   <div className="ergonza-year">

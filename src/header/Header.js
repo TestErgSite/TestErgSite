@@ -84,9 +84,6 @@ export const Header = () => {
               <Link to="/platform" onClick={scrollUp}>
                 <div className="platform">{t("platform")}</div>
               </Link>
-              <Link to="/about-app" onClick={scrollUp}>
-                <div className="about-app">{t("about-app")}</div>
-              </Link>
               <Link to="/study-page" onClick={scrollUp}>
                 <div className="study-page">{t("study-page")}</div>
               </Link>
