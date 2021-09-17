@@ -3,7 +3,6 @@
 .header {
   display: flex;
   width: 100%;
-
   background: linear-gradient(117.43deg, #4e7171d3 0%, #131a22f3 100%);
   box-sizing: border-box;
   -moz-user-select: none;
@@ -12,8 +11,7 @@
   position: fixed;
   top: 0;
   left: 0;
-
-  z-index: 20;
+  z-index: 1001;
   height: 110px;
   transition: height 0.3s ease-out, background 0.3s ease-out;
 }
@@ -47,7 +45,8 @@
   height: 98px;
   background-position: left;
   background-repeat: no-repeat;
-  transition: width 0.2s ease-out, height 0.2s ease-out, background-image 0.2s ease-out;
+  transition: width 0.2s ease-out, height 0.2s ease-out,
+    background-image 0.2s ease-out;
 }
 
 .logo-scrolled {
@@ -108,8 +107,7 @@ svg {
 }
 
 .log-in,
-.demo 
-.contact-us {
+.demo .contact-us {
   min-width: 85px;
 }
 
@@ -147,16 +145,16 @@ svg {
 }
 
 .burger-button-mobile {
-  background-image: url('./icons/burger-button.svg');
+  background-image: url("./icons/burger-button.svg");
   width: 20px;
   height: 20px;
 }
 
 .menu-molile {
   width: 40px;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

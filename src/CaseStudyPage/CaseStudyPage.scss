@@ -218,7 +218,8 @@
 .approach-img-1,
 .approach-img-2,
 .approach-img-3,
-.approach-img-4 {
+.approach-img-4,
+.hybrid-office-item {
   @include font-header-2nd-level;
   text-align: start;
   display: flex;
@@ -237,6 +238,16 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.hybrid-office-item {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.bold {
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 
 .approach-img-1 {
@@ -274,6 +285,15 @@
   display: flex;
   height: 100%;
   align-items: center;
+}
+
+.hybrid {
+  font-weight: normal;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start !important;
+  cursor: default;
+  padding-top: 30px;
 }
 
 .case-study-page-block-5 {
@@ -382,7 +402,88 @@
   border-bottom: none;
 }
 
+.case-study-page-block-6-wrapper {
+  background-image: url("./image-block-5/image 10.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(338.71deg, #36d4be 0%, #f2bb31 106.51%);
+    opacity: 0.8;
+    z-index: 900;
+    width: 100%;
+    top: 0;
+    height: 100%;
+  }
+}
+
+.hybrid-office {
+  @include wrap-content;
+}
+
+.hybrid-office-main-header {
+  @include font-text-black;
+  @include font-header-2nd-level;
+}
+
+.hybrid-office-main-text {
+  @include font-text-black;
+  padding: 15px 0 40px 0;
+  max-width: 560px;
+}
+
+.hybrid-office-header {
+  position: absolute;
+  top: 50px;
+  font-size: 24px;
+  line-height: 34px;
+  left: 50%;
+  @include font-text-black;
+  font-weight: 600;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+}
+
 //mobile
+
+.mobile-images-hybrid {
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.hybrid-office-item-mobile {
+  width: 100%;
+}
+
+.hybrid-checkboxes-mobile {
+  z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 40px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.white {
+  border: 1px solid white !important;
+  z-index: 1000;
+}
+
+.comparison-checkbox__inner_white {
+  background: white;
+  border: 1px solid white !important;
+  z-index: 1000;
+}
+
+.comparison-checkbox.active .comparison-checkbox__inner_white {
+  background: white !important;
+}
 
 .case-study-page-mobile {
   width: 100%;
@@ -427,19 +528,46 @@
 
 .case-study-page-header-mobile,
 .case-study-page-problem-header-mobile,
-.case-study-page-approach-header-mobile {
+.case-study-page-approach-header-mobile,
+.hybrid-office-main-header-mobile,
+.bold-mobile,
+.hybrid-office-header-mobile {
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
   margin-bottom: 25px;
+  color: black;
+}
+
+.bold-mobile {
+  align-self: self-end;
+}
+
+.hybrid-office-header-mobile {
+  left: 0;
+  transform: translate(0, 0);
+  top: 20px;
+  position: absolute;
+  z-index: 1000;
+  padding: 0 40px 0 40px;
 }
 
 .case-study-page-problem-item-mobile,
-.case-study-page-approach-item-mobile {
+.case-study-page-approach-item-mobile,
+.hybrid-office-main-text-mobile,
+.hybrid-mobile {
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
   margin-bottom: 20px;
+}
+
+.hybrid-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 40px 0 40px;
 }
 
 .case-study-page-problem-img-mobile {
@@ -578,6 +706,21 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+}
+
+.case-study-page-block-6-mobile {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.case-study-page-block-6-wrapper-mobile {
+  height: 367px;
 }
 
 .comparison-mobile {

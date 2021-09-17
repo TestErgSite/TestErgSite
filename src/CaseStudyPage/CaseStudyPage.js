@@ -6,18 +6,17 @@ import { Slideshow } from "../SliderMobile/SliderMobile";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import { Popup } from "../Popup/Popup";
-import { useSelector, useDispatch } from 'react-redux'
-import { PopupDemo } from '../PopupDemo/PopupDemo';
+import { useSelector, useDispatch } from "react-redux";
+import { PopupDemo } from "../PopupDemo/PopupDemo";
 import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
 
 export const CaseStudyPage = () => {
-
   const DefaultCaseStudyPage = useMediaQuery({ query: "(min-width: 429px)" });
   const MobileCaseStudyPage = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
 
-  const isActive = useSelector((state) => state.isActive); 
+  const isActive = useSelector((state) => state.isActive);
   const demo = useSelector((state) => state.demo);
   const dispatch = useDispatch();
 
@@ -26,35 +25,72 @@ export const CaseStudyPage = () => {
     1: true,
   });
 
-  const renderCheckbox = (i) => {
-    return (
-      <>
-        <div
-          onClick={() => onCheckboxClick(i)}
-          className={"comparison-checkbox " + (checkboxes[i] ? "active" : "")}
-        >
-          <div className="comparison-checkbox__inner"></div>
-        </div>
-      </>
-    );
+  const [checkboxesForSecondSlider, setValuesForSecondSlider] = useState({
+    0: true,
+    1: false,
+    2: false,
+    3: false,
+  });
+
+  console.log(checkboxesForSecondSlider)
+
+  const renderCheckbox = (i, firstCheckboxes) => {
+    if (firstCheckboxes) {
+      return (
+        <>
+          <div
+            onClick={() => onCheckboxClick(i, firstCheckboxes)}
+            className={"comparison-checkbox " + (checkboxes[i] ? "active" : "")}
+          >
+            <div className="comparison-checkbox__inner"></div>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div
+            onClick={() => onCheckboxClick(i, firstCheckboxes)}
+            className={
+              "comparison-checkbox white " +
+              (checkboxesForSecondSlider[i] ? "active" : "")
+            }
+          >
+            <div className="comparison-checkbox__inner comparison-checkbox__inner_white"></div>
+          </div>
+        </>
+      );
+    }
   };
 
-  const onCheckboxClick = (i) => {
-    setValues({
-      0: false,
-      1: false,
-      ...{
-        [i]: true,
-      },
-    });
+  const onCheckboxClick = (i, firstCheckboxes) => {
+    if (firstCheckboxes) {
+      setValues({
+        0: false,
+        1: false,
+        ...{
+          [i]: true,
+        },
+      });
+    } else {
+      setValuesForSecondSlider({
+        0: false,
+        1: false,
+        2: false,
+        3: false,
+        ...{
+          [i]: true,
+        },
+      });
+    }
   };
 
   return (
     <>
       <Header />
-      {MobileCaseStudyPage &&
+      {MobileCaseStudyPage && (
         <div className="case-study-page-mobile">
-        <div
+          <div
             className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
@@ -207,7 +243,9 @@ export const CaseStudyPage = () => {
               ) : (
                 <div className="comparison-mobile">
                   <div className="ergonza-mobile">
-                    <div className="ergonza-header-mobile">{t("ergonza-header")}</div>
+                    <div className="ergonza-header-mobile">
+                      {t("ergonza-header")}
+                    </div>
                     <div className="comparison-item-mobile comparison-item-first">
                       <div className="ergonza-item-header-mobile ergonza-structure">
                         {t("ergonza-structure")}
@@ -237,7 +275,7 @@ export const CaseStudyPage = () => {
 
                     <div className="comparison-item-mobile comparison-item-last">
                       <div className="ergonza-item-header-mobile ergonza-education">
-                      {t("ergonza-education")}
+                        {t("ergonza-education")}
                       </div>
                       <div className="ergonza-text-mobile ergonza-text ergonza-text-item-4">
                         {t("ergonza-text-item-4")}
@@ -247,17 +285,69 @@ export const CaseStudyPage = () => {
                 </div>
               )}
               <div className="checkboxes-wrapper-comparison">
-                {renderCheckbox(0)}
-                {renderCheckbox(1)}
+                {renderCheckbox(0, true)}
+                {renderCheckbox(1, true)}
+              </div>
+            </div>
+          </div>
+
+          <div className="case-study-page-block-6-mobile">
+            <div className="hybrid-office">
+              <div className="hybrid-office-main-header-mobile">
+                {t("hybrid-office-main-header")}
+              </div>
+              <div className="hybrid-office-main-text-mobile">
+                {t("hybrid-office-main-text")}
+              </div>
+            </div>
+            <div className="case-study-page-block-6-wrapper case-study-page-block-6-wrapper-mobile">
+              <div className="hybrid-office-header-mobile">
+                {t("hybrid-office-header")}
+              </div>
+              <div className="images-approach-wrapper mobile-images-hybrid">
+                <div className="hybrid-office-item hybrid-office-item-mobile">
+                  <div className="approach-text-item-1 hybrid-mobile">
+                    <b className="bold-mobile">
+                      {checkboxesForSecondSlider['0'] ? 1 : null}
+                      {checkboxesForSecondSlider['1'] ? 2 : null}
+                      {checkboxesForSecondSlider['2'] ? 3 : null}
+                      {checkboxesForSecondSlider['3'] ? 4 : null}
+                    </b>
+                    <div>
+                    {checkboxesForSecondSlider['0'] ? 
+                      <>{t("hybrid-office-text-item-1")}</>
+                      : null
+                    }
+                    {checkboxesForSecondSlider['1'] ? 
+                      <>{t("hybrid-office-text-item-2")}</>
+                      : null
+                    }
+                     {checkboxesForSecondSlider['2'] ? 
+                      <>{t("hybrid-office-text-item-3")}</>
+                      : null
+                    }
+                     {checkboxesForSecondSlider['3'] ? 
+                      <>{t("hybrid-office-text-item-4")}</>
+                      : null
+                    }
+                  </div> 
+                  </div>
+                </div>
+                <div className="hybrid-checkboxes-mobile">
+                  {renderCheckbox(0, false)}
+                  {renderCheckbox(1, false)}
+                  {renderCheckbox(2, false)}
+                  {renderCheckbox(3, false)}
+                </div>
               </div>
             </div>
           </div>
         </div>
-  }
+      )}
 
-      {DefaultCaseStudyPage &&
+      {DefaultCaseStudyPage && (
         <div className="case-study-page">
-        <div
+          <div
             className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
@@ -361,7 +451,6 @@ export const CaseStudyPage = () => {
           </div>
 
           <div className="case-study-page-block-4">
-     
             <div className="images-approach-wrapper">
               <div className="approach-img-1">
                 <div className="layout-img">
@@ -480,9 +569,52 @@ export const CaseStudyPage = () => {
               </div>
             </div>
           </div>
-          
+
+          <div className="case-study-page-block-6">
+            <div className="hybrid-office">
+              <div className="hybrid-office-main-header">
+                {t("hybrid-office-main-header")}
+              </div>
+              <div className="hybrid-office-main-text">
+                {t("hybrid-office-main-text")}
+              </div>
+            </div>
+            <div className="case-study-page-block-6-wrapper">
+              <div className="hybrid-office-header">
+                {t("hybrid-office-header")}
+              </div>
+              <div className="images-approach-wrapper">
+                <div className="hybrid-office-item">
+                  <div className="approach-text-item-1 hybrid">
+                    <b class="bold">1</b>
+                    {t("hybrid-office-text-item-1")}
+                  </div>
+                </div>
+                <div className="hybrid-office-item">
+                  <div className="approach-text-item-2 hybrid">
+                    <b class="bold">2</b>
+                    {t("hybrid-office-text-item-2")}
+                  </div>
+                </div>
+              </div>
+              <div className="images-approach-wrapper">
+                <div className="hybrid-office-item">
+                  <div className="approach-text-item-3 hybrid">
+                    <b class="bold">3</b>
+                    {t("hybrid-office-text-item-3")}
+                  </div>
+                </div>
+                <div className="hybrid-office-item">
+                  <div className="approach-text-item-4 hybrid">
+                    <b className="bold">4</b>
+                    {t("hybrid-office-text-item-4")}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-     }
+      )}
       <Footer />
     </>
   );

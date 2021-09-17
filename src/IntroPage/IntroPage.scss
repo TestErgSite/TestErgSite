@@ -144,6 +144,10 @@
   @include font-header-white;
 }
 
+.video {
+  padding-top: 70px;
+}
+
 .higher-engagment-subheader {
   @include font-text-white;
   margin: 20px 0;
@@ -233,8 +237,7 @@
 }
 
 .video-mobile {
-  height: 300px;
-  padding-top: 40px;
+  padding-top: 50px;
 }
 
 .video-en-v-mobile,
@@ -244,7 +247,6 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  @include wrap-content;
   @include noselect;
 }
 

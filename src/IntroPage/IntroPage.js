@@ -53,6 +53,39 @@ export const IntroPage = () => {
               </div>
             </div>
           </div>
+          
+          <div className="video-mobile">
+            {lang === "en" ? (
+              <div className="video-en-v-mobile">
+                <div className="iframe">
+                  <iframe
+                    width="100%"
+                    height="208px"
+                    src="https://www.youtube.com/embed/BfutTRRIHzE"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            ) : (
+              <div className="video-ru-v-mobile">
+                <div className="iframe">
+                  <iframe
+                    width="100%"
+                    height="208px"
+                    src="https://www.youtube.com/embed/yun1wG6KgP0"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            )}
+          </div>
+
           <div className="block-2-mobile">
             <div className="statistics-mobile">
               <div className="team-engagement-mobile">
@@ -153,6 +186,40 @@ export const IntroPage = () => {
               </div>
             </div>
           </div>
+
+          <div className="video">
+            {lang === "en" ? (
+              <div className="video-en-v">
+                <div className="iframe">
+                  <iframe
+                    width="100%"
+                    height="772px"
+                    src="https://www.youtube.com/embed/BfutTRRIHzE"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            ) : (
+              <div className="video-ru-v">
+                <div className="iframe">
+                  <iframe
+                    width="100%"
+                    height="772px"
+                    src="https://www.youtube.com/embed/yun1wG6KgP0"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            )}
+          </div>
+
+
           <div className="block-2">
             <div className="statistics">
               <div className="team-engagement">
