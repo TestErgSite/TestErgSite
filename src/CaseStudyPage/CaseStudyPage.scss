@@ -287,6 +287,16 @@
   align-items: center;
 }
 
+.approach-text-item-1,
+.approach-text-item-3 {
+  padding-left: 155px;
+}
+
+.approach-text-item-2,
+.approach-text-item-4 {
+  padding-right: 170px;
+}
+
 .hybrid {
   font-weight: normal;
   flex-direction: column;
@@ -447,7 +457,15 @@
   transform: translate(-50%, -50%);
 }
 
+.case-study-page-block-7 {
+  padding: 40px 0;
+}
+
 //mobile
+
+.case-study-page-block-7-mobile {
+  padding: 20px 0;
+}
 
 .mobile-images-hybrid {
   flex-direction: column;

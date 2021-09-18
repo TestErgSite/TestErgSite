@@ -1,0 +1,52 @@
+@import "../styles/styles.scss";
+
+.info-block-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.info-block-col:not(:last-child) {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 20px; 
+}
+
+.info-block-wrapper {
+    @include wrap-content;
+}
+
+.info-block-header {
+    @include font-header-2nd-level;
+    padding-bottom: 40px;
+}
+
+.info-block-col-text {
+    @include font-text-black;
+    padding-top: 10px;
+}
+
+//mobile 
+
+.info-block-wrapper-mobile {
+    @include wrap-content-mobile;
+}
+
+.info-block-header-mobile {
+    @include font-header-mobile-black;
+    padding-bottom: 20px;
+}
+
+.info-block-columns-molile {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-block-col-text-mobile {
+    @include font-text-mobile;
+    padding-top: 10px;
+}
+
+.info-block-col-mobile:not(:last-child) {
+    padding-bottom: 40px;
+}

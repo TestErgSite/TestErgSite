@@ -9,6 +9,10 @@ import { Popup } from "../Popup/Popup";
 import { useSelector, useDispatch } from "react-redux";
 import { PopupDemo } from "../PopupDemo/PopupDemo";
 import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
+import { InfoBlock } from "../InfoBlock/InfoBlock";
+import eye from "./images-block-7/eye.svg";
+import diagram from "./images-block-7/diagram.svg";
+import notes from "./images-block-7/notes.svg";
 
 export const CaseStudyPage = () => {
   const DefaultCaseStudyPage = useMediaQuery({ query: "(min-width: 429px)" });
@@ -31,8 +35,6 @@ export const CaseStudyPage = () => {
     2: false,
     3: false,
   });
-
-  console.log(checkboxesForSecondSlider)
 
   const renderCheckbox = (i, firstCheckboxes) => {
     if (firstCheckboxes) {
@@ -308,29 +310,25 @@ export const CaseStudyPage = () => {
                 <div className="hybrid-office-item hybrid-office-item-mobile">
                   <div className="approach-text-item-1 hybrid-mobile">
                     <b className="bold-mobile">
-                      {checkboxesForSecondSlider['0'] ? 1 : null}
-                      {checkboxesForSecondSlider['1'] ? 2 : null}
-                      {checkboxesForSecondSlider['2'] ? 3 : null}
-                      {checkboxesForSecondSlider['3'] ? 4 : null}
+                      {checkboxesForSecondSlider["0"] ? 1 : null}
+                      {checkboxesForSecondSlider["1"] ? 2 : null}
+                      {checkboxesForSecondSlider["2"] ? 3 : null}
+                      {checkboxesForSecondSlider["3"] ? 4 : null}
                     </b>
                     <div>
-                    {checkboxesForSecondSlider['0'] ? 
-                      <>{t("hybrid-office-text-item-1")}</>
-                      : null
-                    }
-                    {checkboxesForSecondSlider['1'] ? 
-                      <>{t("hybrid-office-text-item-2")}</>
-                      : null
-                    }
-                     {checkboxesForSecondSlider['2'] ? 
-                      <>{t("hybrid-office-text-item-3")}</>
-                      : null
-                    }
-                     {checkboxesForSecondSlider['3'] ? 
-                      <>{t("hybrid-office-text-item-4")}</>
-                      : null
-                    }
-                  </div> 
+                      {checkboxesForSecondSlider["0"] ? (
+                        <>{t("hybrid-office-text-item-1")}</>
+                      ) : null}
+                      {checkboxesForSecondSlider["1"] ? (
+                        <>{t("hybrid-office-text-item-2")}</>
+                      ) : null}
+                      {checkboxesForSecondSlider["2"] ? (
+                        <>{t("hybrid-office-text-item-3")}</>
+                      ) : null}
+                      {checkboxesForSecondSlider["3"] ? (
+                        <>{t("hybrid-office-text-item-4")}</>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
                 <div className="hybrid-checkboxes-mobile">
@@ -342,6 +340,19 @@ export const CaseStudyPage = () => {
               </div>
             </div>
           </div>
+
+          <div className="case-study-page-block-7-mobile">
+            <InfoBlock
+              header={t("what-if")}
+              col1={t("what-if-first")}
+              col2={t("what-if-second")}
+              col3={t("what-if-third")}
+              img1={eye}
+              img2={diagram}
+              img3={notes}
+            ></InfoBlock>
+          </div>
+
         </div>
       )}
 
@@ -612,6 +623,18 @@ export const CaseStudyPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="case-study-page-block-7">
+            <InfoBlock
+              header={t("what-if")}
+              col1={t("what-if-first")}
+              col2={t("what-if-second")}
+              col3={t("what-if-third")}
+              img1={eye}
+              img2={diagram}
+              img3={notes}
+            ></InfoBlock>
           </div>
         </div>
       )}
