@@ -1,27 +1,32 @@
 ## Запуск CRA - если требуется работать только с фронтендом
 
-```npm start
+```shell
+npm start
 ```
 
 ## Запуск лэндинга через сервер - если требуется работа с сервером
 
-```nodemon server.js
+```shell
+nodemon server.js
 ```
 
 ## Отслеживание изменений с сервера и авто билд (запускается после команды `nodemon server.js`)
 
-```npm run watch
+```shell
+npm run watch
 ```
 
 ## Работа с Докером (для обновления сайта на хостинге) 
 
 ### Билд докер образа
 
-``` docker build -t luvcrime/ergonza:[x.x.x] .
+```shell
+docker build -t luvcrime/ergonza:[x.x.x] .
 ```
 
 ### Пушим докер образ
-``` docker push luvcrime/ergonza:1.0.2
+```shell
+docker push luvcrime/ergonza:1.0.2
 ```
 
 ### Заходим на сайт sloppy.io и в settings меняем Image tag (это версионность которую мы указывали при билде -  x.x.x)
