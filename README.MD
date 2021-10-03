@@ -21,7 +21,7 @@ npm run watch
 ### Билд докер образа
 
 ```shell
-docker build -t luvcrime/ergonza:[x.x.x] .
+docker build -t luvcrime/ergonza:x.x.x .
 ```
 
 ### Пушим докер образ
