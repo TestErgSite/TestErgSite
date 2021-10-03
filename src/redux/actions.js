@@ -12,13 +12,14 @@ export const setStateToPromt = (currentElement, boolean) => {
     return {
       type: "HANDLE_POPUP",
       payload: {
-        isActive
+        isActive,
       },
     };
   }
 
   export const showPopupAsync = () => {
     return (dispatch) => {
+        dispatch(handlePopupDemo('none'));
         dispatch(handlePopup('visible'))
         setTimeout(() => {
           dispatch(handlePopup('animate'))
@@ -39,13 +40,14 @@ export const setStateToPromt = (currentElement, boolean) => {
     return {
       type: "HANDLE_POPUP_DEMO",
       payload: {
-        demo
+        demo,
       },
     };
   }
 
   export const showPopupDemoAsync = () => {
     return (dispatch) => {
+        dispatch(handlePopup('none'))
         dispatch(handlePopupDemo('visible'))
         setTimeout(() => {
           dispatch(handlePopupDemo('animate'))

@@ -26,14 +26,14 @@ const reducer = (state = initialState, action) => {
         case "HANDLE_POPUP":
           return {
             ...state,
-            isActive: action.payload.isActive
+            isActive: action.payload.isActive,
           };
 
         case "HANDLE_POPUP_DEMO":
           console.log(action.payload.demo)
           return {
             ...state,
-            demo: action.payload.demo
+            demo: action.payload.demo,
           };
 
     default:

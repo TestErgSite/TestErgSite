@@ -62,9 +62,6 @@ export const MenuMobile = () => {
                 <Link to="/platform">
                   <div className="platform mob-hov">{t("platform")}</div>
                 </Link>
-                <Link to="/about-app">
-                  <div className="about-app mob-hov">{t("about-app")}</div>
-                </Link>
                 <Link to="/study-page">
                   <div className="study-page mob-hov">{t("study-page")}</div>
                 </Link>
