@@ -467,6 +467,7 @@
 
 .case-study-page-block-9{
   width: 100%;
+  @include noselect;
 }
 
 .case-study-page-block-9-wrapper {

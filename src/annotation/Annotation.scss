@@ -1,5 +1,9 @@
 @import "../styles/styles.scss";
 
+.annotation-block {
+  @include noselect;
+}
+
 .annotation-block,
 .annotation-block-mobile {
   background: #f4f4f4;
