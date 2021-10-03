@@ -18,6 +18,7 @@
   transition: top 0.3s ease-out, opacity 0.3s ease-out;
   &.visible {
     visibility: visible;
+    z-index: 10000
   }
   &.animate {
     top: 150px;
@@ -196,6 +197,7 @@
   visibility: hidden;
   &.visible {
     visibility: visible;
+    z-index: 10000
   }
   &.animate {
     bottom: 0;
