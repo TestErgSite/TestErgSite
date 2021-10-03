@@ -19,7 +19,7 @@ endpoints.forEach((endpoint) => {
   });
 });
 //telegram request
-app.post('/telegram', ctrlTelegram.sendMsg);
+app.post('/telegram', ctrlTelegram.sendMsg); 
 //wrong endpoint
 app.use(function (req, res, next) {
     res.redirect("/", 302);

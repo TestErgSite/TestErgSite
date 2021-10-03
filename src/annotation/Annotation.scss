@@ -1,0 +1,46 @@
+@import "../styles/styles.scss";
+
+.annotation-block,
+.annotation-block-mobile {
+  background: #f4f4f4;
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  z-index: 12;
+}
+
+.arrow {
+    left: 47px;
+    display: inline-block;
+    position: relative;
+    height: 38px;
+    top: 10px;
+    z-index: 10;
+    overflow: hidden;
+    width: 37px;
+    background-image: url('./Annotation.svg');
+    background-position: -67px 0px;
+}
+
+.annotation-text {
+  @include font-header-2nd-level;
+  font-weight: 600;
+}
+
+.annatation-wrapper {
+  @include wrap-content;
+}
+
+//mobile
+
+.annatation-wrapper-mobile {
+  @include wrap-content-mobile;
+}
+
+.annotation-text-mobile {
+  @include font-header-mobile-black;
+}
+
+.annotation-block-mobile {
+  padding: 20px;
+}

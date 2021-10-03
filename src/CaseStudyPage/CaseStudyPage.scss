@@ -461,7 +461,97 @@
   padding: 40px 0;
 }
 
+.case-study-page-block-8 {
+  padding: 0 0 40px 0;
+}
+
+.case-study-page-block-9{
+  width: 100%;
+}
+
+.case-study-page-block-9-wrapper {
+  @include wrap-content;
+  @include font-text-black;
+  font-weight: 600;
+}
+
+.new-member-header {
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.new-member-img {
+  background-image: url(./images-block-9/waves.svg);
+  width: 460px;
+  height: 494px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.new-member {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.round {
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.list-item-text {
+  @include font-text-black;
+}
+
+.new-member-result {
+  margin-bottom: 50px;
+  width: 50%;
+}
+
 //mobile
+
+.new-member-img-mobile {
+  background-image: url('./images-block-9/waves-mobile.svg');
+  width: 331px;
+  height: 357px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.new-member-list-mobile {
+  margin-bottom: 30px;
+}
+
+.case-study-page-block-9-wrapper-mobile  {
+  @include wrap-content-mobile;
+}
+
+.new-member-header-mobile {
+  width: 100%;
+  margin-bottom: 30px;
+  @include font-header-mobile-black;
+}
+
+.new-member-result-mobile {
+  margin-bottom: 30px;
+  width: 100%;
+  @include font-header-mobile-black;
+}
+
+.new-member-mobile {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
 
 .case-study-page-block-7-mobile {
   padding: 20px 0;
@@ -851,4 +941,8 @@
 .standard-hcm-item-header-mobile,
 .ergonza-item-header-mobile {
   padding-bottom: 8px;
+}
+
+.case-study-page-block-8-mobile {
+  margin: 20px 0 40px 0;
 }

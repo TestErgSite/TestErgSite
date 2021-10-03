@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { PopupDemo } from "../PopupDemo/PopupDemo";
 import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
 import { InfoBlock } from "../InfoBlock/InfoBlock";
+import { Annotation } from "../annotation/Annotation";
 import eye from "./images-block-7/eye.svg";
 import diagram from "./images-block-7/diagram.svg";
 import notes from "./images-block-7/notes.svg";
@@ -353,6 +354,69 @@ export const CaseStudyPage = () => {
             ></InfoBlock>
           </div>
 
+          <div className="case-study-page-block-8-mobile">
+            <Annotation direction="left" text={t("annotation")}></Annotation>
+          </div>
+
+          <div className="case-study-page-block-9">
+            <div className="case-study-page-block-9-wrapper-mobile">
+              <div className="new-member-header-mobile">{t("new-member-header")}</div>
+              <div className="new-member-mobile">
+                <div className="new-member-list-mobile">
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-1")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-2")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-3")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-4")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-5")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-6")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-7")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-8")}
+                    </div>
+                  </div>
+                </div>
+                <div className="new-member-img-mobile"></div>
+              </div>
+              <div className="new-member-result-mobile">{t("new-member-result")}</div>
+            </div>
+          </div>
         </div>
       )}
 
@@ -635,6 +699,68 @@ export const CaseStudyPage = () => {
               img2={diagram}
               img3={notes}
             ></InfoBlock>
+          </div>
+          <div className="case-study-page-block-8">
+            <Annotation direction="left" text={t("annotation")}></Annotation>
+          </div>
+          <div className="case-study-page-block-9">
+            <div className="case-study-page-block-9-wrapper">
+              <div className="new-member-header">{t("new-member-header")}</div>
+              <div className="new-member">
+                <div className="new-member-list">
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-1")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-2")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-3")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-4")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-5")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-6")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-7")}
+                    </div>
+                  </div>
+                  <div className="list-item">
+                    <div className="round"></div>
+                    <div className="list-item-text">
+                      {t("list-item-text-8")}
+                    </div>
+                  </div>
+                </div>
+                <div className="new-member-img"></div>
+              </div>
+              <div className="new-member-result">{t("new-member-result")}</div>
+            </div>
           </div>
         </div>
       )}
