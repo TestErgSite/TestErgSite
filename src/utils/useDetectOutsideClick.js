@@ -10,20 +10,17 @@ export const useDetectOutsideClick = (el, initialState) => {
         setIsActive(!isActive);
       }
        // If the active element exists and is clicked on dropdown item
-      if(el.current.children) {
+      if(el.current) {
         setIsActive(!isActive);
       }
     };
-
     // If the item is active (ie open) then listen for clicks
     if (isActive) {
       window.addEventListener('click', pageClickEvent);
     }
-
     return () => {
       window.removeEventListener('click', pageClickEvent);
     }
-
   }, [isActive, el]);
   return [isActive, setIsActive];
 }

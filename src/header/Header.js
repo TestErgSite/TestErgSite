@@ -8,6 +8,7 @@ import { useMediaQuery } from "react-responsive";
 import { useSelector, useDispatch } from "react-redux";
 import { showPopupAsync, hidePopupAsync, showPopupDemoAsync } from "../redux/actions";
 import { scrollUp } from "../utils/scrollUp";
+import { DropDownMenu } from "../DropDownMenu/DropDownMenu";
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -98,6 +99,7 @@ export const Header = () => {
               >
                 {t("contact-us")}
               </div>
+              <DropDownMenu></DropDownMenu>
               <ChangeLanguageButton />
             </nav>
           </div>

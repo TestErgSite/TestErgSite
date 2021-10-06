@@ -20,6 +20,9 @@ export const App = () => {
         <Route path="/study-page" exact component={CaseStudyPage} />
         <Route path="/platform" exact component={Platfrom} />
         <Route path="/menu" exact component={MenuMobile} />
+        <Route path="/what-is-ergonza" exact component={HomePage} />
+        <Route path="/team" exact component={HomePage} />
+        <Route path="/methodology" exact component={HomePage} />
       </div>
     </Router>
   );

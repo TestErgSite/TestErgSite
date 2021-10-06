@@ -25,23 +25,26 @@ export const HowItWorksLayout = () => {
   const demo = useSelector((state) => state.demo);
   const dispatch = useDispatch();
 
-  const [timeoutId, setTimeoutId] = useState();
+  const stopTimeout = useCallback(() => {
+    clearTimeout(timeoutRef.current);
+  }, [])
+  const timeoutRef = useRef();
   const [activeCheckbox, setActiveCheckbox] = useState(1);
 
-  const stopTimeout = useCallback(() => {
-    clearTimeout(timeoutId);
-  }, [timeoutId]);
-
   const timeoutCallback = useCallback(() => {
-    const id = setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
+      console.log('timeout called')
       setActiveCheckbox((activeCheckbox) => activeCheckbox === 3 ? 1 : (activeCheckbox + 1));
       timeoutCallback();
     }, 5000);
-    setTimeoutId(id);
   }, [activeCheckbox, setActiveCheckbox]);
 
   useEffect(() => {
     timeoutCallback();
+    return () => {
+      console.log('stop timeout');
+      clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   const renderCheckbox = (i) => {

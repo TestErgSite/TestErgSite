@@ -70,6 +70,7 @@
   display: flex;
   justify-content: center;
   white-space: nowrap;
+  align-items: center;
 }
 
 .nav .platform,
@@ -92,6 +93,7 @@ svg {
 .demo,
 .contact-us,
 .study-page,
+.drop-down-wrapper,
 .home {
   height: 47px;
   padding: 0 10px 0 10px;
