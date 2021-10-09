@@ -33,13 +33,10 @@
 
 .annatation-wrapper {
   @include wrap-content;
+  padding: 0;
 }
 
 //mobile
-
-.annatation-wrapper-mobile {
-  @include wrap-content-mobile;
-}
 
 .annotation-text-mobile {
   @include font-header-mobile-black;

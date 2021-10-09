@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { CaseStudyPage } from "./CaseStudyPage/CaseStudyPage";
 import { Platfrom } from "./Platfrom/Platfrom";
 import { MenuMobile } from "./MenuMobile/MenuMobile";
+import { Team } from "./Team/Team";
+import { WhatIsErgonza } from "./WhatIsErgonza/WhatIsErgonza";
+import { Methodology } from "./Methodology/Methodology";
 
 import "./i18n";
 
@@ -20,9 +23,9 @@ export const App = () => {
         <Route path="/study-page" exact component={CaseStudyPage} />
         <Route path="/platform" exact component={Platfrom} />
         <Route path="/menu" exact component={MenuMobile} />
-        <Route path="/what-is-ergonza" exact component={HomePage} />
-        <Route path="/team" exact component={HomePage} />
-        <Route path="/methodology" exact component={HomePage} />
+        <Route path="/methodology" exact component={Methodology} />
+        <Route path="/what-is-ergonza" exact component={WhatIsErgonza} />
+        <Route path="/team" exact component={Team} />
       </div>
     </Router>
   );

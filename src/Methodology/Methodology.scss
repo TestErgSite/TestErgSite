@@ -1,0 +1,214 @@
+@import "../styles/styles.scss";
+
+.methodology,
+.methodology-mobile {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.methodology-block-1 {
+  @include wrap-content;
+  width: 1120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  box-sizing: border-box;
+  padding-top: 150px;
+  box-sizing: border-box;
+}
+
+.principles {
+  @include font-header-black;
+  margin-bottom: 40px;
+}
+
+.uniq {
+  @include font-header-2nd-level;
+  margin-bottom: 40px;
+}
+
+.platform-foundation-1,
+.platform-foundation-2,
+.platform-foundation-3,
+.platform-foundation-4 {
+  @include font-text-black;
+}
+
+.focus {
+  margin-bottom: 40px;
+}
+
+.platform-foundation-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.platform-foundation-img {
+  background-image: url("./images/block-1/block-1.svg");
+  width: 310px;
+  height: auto;
+  background-repeat: no-repeat;
+  margin-left: 30px;
+}
+
+.platform-foundation-text {
+  width: 60%;
+}
+
+.platform-foundation-text div {
+  margin-bottom: 20px;
+}
+
+.methodology-block-2 {
+  display: flex;
+  background-image: url("./images/block-2/image-block-2.png");
+  background-size: cover;
+  min-width: 100%;
+  height: 938px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.methodology-block-2-wrapper {
+  @include wrap-content;
+}
+
+.first-time {
+  @include font-header-white;
+  margin: 50px 0 40px 0;
+  width: 60%;
+}
+
+.first-time-text {
+  width: 80%;
+  & div {
+    @include font-text-white;
+    margin-bottom: 20px;
+  }
+}
+
+.methodology-block-3 {
+  margin: 40px 0;
+}
+
+.methodology-block-4 {
+  @include wrap-content;
+}
+
+.result {
+  @include font-header-2nd-level;
+}
+
+.result-text {
+  @include font-text-black;
+}
+
+.methodology-block-5 {
+  @include wrap-content;
+  position: relative;
+  &::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    width: 283px;
+    height: 283px;
+    border-radius: 50%;
+    top: 28px;
+    left: 59px;
+    display: flex;
+    cursor: default;
+  }
+}
+
+.kek {
+    opacity: 0.8;
+}
+
+.methodology-block-5-enn {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//mobile
+
+.methodology-block-1-mobile {
+  @include wrap-content-mobile;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  box-sizing: border-box;
+  padding-top: 50px;
+}
+
+.principles-mobile {
+  @include font-header-mobile-black;
+  margin-bottom: 40px;
+  line-height: 30px;
+}
+
+.uniq-mobile {
+  @include font-header-mobile-black-2nd-level;
+  margin-bottom: 40px;
+}
+
+.platform-foundation-text-mobile {
+  width: 100%;
+}
+
+.platform-foundation-text-mobile div {
+  margin-bottom: 20px;
+}
+
+.platform-foundation-img-mobile {
+  background-image: url("./images/block-1/block-1-mobile.svg");
+  width: 213px;
+  height: 330px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.methodology-block-2-mobile {
+  display: flex;
+  background-image: url("./images/block-2/image-block-2.png");
+  background-size: cover;
+  min-width: 100%;
+  height: 538px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.first-time-text-mobile {
+  width: 95%;
+  & div {
+    @include font-text-white-mobile;
+    margin-bottom: 20px;
+  }
+}
+
+.first-time-mobile {
+  @include font-header-mobile-white;
+  margin: 20px 0 20px 0;
+  width: 90%;
+}
+
+.methodology-block-3-mobile {
+  @include wrap-content-mobile;
+  margin: 20px 0;
+}
+
+.methodology-block-4-mobile {
+  @include wrap-content-mobile;
+}
+
+.result-mobile {
+  @include font-header-mobile-black-2nd-level;
+}
+
+.result-text-mobile {
+  @include font-text-mobile;
+}

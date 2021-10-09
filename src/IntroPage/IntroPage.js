@@ -23,8 +23,6 @@ export const IntroPage = () => {
   const demo = useSelector((state) => state.demo);
   const dispatch = useDispatch();
 
-  console.log('hello')
-
   return (
     <>
       {MobileIntroPage && (

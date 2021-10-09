@@ -945,5 +945,6 @@
 }
 
 .case-study-page-block-8-mobile {
-  margin: 20px 0 40px 0;
+  @include wrap-content-mobile;
+  margin: 20px 0 50px 0;
 }

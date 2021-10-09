@@ -6,6 +6,16 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
+  color: #000000;
+}
+
+@mixin font-header-mobile-black-2nd-level {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
 }
 
 @mixin font-header-mobile-white {
@@ -14,6 +24,7 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
+  color: #ffffff;
 }
 
 @mixin font-text-mobile {
@@ -22,21 +33,32 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+  color: #000000;
+}
+
+@mixin font-text-white-mobile {
+  font-family: "Proxima Nova Thin", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
 }
 
 @mixin wrap-content-mobile {
-  width: 85%;
-  padding: 0 20px 0 20px;
+  width: 100%;
+  padding: 0 24px 0 24px;
   font-family: "Proxima Nova Thin", sans-serif;
   margin: 0 auto;
   height: 100%;
+  box-sizing: border-box;
 }
 
 //default
 
 @mixin wrap-content {
   max-width: 1120px;
-  padding: 0 20px 0 20px;
+  padding: 0 24px 0 24px;
   font-family: "Proxima Nova Thin", sans-serif;
   margin: 0 auto;
   height: 100%;

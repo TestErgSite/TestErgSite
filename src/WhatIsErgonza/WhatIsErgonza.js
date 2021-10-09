@@ -1,0 +1,44 @@
+import "./WhatIsErgonza.scss";
+import React, { useEffect, useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import "../i18n";
+import { useMediaQuery } from "react-responsive";
+import { useSelector, useDispatch } from "react-redux";
+import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
+
+export const WhatIsErgonza = () => {
+  const { t } = useTranslation();
+
+  const DefaultWhatIsErgonza = useMediaQuery({ query: "(min-width: 429px)" });
+  const MobileWhatIsErgonza = useMediaQuery({ query: "(max-width: 428px)" });
+
+  const isActive = useSelector((state) => state.isActive);
+  const dispatch = useDispatch();
+
+  return (
+    <>
+      {MobileWhatIsErgonza && (
+        <div className="whatIsErgonza-mobile">
+          <div
+            className={`opacity ${isActive !== "none"  ? "overlay" : ""}`}
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+
+        </div>
+      )}
+
+      {DefaultWhatIsErgonza && (
+        <>
+          <div
+            className="opacity"
+            onClick={() => dispatch(hidePopupAsync())}
+          ></div>
+          <div className="whatIsErgonza-wrapper">
+
+          </div>
+        </>
+      )}
+  
+    </>
+  );
+};

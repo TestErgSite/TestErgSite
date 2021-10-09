@@ -1,5 +1,5 @@
 import "./MenuMobile.scss";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../i18n";
 import { Link } from "react-router-dom";
@@ -27,6 +27,12 @@ export const MenuMobile = () => {
   const url = useSelector((state) => state.url);
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
+
+  const [arrowUp, toggleArrow] = useState(false);
+
+  const toggle = () => {
+    toggleArrow(!arrowUp);
+  };
 
   return (
     <>
@@ -71,6 +77,34 @@ export const MenuMobile = () => {
                   onClick={() => dispatch(showPopupDemoAsync(demo))}
                 >
                   {t("demo")}
+                </div>
+
+                <div className="about-us-mobile mob-hov">
+                  <div className="about-us-arrow-mobile" onClick={toggle}>
+                    {t("about-us")}
+                    <span
+                      className={`about-us-arrow ${arrowUp ? "up" : ""}`}
+                    ></span>
+                  </div>
+                  <div
+                    className={`about-us-container-mobile ${
+                      arrowUp ? "" : "hidden"
+                    }`}
+                  >
+                    <Link to="/methodology">
+                      <div className="methodology mob-hov">
+                        {t("methodology")}
+                      </div>
+                    </Link>
+                    <Link to="/what-is-ergonza">
+                      <div className="what-is-ergonza mob-hov">
+                        {t("what-is-ergonza")}
+                      </div>
+                    </Link>
+                    <Link to="/team">
+                      <div className="team mob-hov">{t("team")}</div>
+                    </Link>
+                  </div>
                 </div>
               </nav>
             </div>

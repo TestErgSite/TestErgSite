@@ -106,7 +106,6 @@ export const Header = () => {
         </div>
         </>
       )}
-      
   
     </>
   );
