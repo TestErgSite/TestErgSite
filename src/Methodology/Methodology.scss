@@ -108,6 +108,8 @@
 
 .methodology-block-5 {
   @include wrap-content;
+  margin-top: 40px;
+  margin-bottom: 40px;
   position: relative;
   &::after {
     content: "";
@@ -116,22 +118,18 @@
     width: 283px;
     height: 283px;
     border-radius: 50%;
-    top: 28px;
-    left: 59px;
+    top: 102px;
+    left: 58px;
     display: flex;
     cursor: default;
   }
 }
 
-.kek {
-    opacity: 0.8;
+.testing {
+  @include font-header-2nd-level;
+  margin-bottom: 40px;
 }
 
-.methodology-block-5-enn {
-  &:hover {
-    cursor: pointer;
-  }
-}
 
 //mobile
 
@@ -211,4 +209,14 @@
 
 .result-text-mobile {
   @include font-text-mobile;
+}
+
+.methodology-block-5-mobile {
+  @include wrap-content-mobile;
+  margin: 20px 0;
+}
+
+.testing-mobile {
+  @include font-header-mobile-black-2nd-level;
+  margin-bottom: 20px;
 }

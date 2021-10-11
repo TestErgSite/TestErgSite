@@ -1,0 +1,10 @@
+.ennea-circle-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.ennea-circle {
+    &:hover {
+      cursor: pointer;
+    }
+  }
