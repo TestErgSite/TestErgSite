@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import "./EnneaCircle.scss";
 import { typesEn } from "../Data/TypeDescriptionEn";
 import { typesRu } from "../Data/TypeDescriptionRu";
+import { MyPagination } from "../Pagintaion/Pagination";
 
 export const EnneaCircle = () => {
   const { t } = useTranslation();
@@ -47,62 +48,44 @@ export const EnneaCircle = () => {
   });
 
   const [activeColor2, setActiveColor2] = useState(0);
+  const [pageNumber, setPage] = useState(0);
 
   let typeHeader = <div>{t(`type-header-${activeColor2}`)}</div>;
 
   console.log(i18n.language);
 
-  const getDescription = (typesEn, typesRu) => {
-    let description = [];
-    if (i18n.language === "en") {
-      if (Number(activeColor2) === 0) {
-        description.push(
-          <div className="ennea-circle-text" key={1}>
-            {t("type-0")}
-          </div>
-        );
-      } else {
-        typesEn.find((type) => {
-          if (Number(activeColor2) === type.id) {
-            return type.characteristic.forEach((char) => {
-              char.subcategories.map((sub) => {
-                console.log(sub.subcategory_name);
-                description.push(
-                  <React.Fragment key={sub.subcategory_name}>
-                    <div className="traits">{sub.subcategory_name}</div>
-                    <div className="ennea-circle-text">{sub.description}</div>
-                  </React.Fragment>
-                );
-              });
-            });
-          }
-        });
-      }
+  const getDescription = (page = 0) => {
+    let description = null;
+    const texts = i18n.language === "en" ? typesEn : typesRu;
+    if (Number(activeColor2) === 0) {
+      description = [
+        <div className="ennea-circle-text type-0-text" key={1}>
+          {t("type-0")}
+        </div>,
+      ];
     } else {
-      if (Number(activeColor2) === 0) {
-        description.push(
-          <div className="ennea-circle-text" key={1}>
-            {t("type-0")}
-          </div>
-        );
-      } else {
-        typesRu.find((type) => {
-          if (Number(activeColor2) === type.id) {
-            description = [];
-            return type.characteristic.forEach((char) => {
-              char.subcategories.map((sub) => {
-                description.push(
-                  <React.Fragment key={sub.subcategory_name}>
-                    <div className="traits">{sub.subcategory_name}</div>
-                    <div className="ennea-circle-text">{sub.description}</div>
-                  </React.Fragment>
-                );
-              });
-            });
-          }
+      const type = texts.find((type) => {
+        return Number(activeColor2) === type.id;
+      });
+      if (!type) return null;
+      const { characteristic } = type;
+      const pages = [];
+      characteristic.forEach(({ subcategories }) => {
+        subcategories.forEach(({ description, subcategory_name }) => {
+          pages.push({ subcategory_name, description });
         });
-      }
+      });
+      console.log(pages[page]);
+      if (!pages[page]) return "No such page";
+      const { subcategory_name, description: desc } = pages[page];
+      description = (
+        <React.Fragment key={subcategory_name}>
+          <div className="traits">{subcategory_name}</div>
+          <div className="ennea-circle-text">{desc}</div>
+        </React.Fragment>
+      );
     }
+
     return description;
   };
 
@@ -110,8 +93,8 @@ export const EnneaCircle = () => {
     <div className="ennea-block">
       {MobileEnneaCircle && (
         <>
-          <div className="type-header">{typeHeader}</div>
-          <div className="ennea-circle-wrapper">
+          <div className="type-header-mobile">{typeHeader}</div>
+          <div className="ennea-circle-wrapper-mobile">
             <div className="circle">
               <svg
                 onClick={(e) => clickHandler(e)}
@@ -215,9 +198,7 @@ export const EnneaCircle = () => {
                 />
               </svg>
             </div>
-            <div className="ennea-description" height="100%">
-              {getDescription(typesEn, typesRu)}
-            </div>
+            <div className="ennea-description-mobile">{getDescription(pageNumber)}</div>
           </div>
         </>
       )}
@@ -328,10 +309,11 @@ export const EnneaCircle = () => {
                 />
               </svg>
             </div>
-            <div className="ennea-description" height="100%">
-              {getDescription(typesEn, typesRu)}
-            </div>
+            <div className="ennea-description">{getDescription(pageNumber)}</div>
           </div>
+          {Number(activeColor2) !== 0 ? (
+            <MyPagination page={pageNumber} onPageChange={setPage} characteristicId={activeColor2} type="page" />
+          ) : null}
         </>
       )}
     </div>

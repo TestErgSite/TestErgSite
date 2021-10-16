@@ -15,6 +15,8 @@
   .ennea-circle-text {
       display: flex;
       @include font-text-black;
+      margin-top: 20px;
+      margin-bottom: 20px;
   }
 
   .circle {
@@ -40,15 +42,13 @@
     margin-bottom: 40px;
   }
 
-  .hidden {
-      display: none;
-  }
-
   .ennea-description {
+    overflow: auto;
     width: 50%;
     display: flex;
     flex-direction: column;
     @include noselect;
+    max-height: 720px;
   }
 
   .traits {
@@ -56,3 +56,36 @@
     @include noselect;
     font-weight: 600;
   }
+
+  .type-0-text {
+      margin: 0;
+  }
+
+  //mobile 
+
+  .ennea-circle-wrapper-mobile {
+    display: flex;
+    flex-direction: column;
+}
+
+.ennea-description-mobile {
+    @include font-text-mobile;
+    width: 100%;
+}
+
+.type-header-mobile {
+    @include font-header-mobile-black;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.ennea-description-mobile .ennea-circle-text {
+    @include font-text-mobile;
+  
+}
+
+.ennea-description-mobile .traits {
+    @include font-header-mobile-black-2nd-level;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

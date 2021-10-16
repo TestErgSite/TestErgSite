@@ -100,7 +100,6 @@ export const Methodology = () => {
           </div>
 
           <div className="methodology-block-5-mobile">
-            <div className="testing-mobile">{t("testing")}</div>
               <EnneaCircle />
             </div>
 
