@@ -185,7 +185,6 @@ export const Methodology = () => {
             </div>
 
             <div className="methodology-block-5">
-            <div className="testing">{t("testing")}</div>
               <EnneaCircle />
             </div>
           </div>

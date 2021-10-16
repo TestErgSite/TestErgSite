@@ -1,10 +1,58 @@
+@import "../styles/styles.scss";
+
 .ennea-circle-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .ennea-circle {
+    display: flex;
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .ennea-circle-text {
+      display: flex;
+      @include font-text-black;
+  }
+
+  .circle {
+    position: relative;
+    width: 50%;
+    &::after {
+        content: "";
+        background-color: transparent;
+        position: absolute;
+        width: 283px;
+        height: 283px;
+        border-radius: 50%;
+        top: 28px;
+        left: 34px;
+        display: flex;
+        cursor: default;
+      }
+  }
+
+  .type-header {
+    @include font-header-2nd-level;
+    @include noselect;
+    margin-bottom: 40px;
+  }
+
+  .hidden {
+      display: none;
+  }
+
+  .ennea-description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    @include noselect;
+  }
+
+  .traits {
+    @include font-text-black;
+    @include noselect;
+    font-weight: 600;
   }

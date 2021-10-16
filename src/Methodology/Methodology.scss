@@ -110,25 +110,8 @@
   @include wrap-content;
   margin-top: 40px;
   margin-bottom: 40px;
-  position: relative;
-  &::after {
-    content: "";
-    background-color: transparent;
-    position: absolute;
-    width: 283px;
-    height: 283px;
-    border-radius: 50%;
-    top: 102px;
-    left: 58px;
-    display: flex;
-    cursor: default;
-  }
 }
 
-.testing {
-  @include font-header-2nd-level;
-  margin-bottom: 40px;
-}
 
 
 //mobile
