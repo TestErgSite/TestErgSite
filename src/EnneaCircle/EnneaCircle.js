@@ -16,22 +16,25 @@ export const EnneaCircle = () => {
 
   const clickHandler = (e) => {
     const id = e.target.id;
-    setActiveColor({
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-      5: false,
-      6: false,
-      7: false,
-      8: false,
-      9: false,
-      0: false,
-      ...{
-        [id]: true,
-      },
-    });
-    setActiveColor2(id);
+    if(e.target.nodeName === 'path') {
+        setActiveColor({
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+          5: false,
+          6: false,
+          7: false,
+          8: false,
+          9: false,
+          0: false,
+          ...{
+            [id]: true,
+          },
+        });
+        setActiveColor2(id);
+    }
+    e.stopPropagation();
   };
 
   const [activeColor, setActiveColor] = useState({
@@ -97,6 +100,7 @@ export const EnneaCircle = () => {
           <div className="ennea-circle-wrapper-mobile">
             <div className="circle">
               <svg
+              pointer-events="all"
                 onClick={(e) => clickHandler(e)}
                 className="ennea-circle"
                 width="327"
@@ -198,7 +202,10 @@ export const EnneaCircle = () => {
                 />
               </svg>
             </div>
-            <div className="ennea-description-mobile">{getDescription(pageNumber)}</div>
+            <div className="ennea-description-mobile">{getDescription(pageNumber)}
+            {Number(activeColor2) !== 0 ? (
+            <MyPagination page={pageNumber} onPageChange={setPage} characteristicId={activeColor2} type="page" />
+          ) : null}</div>
           </div>
         </>
       )}
@@ -206,9 +213,9 @@ export const EnneaCircle = () => {
         <>
           <div className="type-header">{typeHeader}</div>
           <div className="ennea-circle-wrapper">
-            <div className="circle">
+            <div className="circle" onClick={(e) => clickHandler(e)}>
               <svg
-                onClick={(e) => clickHandler(e)}
+                
                 className="ennea-circle"
                 width="351"
                 height="359"
@@ -309,11 +316,14 @@ export const EnneaCircle = () => {
                 />
               </svg>
             </div>
-            <div className="ennea-description">{getDescription(pageNumber)}</div>
-          </div>
+            <div style={{width: "50%"}}>
+            <div className={`ennea-description ${activeColor2 === 0 ? 'change-height' : ''}`}>{getDescription(pageNumber)}
+            </div>
           {Number(activeColor2) !== 0 ? (
             <MyPagination page={pageNumber} onPageChange={setPage} characteristicId={activeColor2} type="page" />
           ) : null}
+          </div>
+          </div>
         </>
       )}
     </div>

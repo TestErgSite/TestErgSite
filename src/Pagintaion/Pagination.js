@@ -28,8 +28,8 @@ export const MyPagination = ({ characteristicId, onPageChange }) => {
       <Pagination
         count={pagesCount}
         shape="rounded"
-        siblingCount={10}
-        boundaryCount={10}
+        siblingCount={1}
+        boundaryCount={1}
         hidePrevButton
         hideNextButton
         onChange={(_, pageNumber) => onPageChange(pageNumber - 1)}
