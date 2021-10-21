@@ -5,6 +5,10 @@ import "../i18n";
 import { useMediaQuery } from "react-responsive";
 import { useSelector, useDispatch } from "react-redux";
 import { hidePopupAsync, hidePopupDemoAsync } from "../redux/actions";
+import { Header } from "../header/Header";
+import { Footer } from "../footer/Footer";
+import { PopupDemo } from "../PopupDemo/PopupDemo";
+import { Popup } from "../Popup/Popup";
 
 export const Team = () => {
   const { t } = useTranslation();
@@ -16,30 +20,43 @@ export const Team = () => {
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
 
+  const demo = useSelector((state) => state.demo);
+
   return (
     <>
-      {MobileTeam && (
-        <div className="team-mobile">
-          <div
-            className={`opacity ${isActive !== "none"  ? "overlay" : ""}`}
-            onClick={() => dispatch(hidePopupAsync())}
-          ></div>
+     <Header />
+    {MobileTeam && (
+      <div className="methodology-mobile">
+        <div
+          className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+          onClick={() => dispatch(hidePopupAsync())}
+        ></div>
+        {isActive === "visible" || "animate" ? <Popup /> : null}
 
-        </div>
-      )}
+        <div
+          className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+          onClick={() => dispatch(hidePopupDemoAsync())}
+        ></div>
+        {demo === "visible" || "animate" ? <PopupDemo /> : null}
+      </div>
+    )}
 
-      {DefaultTeam && (
-        <>
-          <div
-            className="opacity"
-            onClick={() => dispatch(hidePopupAsync())}
-          ></div>
-          <div className="team-wrapper">
+    {DefaultTeam && (
+      <div className="methodology">
+        <div
+          className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
+          onClick={() => dispatch(hidePopupAsync())}
+        ></div>
+        {isActive === "visible" || "animate" ? <Popup /> : null}
 
-          </div>
-        </>
-      )}
-  
-    </>
+        <div
+          className={`opacity ${demo !== "none" ? "overlay" : ""}`}
+          onClick={() => dispatch(hidePopupDemoAsync())}
+        ></div>
+        {demo === "visible" || "animate" ? <PopupDemo /> : null}
+      </div>
+    )}
+    <Footer />
+  </>
   );
 };

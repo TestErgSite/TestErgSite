@@ -100,6 +100,7 @@
 
 .result {
   @include font-header-2nd-level;
+  margin-bottom: 40px;
 }
 
 .result-text {
@@ -112,7 +113,228 @@
   margin-bottom: 40px;
 }
 
+.methodology-block-6 {
+  @include wrap-content;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
+.brands-img-1 {
+  background-image: url('./images/block-6/avon.png');
+  width: 230px;
+  height: 101px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.brands-img-2 {
+  background-image: url('./images/block-6/best_buy.png');
+  width: 180px;
+  height: 89px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.brands-img-3 {
+  background-image: url('./images/block-6/nossa.png');
+  width: 234px;
+  height: 103px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.brands-img-4 {
+  background-image: url('./images/block-6/beacco.png');
+  width: 260px;
+  height: 115px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.brends-header {
+  @include font-header-2nd-level;
+}
+
+.brends-images {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.highly-efficient-team-header,
+.validation-header,
+.model-main-header {
+  @include font-header-2nd-level;
+  margin-bottom: 40px;
+}
+
+.validation-header {
+  margin-top: 40px;
+}
+
+.methodology-block-7,
+.methodology-block-8,
+.methodology-block-9,
+.methodology-block-10,
+.methodology-block-11 {
+  @include wrap-content;
+}
+
+.methodology-block-9-wrapper {
+  @include font-text-black;
+}
+
+.model-header,
+.type-header-pers,
+.HPEI-header {
+  @include font-text-black;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+
+.highly-efficient-team-text,
+.validation-text {
+  @include font-text-black;
+  width: 50%;
+}
+
+.highly-efficient-team-img {
+  background-image: url('./images/block-7/block-7.svg');
+  width: 429px;
+  height: 457px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.validation-img {
+  background-image: url('./images/block-8/block-8.svg');
+  width: 429px;
+  height: 457px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-7-content-wrapper,
+.block-8-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.model-img {
+  background-image: url('./images/block-9/image-1.svg');
+  width: 120px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.type-img {
+  background-image: url('./images/block-9/image-2.svg');
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.HPEI-img {
+  background-image: url('./images/block-9/image-3.svg');
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.methodology-block-9-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.block-8-content-wrapper {
+  flex-direction: row-reverse;
+}
+
+.model,
+.type,
+.HPEI {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.model,
+.type {
+  padding-right: 27px;
+  box-sizing: border-box;
+}
+
+.barometer-craate-header {
+  @include font-header-2nd-level;
+  margin: 40px 0;
+}
+
+.barometer-craate-text {
+  @include font-text-black;
+}
+
+.methodology-block-11 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.margin-col {
+  margin-right: 9%;
+}
+
+.col-text-wrapper {
+  width: 45%;
+}
+
+.col-2-header,
+.col-1-header,
+.block-11-list-item,
+.col-text {
+  @include font-text-black;
+  & li {
+    @include font-text-black;
+  }
+}
+
+.block-11-result {
+  display: flex;
+  flex-direction: row;
+}
+
+.block-11-col-1,
+.block-11-col-2 {
+  width: 45%;
+}
+
+.block-11-col-1 {
+  margin-right: 9%;
+}
+
+.col-1-img {
+  background-image: url('./images/block-11/image-1.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 94px;
+  margin-bottom: 40px;
+}
+
+.col-2-img {
+  background-image: url('./images/block-11/image-2.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 40px;
+}
 
 //mobile
 

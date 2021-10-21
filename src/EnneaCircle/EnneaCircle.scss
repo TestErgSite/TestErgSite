@@ -17,6 +17,7 @@
       @include font-text-black;
       margin-top: 20px;
       margin-bottom: 20px;
+      flex-direction: column;
   }
 
 
@@ -109,5 +110,11 @@
 .ennea-description-mobile .traits {
     @include font-header-mobile-black-2nd-level;
     margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.circle-mobile {
+    position: relative;
+    width: 100%;
     margin-bottom: 10px;
 }

@@ -63,7 +63,12 @@ export const EnneaCircle = () => {
     if (Number(activeColor2) === 0) {
       description = [
         <div className="ennea-circle-text type-0-text" key={1}>
-          {t("type-0")}
+          <span style={{marginBottom: '10px'}}>{t("type-0-0")}</span>
+          <span style={{marginBottom: '10px'}}>{t("type-0-1")}</span>
+          <span style={{marginBottom: '10px'}}>{t("type-0-2")}</span>
+          <span style={{marginBottom: '10px'}}>{t("type-0-3")}</span>
+          <span style={{marginBottom: '10px'}}>{t("type-0-4")}</span>
+          <span>{t("type-0-5")}</span>
         </div>,
       ];
     } else {
@@ -98,9 +103,8 @@ export const EnneaCircle = () => {
         <>
           <div className="type-header-mobile">{typeHeader}</div>
           <div className="ennea-circle-wrapper-mobile">
-            <div className="circle">
+            <div className="circle-mobile">
               <svg
-              pointer-events="all"
                 onClick={(e) => clickHandler(e)}
                 className="ennea-circle"
                 width="327"
