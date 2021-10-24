@@ -12,13 +12,13 @@ export const Annotation = (props) => {
           <div className={`arrow ${props.direction === "right" ? "rotate" : "" }`}></div>
 
           <div className="annotation-block">
-            <div className="annotation-text">{props.text}</div>
+            <div className={`annotation-text ${props.noWeight ? 'noWeight' : ''}`}>{props.text}</div>
           </div>
         </div>
       )}
       {MobileAnnotation && (
         <div className="annatation-wrapper-mobile">
-           <div className="arrow"></div>
+           <div className={`arrow ${props.noArrow ? 'no-arrow' : ''}`}></div>
 
           <div className="annotation-block-mobile">
             <div className="annotation-text-mobile">{props.text}</div>

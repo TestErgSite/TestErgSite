@@ -18,7 +18,7 @@
     display: inline-block;
     position: relative;
     height: 38px;
-    top: 10px;
+    top: 13px;
     z-index: 10;
     overflow: hidden;
     width: 37px;
@@ -31,9 +31,17 @@
   font-weight: 600;
 }
 
+.noWeight {
+  font-weight: 400;
+}
+
 .annatation-wrapper {
   @include wrap-content;
   padding: 0;
+}
+
+.rotate {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 //mobile
@@ -44,4 +52,8 @@
 
 .annotation-block-mobile {
   padding: 20px;
+}
+
+.no-arrow {
+  display: none;
 }

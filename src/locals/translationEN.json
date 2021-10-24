@@ -158,7 +158,7 @@
     "validation-text-3": "The first studies on discriminant validity (showing the originality of HPEI in comparison with other personality assessment tools), as well as on predictive reliability (determining the stability of the obtained indicators now and after some time), were presented at the 14th Congress of the European Association for Organizational Psychology in May 2009.",
     "validation-text-4": "Multiple hierarchical regression analysis found that HPEI is significantly more accurate in predicting the behavior of subjects, as well as their interests and roles in the team, compared to the Big Five and MBTI tools.",
     "model-main-header": "Enneagram model",
-    "model-header": "Enneagram model",
+    "model-header": "Enneagram",
     "type-header": "The type of a person's personality",
     "HPEI-header": "The HPEI questionnaire",
     "model-text": "Is unique and has no analogies with other popular personality assessment systems.",
@@ -193,7 +193,27 @@
     "col-2-text-3": "In addition to the relationship barometer, on our platform you will find specific advice on how to better interact with a boss / subordinate / colleague of this personality type, including remotely. For example:",
     "col-2-text-4": "How best to manage and motivate an employee of this type",
     "col-2-text-5": "What is the easiest way to get the approval of this type of boss",
-    "col-2-text-6": "How to support your colleague or give him feedback."
+    "col-2-text-6": "How to support your colleague or give him feedback.",
+    "methodology-and-testing-header": "MBTI methodology and testing",
+    "methodology-and-testing-text-0": "x",
+    "methodology-and-testing-text-1": "x",
+    "scales-header-0-0": "",
+    "scales-header-1-0": "x",
+    "scales-text-0-0": "x",
+    "scales-text-1-0": "x",
+    "scales-header-0-1": "x",
+    "scales-header-1-1": "x",
+    "scales-text-0-1": "x",
+    "scales-text-1-1": "x",
+    "methodology-and-testing-text-2": "x",
+    "methodology-and-testing-text-3": "x",
+    "methodology-and-testing-text-4": "x",
+    "methodology-and-testing-text-5": "x",
+    "authors-header": "Authors and developers of the methodology",
+    "author-0": "Philippe Halin",
+    "author-1": "Jacques Premont",
+    "author-text-0": "x",
+    "author-text-1": "x"
 }
 
 

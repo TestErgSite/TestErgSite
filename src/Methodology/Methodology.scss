@@ -120,35 +120,39 @@
 }
 
 .brands-img-1 {
-  background-image: url('./images/block-6/avon.png');
+  background-image: url("./images/block-6/avon.png");
   width: 230px;
   height: 101px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .brands-img-2 {
-  background-image: url('./images/block-6/best_buy.png');
+  background-image: url("./images/block-6/best_buy.png");
   width: 180px;
   height: 89px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .brands-img-3 {
-  background-image: url('./images/block-6/nossa.png');
+  background-image: url("./images/block-6/nossa.png");
   width: 234px;
   height: 103px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .brands-img-4 {
-  background-image: url('./images/block-6/beacco.png');
+  background-image: url("./images/block-6/beacco.png");
   width: 260px;
   height: 115px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .brends-header {
@@ -164,9 +168,15 @@
 
 .highly-efficient-team-header,
 .validation-header,
-.model-main-header {
+.model-main-header,
+.authors-header {
   @include font-header-2nd-level;
   margin-bottom: 40px;
+}
+
+.authors-wrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .validation-header {
@@ -177,8 +187,14 @@
 .methodology-block-8,
 .methodology-block-9,
 .methodology-block-10,
-.methodology-block-11 {
+.methodology-block-11,
+.methodology-block-12,
+.methodology-block-13 {
   @include wrap-content;
+}
+
+.methodology-block-13 {
+  margin-bottom: 40px;
 }
 
 .methodology-block-9-wrapper {
@@ -193,7 +209,6 @@
   margin: 10px 0;
 }
 
-
 .highly-efficient-team-text,
 .validation-text {
   @include font-text-black;
@@ -201,7 +216,7 @@
 }
 
 .highly-efficient-team-img {
-  background-image: url('./images/block-7/block-7.svg');
+  background-image: url("./images/block-7/block-7.svg");
   width: 429px;
   height: 457px;
   background-position: center;
@@ -209,7 +224,7 @@
 }
 
 .validation-img {
-  background-image: url('./images/block-8/block-8.svg');
+  background-image: url("./images/block-8/block-8.svg");
   width: 429px;
   height: 457px;
   background-position: center;
@@ -224,7 +239,7 @@
 }
 
 .model-img {
-  background-image: url('./images/block-9/image-1.svg');
+  background-image: url("./images/block-9/image-1.svg");
   width: 120px;
   height: 100px;
   background-position: center;
@@ -232,7 +247,7 @@
 }
 
 .type-img {
-  background-image: url('./images/block-9/image-2.svg');
+  background-image: url("./images/block-9/image-2.svg");
   width: 100px;
   height: 100px;
   background-position: center;
@@ -240,7 +255,7 @@
 }
 
 .HPEI-img {
-  background-image: url('./images/block-9/image-3.svg');
+  background-image: url("./images/block-9/image-3.svg");
   width: 100px;
   height: 100px;
   background-position: center;
@@ -271,7 +286,8 @@
   box-sizing: border-box;
 }
 
-.barometer-craate-header {
+.barometer-craate-header,
+.methodology-and-testing-header {
   @include font-header-2nd-level;
   margin: 40px 0;
 }
@@ -319,7 +335,7 @@
 }
 
 .col-1-img {
-  background-image: url('./images/block-11/image-1.svg');
+  background-image: url("./images/block-11/image-1.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 100px;
@@ -328,12 +344,52 @@
 }
 
 .col-2-img {
-  background-image: url('./images/block-11/image-2.svg');
+  background-image: url("./images/block-11/image-2.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 90px;
   height: 90px;
   margin-bottom: 40px;
+}
+
+.methodology-and-testing-text-0,
+.methodology-and-testing-text-1,
+.methodology-and-testing-text-2,
+.methodology-and-testing-text-3,
+.methodology-and-testing-text-4,
+.methodology-and-testing-text-5,
+.scales-header,
+.scales-text {
+  margin-bottom: 20px;
+  @include font-text-black;
+}
+
+.scales-header {
+  font-weight: 600;
+}
+
+.methodology-and-testing-scales {
+  display: flex;
+  flex-direction: row;
+}
+
+.scales-col-1,
+.scales-col-2,
+.authors-col-1,
+.authors-col-2 {
+  width: 45%;
+  @include font-text-black;
+}
+
+.scales-col-1,
+.authors-col-1 {
+  margin-right: 9%;
+}
+
+.author-0,
+.author-1,
+.author {
+  font-weight: 600;
 }
 
 //mobile
@@ -350,13 +406,13 @@
 
 .principles-mobile {
   @include font-header-mobile-black;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   line-height: 30px;
 }
 
 .uniq-mobile {
   @include font-header-mobile-black-2nd-level;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .platform-foundation-text-mobile {
@@ -399,11 +455,6 @@
   width: 90%;
 }
 
-.methodology-block-3-mobile {
-  @include wrap-content-mobile;
-  margin: 20px 0;
-}
-
 .methodology-block-4-mobile {
   @include wrap-content-mobile;
 }
@@ -416,12 +467,200 @@
   @include font-text-mobile;
 }
 
-.methodology-block-5-mobile {
+.methodology-block-5-mobile,
+.methodology-block-3-mobile,
+.methodology-block-6-mobile,
+.methodology-block-7-mobile,
+.methodology-block-8-mobile,
+.methodology-block-9-mobile,
+.methodology-block-10-mobile,
+.methodology-block-11-mobile,
+.methodology-block-12-mobile,
+.methodology-block-13-mobile {
   @include wrap-content-mobile;
   margin: 20px 0;
 }
 
-.testing-mobile {
+.brands-img-1-mobile {
+  background-image: url("./images/block-6/avon.png");
+  width: 90px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.brands-img-2-mobile {
+  background-image: url("./images/block-6/best_buy.png");
+  width: 80px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.brands-img-3-mobile {
+  background-image: url("./images/block-6/nossa.png");
+  width: 90px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.brands-img-4-mobile {
+  background-image: url("./images/block-6/beacco.png");
+  width: 90px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.brends-images-mobile {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.block-7-content-wrapper-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.block-8-content-wrapper-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.validation-text-mobile,
+.highly-efficient-team-text-mobile,
+.HPEI-text-mobile,
+.model-text-mobile,
+.type-text-mobile,
+.barometer-craate-text-mobile {
+  @include font-text-mobile;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.methodology-block-11-mobile li,
+.platform-foundation-text-mobile div,
+.annotation-text-mobile {
+  @include font-text-mobile;
+}
+
+.annotation-text-mobile {
+  font-weight: 600;
+}
+
+.methodology-block-9-wrapper-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.model-mobile,
+.HPEI-mobile,
+.type-mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.highly-efficient-team-img-mobile {
+  background-image: url("./images/block-7/block-7.svg");
+  width: 100%;
+  height: 277px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.validation-img-mobile {
+  background-image: url("./images/block-8/block-8.svg");
+  width: 100%;
+  height: 345px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.methodology-block-9-mobile {
+  margin-top: 0;
+}
+
+.HPEI-img-mobile,
+.model-img-mobile,
+.type-img-mobile {
+  margin-bottom: 10px;
+}
+
+.methodology-block-11-mobile div,
+.methodology-block-12-mobile div,
+.author-mobile {
+  @include font-text-mobile;
+}
+
+.author-mobile {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.methodology-block-11-mobile .barometer-craate-header-mobile,
+.methodology-block-12-mobile .methodology-and-testing-header-mobile,
+.methodology-block-12-mobile .scales-header {
+  @include font-header-mobile-black-2nd-level;
+  margin-bottom: 20px !important;
+}
+
+.block-11-col-1-mobile {
+  width: 100%;
+}
+
+.block-11-result-mobile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.col-text-wrapper-mobile {
+  width: 100%;
+}
+
+.testing-mobile,
+.brends-header-mobile,
+.highly-efficient-team-header-mobile,
+.validation-header-mobile,
+.model-main-header-mobile,
+.type-header-pers-mobile,
+.model-header-mobile,
+.HPEI-header-mobile,
+.authors-header-mobile {
   @include font-header-mobile-black-2nd-level;
   margin-bottom: 20px;
+}
+
+.methodology-and-testing-scales-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+.scales-col-2-mobile,
+.scales-col-1-mobile {
+  width: 100%;
+}
+
+.checkboxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.authors-col-1-mobile,
+.authors-col-2-mobile {
+  width: 100%;
 }
