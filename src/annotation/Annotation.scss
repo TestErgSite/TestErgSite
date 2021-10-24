@@ -11,6 +11,7 @@
   padding: 30px;
   border-radius: 20px;
   z-index: 12;
+  display: flex;
 }
 
 .arrow {
@@ -26,9 +27,31 @@
     background-position: -67px 0px;
 }
 
-.annotation-text {
+.annotation-text,
+.annotation-text-2 {
   @include font-header-2nd-level;
   font-weight: 600;
+}
+
+.WithDivider {
+  @include font-text-black;
+  width: 48%;
+}
+
+
+.annotation-block-WithDivider {
+  justify-content: space-between;
+}
+
+.annotation-text-2 {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    border: 1px solid  #DADADA;;
+    height: 273px;
+    left: -28px;
+  }
 }
 
 .noWeight {
