@@ -1,0 +1,149 @@
+.barometer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 334px;
+}
+
+.barometer-candidate {
+  top: -30px;
+  width: 491px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barometer-circle {
+  width: 210px;
+  height: 206px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  opacity: 0.2;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 99px;
+}
+
+.barometer-circle-candidate {
+  left: 59px;
+}
+
+.start-procent {
+  position: absolute;
+  top: 210px;
+  left: 35px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.end-procent {
+  position: absolute;
+  top: 210px;
+  left: 270px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.barometer-arrow {
+  height: 21px;
+  width: 140px;
+  background-image: url("./icons/arrow.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  margin: 0;
+  position: absolute;
+  top: 184px;
+  left: 100px;
+  transform: rotate(0deg);
+  transition: transform 0.8s;
+}
+
+.barometer-arrow-procent {
+  position: absolute;
+  top: 210px;
+  left: 158px;
+  color: #f2f5fa;
+  font-size: 14px;
+}
+
+.score-diff {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;;
+  border-radius: 50%;
+}
+
+.score-diff-wrapper {
+  position: relative;
+  width: 210px;
+  top: 50px;
+  height: 10px;
+  transform: rotate(0deg);
+}
+
+.indicator {
+  display: flex;
+  position: absolute;
+  height: 0;
+  width: 3px;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.barometer-indicator {
+  display: flex;
+  position: absolute;
+  transform-origin: 143px 4.5px;
+  left: 23px;
+  top: 198px;
+  height: 3px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 30px solid #ff404b;
+  width: 0;
+  opacity: 0.15;
+}
+
+.red {
+  border-left-color: #ff404b;
+}
+
+.yellow {
+  border-left-color: #fff38b;
+}
+
+.green {
+  border-left-color: #68f8b0;
+}
+
+.highlighted::before {
+  content: "";
+  width: 100px;
+  height: 26px;
+  position: relative;
+  top: -11px;
+  left: -16px;
+  transform: rotate(88deg);
+}
+
+.highlighted.red::before {
+  box-shadow: 0px 0px 5px 1.3px #ed3b48;
+}
+
+.highlighted.green::before {
+  box-shadow: 0px 0px 5px 1.3px #68f8b0;
+}
+
+.highlighted.yellow::before {
+  box-shadow: 0px 0px 5px 1.3px #fff38b;
+}
+
+.score-diff-wrapper-candidate {
+  top: 192px;
+  position: absolute;
+  left: 56px;
+}

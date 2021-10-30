@@ -2,6 +2,7 @@
 
 .annotation-block {
   @include noselect;
+  max-height: 350px;
 }
 
 .annotation-block,
@@ -49,7 +50,7 @@
     content: '';
     position: absolute;
     border: 1px solid  #DADADA;;
-    height: 273px;
+    height: 100%;
     left: -28px;
   }
 }
@@ -67,6 +68,10 @@
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
+.annotation-header {
+  font-weight: 600;
+}
+
 //mobile
 
 .annotation-text-mobile {
@@ -79,4 +84,8 @@
 
 .no-arrow {
   display: none;
+}
+
+.annotation-header {
+  font-weight: 600;
 }

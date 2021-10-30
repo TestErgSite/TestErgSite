@@ -30,6 +30,8 @@
   background: linear-gradient(117.43deg, #5d7072, #42484e);
   z-index: 2;
   border-radius: 0 0 40px 40px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .team-list {
@@ -38,4 +40,24 @@
   width: 100%;
   justify-content: center;
   margin-top: 80px;
+}
+
+.barometer-header {
+ @include font-header-mobile-white;
+}
+
+.barometer-procent {
+  font-weight: 600;
+  font-size: 58px;
+}
+
+.barometer-experts {
+  font-size: 20px;
+}
+
+.footer-text-wrapper {
+  @include font-text-white-mobile;
+  height: 100%;
+  line-height: 55px;
+  padding-top: 40px;
 }

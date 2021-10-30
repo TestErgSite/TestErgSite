@@ -10,12 +10,9 @@ import { Footer } from "../footer/Footer";
 import { PopupDemo } from "../PopupDemo/PopupDemo";
 import { Popup } from "../Popup/Popup";
 import { UserSnippet } from "../Snippet/Snippet";
-import Sasha from "./images/Sasha.png";
-import Anya from "./images/Anya.png";
-import Dima from "./images/Dima.png";
-import Nikita from "./images/Nikita.png";
-import Igor from "./images/Igor.png";
 import { Annotation } from "../annotation/Annotation";
+import { teamRu, teamEn } from "../Data/TeamData";
+import { Barometer } from '../barometer/Barometer';
 
 export const Team = () => {
   const { t } = useTranslation();
@@ -29,83 +26,7 @@ export const Team = () => {
 
   const demo = useSelector((state) => state.demo);
 
-  const teamRu = [
-    {
-      id: 0,
-      first_name: "Дмитрий",
-      last_name: "Шихов",
-      position: "Founder & CEO",
-      avatar: Dima,
-    },
-    {
-      id: 1,
-      irst_name: "Игорь",
-      last_name: "Булах",
-      position: " Head of Product",
-      avatar: Igor,
-    },
-    {
-      id: 2,
-      first_name: "Александра",
-      last_name: "Островская",
-      position: "Head of Frontend Dvt.",
-      avatar: Sasha,
-    },
-    {
-      id: 3,
-      irst_name: "Никита",
-      last_name: "Деревянко",
-      position: "Head of Backend Dvt.",
-      avatar: Nikita,
-    },
-    {
-      id: 4,
-      first_name: "Анна",
-      last_name: "Карпенко",
-      position: "Head of Methodology",
-      avatar: Anya,
-    },
-  ];
-
-  const teamEn = [
-    {
-      id: 0,
-      first_name: "Dmitry",
-      last_name: "Shikhov",
-      position: "Founder & CEO",
-      avatar: Dima,
-    },
-    {
-      id: 1,
-      first_name: "Igor",
-      last_name: "Bulah",
-      position: " Head of Product",
-      avatar: Igor,
-    },
-    {
-      id: 2,
-      first_name: "Aleksandra",
-      last_name: "Ostrovskaia",
-      position: "Head of Frontend Dvt.",
-      avatar: Sasha,
-    },
-    {
-      id: 3,
-      first_name: "Nikita",
-      last_name: "Derevianko",
-      position: "Head of Backend Dvt.",
-      avatar: Nikita,
-    },
-    {
-      id: 4,
-      first_name: "Anna",
-      last_name: "Karpenko",
-      position: "Head of Methodology",
-      avatar: Anya,
-    },
-  ];
-
-  const team = i18n.language === "en" ? teamRu : teamEn;
+  const team = i18n.language === "en" ? teamEn : teamRu;
 
   const getTeam = () => {
     const teamArrray = [];
@@ -136,7 +57,7 @@ export const Team = () => {
     });
   };
 
-  console.log(selected[0])
+  console.log(selected);
 
   return (
     <>
@@ -177,16 +98,31 @@ export const Team = () => {
               <div className="team-list" onClick={(e) => getDescription(e)}>
                 {getTeam()}
               </div>
-              {selected[0] && (
-              <Annotation
-                direction="right"
-                noWeight
-                text={t("methodology-block-3-text")}
-                text2={t("methodology-block-3-text")}
-                width={1023}
-              />
-              )}
-              <div className="team-platform-footer"></div>
+              {team.map((person, id) => {
+                if (selected[id]) {
+                  const direction = id >= 3 ? "right" : "left";
+                  return (
+                    <Annotation
+                      id={id}
+                      direction={direction}
+                      noWeight
+                      header={{id: person.ennea.id, procent: person.ennea.procent}}
+                      text={person.ennea.personDesciption}
+                      text2={person.ennea.professionalSkillsDescription}
+                      width={1023}
+                      key={person.first_name}
+                    />
+                  );
+                } else return null;
+              })}
+              <div className="team-platform-footer">
+                <Barometer />
+                <div className="footer-text-wrapper">
+                  <div className="barometer-header">{t("barometer-header")}</div>
+                  <div className="barometer-procent">92%</div>
+                  <div className="barometer-experts">{t("barometer-experts")}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
