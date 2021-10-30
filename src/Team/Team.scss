@@ -44,15 +44,19 @@
 
 .barometer-header {
  @include font-header-mobile-white;
+ padding-bottom: 7px;
 }
 
 .barometer-procent {
   font-weight: 600;
   font-size: 58px;
+  padding-bottom: 7px;
 }
 
 .barometer-experts {
   font-size: 20px;
+  line-height: 30px;
+  padding-bottom: 7px;
 }
 
 .footer-text-wrapper {
@@ -60,4 +64,5 @@
   height: 100%;
   line-height: 55px;
   padding-top: 40px;
+  width: 53%;
 }
