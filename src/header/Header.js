@@ -99,7 +99,7 @@ export const Header = () => {
               >
                 {t("contact-us")}
               </div>
-              <DropDownMenu></DropDownMenu>
+              <DropDownMenu footer={false}/>
               <ChangeLanguageButton />
             </nav>
           </div>

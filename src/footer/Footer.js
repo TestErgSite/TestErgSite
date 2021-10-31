@@ -15,6 +15,7 @@ import {
   showPopupDemoAsync,
   hidePopupDemoAsync,
 } from "../redux/actions";
+import { DropDownMenu } from "../DropDownMenu/DropDownMenu";
 
 export const Footer = () => {
   const DefaultFooter = useMediaQuery({ query: "(min-width: 429px)" });
@@ -152,6 +153,10 @@ export const Footer = () => {
                 <Link to="/" onClick={scrollUp}>
                   <div className="logo">
                     <div className="logo-footer"></div>
+                    <div className="participant">
+                      <div className="star-hub-text">{t("star-hub-text")}</div>
+                      <div className="star-hub-img"></div>
+                    </div>
                   </div>
                 </Link>
                 <div
@@ -182,29 +187,26 @@ export const Footer = () => {
                       {t("platform")}
                     </div>
                   </Link>
-                  <Link to="/about-app" onMouseOver={() => handleHover(3)}>
-                    <div
-                      className={`about-app about-app-footer ${
-                        navs[3] ? "" : "hovered"
-                      }`}
-                      onClick={scrollUp}
-                    >
-                      {t("about-app")}
-                    </div>
-                  </Link>
                   <Link
                     to="/study-page"
                     onClick={scrollUp}
-                    onMouseOver={() => handleHover(4)}
+                    onMouseOver={() => handleHover(3)}
                   >
                     <div
                       className={`study-page study-page-footer ${
-                        navs[4] ? "" : "hovered"
+                        navs[3] ? "" : "hovered"
                       }`}
                     >
                       {t("study-page")}
                     </div>
                   </Link>
+                  <div
+                  onMouseOver={() => handleHover(4)}
+                  className={`about-us-drow-down about-us-drow-down-footer ${
+                    navs[4] ? "" : "hovered"
+                  }`}>
+              <DropDownMenu footer={true}/>
+                  </div>
                 </div>
                 <div className="copyright">
                   <div className="ergonza-year">

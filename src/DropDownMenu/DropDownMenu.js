@@ -5,7 +5,7 @@ import { useDetectOutsideClick } from "../utils/useDetectOutsideClick";
 import "./DropDownMenu.scss";
 import { Link } from "react-router-dom";
 
-export const DropDownMenu = () => {
+export const DropDownMenu = (props) => {
   const { t, i18n } = useTranslation();
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
@@ -17,7 +17,7 @@ export const DropDownMenu = () => {
         <div>{t("about-us")}</div>
       </div>
       <div
-        className={`drop-down-menu ${isActive ? "active" : ""}`}
+        className={`drop-down-menu ${isActive ? "active" : ""} ${props.footer ? "drop-down-footer-active" : ""}` }
         ref={dropdownRef}
       >
         <Link

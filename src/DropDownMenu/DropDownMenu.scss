@@ -2,6 +2,9 @@
 
 .drop-down-wrapper {
   position: relative;
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .change-lang-footer {
@@ -36,6 +39,10 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
+}
+
+.drop-down-footer-active {
+  top: 30px;
 }
 
 .drop-down-menu.active {
