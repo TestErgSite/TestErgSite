@@ -10,6 +10,7 @@
 
 .what-is-ergonza-wrapper {
   @include wrap-content;
+  @include noselect;
 }
 
 .what-is-ergonza-header {
@@ -74,4 +75,26 @@
 .approach-text-item-3.ergonza-text,
 .approach-text-item-4.ergonza-text {
     margin-top: 260px;
+}
+
+.approach-img-1.border {
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.approach-img-2.border {
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.approach-img-3.border {
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 2px solid white;
+}
+
+.approach-img-4.border {
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 2px solid white;
 }

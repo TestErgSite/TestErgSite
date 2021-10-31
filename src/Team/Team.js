@@ -57,8 +57,6 @@ export const Team = () => {
     });
   };
 
-  console.log(selected);
-
   return (
     <>
       <Header />
