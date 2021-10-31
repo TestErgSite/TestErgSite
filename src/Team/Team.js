@@ -106,6 +106,7 @@ export const Team = () => {
                       id={id}
                       direction={direction}
                       noWeight
+                      divider
                       header={{id: person.ennea.id, procent: person.ennea.procent}}
                       text={person.ennea.personDesciption}
                       text2={person.ennea.professionalSkillsDescription}

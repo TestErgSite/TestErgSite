@@ -109,7 +109,7 @@ export const Methodology = () => {
             </div>
             <div className="platform-foundation-img-mobile"></div>
             <div className="focus">
-              <Annotation direction="left" text={t("focus")}></Annotation>
+              <Annotation direction="left" divider={false} text={t("focus")}></Annotation>
             </div>
           </div>
           <div className="methodology-block-2-mobile">
@@ -138,6 +138,7 @@ export const Methodology = () => {
           </div>
           <div className="methodology-block-3-mobile">
             <Annotation
+            divider={false}
               direction="left"
               text={t("methodology-block-3-text")}
             ></Annotation>
@@ -322,6 +323,7 @@ export const Methodology = () => {
                   direction="right"
                   noWeight
                   noArrow
+                  divider={false}
                   text={t("author-text-0")}
                 ></Annotation>
               </div> 
@@ -333,6 +335,7 @@ export const Methodology = () => {
                   direction="right"
                   noWeight
                   noArrow
+                  divider={false}
                   text={t("author-text-1")}
                 ></Annotation>
               </div>
@@ -382,7 +385,7 @@ export const Methodology = () => {
                 <div className="platform-foundation-img"></div>
               </div>
               <div className="focus">
-                <Annotation direction="left" text={t("focus")}></Annotation>
+                <Annotation direction="left" divider={false} text={t("focus")}></Annotation>
               </div>
             </div>
 
@@ -414,6 +417,7 @@ export const Methodology = () => {
             <div className="methodology-block-3">
               <Annotation
                 direction="left"
+                divider={false}
                 text={t("methodology-block-3-text")}
               ></Annotation>
             </div>
@@ -591,6 +595,7 @@ export const Methodology = () => {
                   <Annotation
                     direction="right"
                     noWeight
+                    divider={false}
                     text={t("author-text-0")}
                   ></Annotation>
                 </div>
@@ -599,6 +604,7 @@ export const Methodology = () => {
                   <Annotation
                     direction="right"
                     noWeight
+                    divider={false}
                     text={t("author-text-1")}
                   ></Annotation>
                 </div>

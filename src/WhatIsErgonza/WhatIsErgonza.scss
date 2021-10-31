@@ -1,0 +1,77 @@
+@import "../styles/styles.scss";
+
+.what-is-ergonza {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 150px;
+}
+
+.what-is-ergonza-wrapper {
+  @include wrap-content;
+}
+
+.what-is-ergonza-header {
+  @include font-header-black;
+  margin-bottom: 40px;
+}
+
+.what-is-ergonza-text {
+  @include font-text-black;
+  margin-bottom: 40px;
+}
+
+.span-header {
+    @include font-header-2nd-level;
+    margin-bottom: 20px;
+}
+
+.what-is-ergonza-images {
+  position: relative;
+  z-index: 10;
+}
+
+.ergonza-logo {
+  position: absolute;
+  background-image: url("./images/logo_white_transparent\ 1\ \(1\).png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 215px;
+  height: 178px;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ergonza-text {
+    display: flex;
+    flex-direction: column;
+    @include font-text-black;
+    font-size: 20px!important;
+    align-items: self-start;
+    margin-top: 50px;
+    width: 60%;
+}
+
+.ergonza-logo-circle {
+    position: absolute;
+    width: 253px;
+    height: 253px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 50%;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.approach-text-item-3.ergonza-text,
+.approach-text-item-4.ergonza-text {
+    margin-top: 260px;
+}

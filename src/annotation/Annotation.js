@@ -9,7 +9,6 @@ export const Annotation = (props) => {
   const MobileAnnotation = useMediaQuery({ query: "(max-width: 428px)" });
 
   const { t } = useTranslation();
-  const { i18n } = useTranslation();
 
   let translate;
   if(props.id === 0) {
@@ -34,9 +33,9 @@ export const Annotation = (props) => {
   const styles = {
     transform: `translate(${translate}px, 0) matrix(${matrix})`
   };
-  console.log(props.direction, styles)
+  console.log(props.divider === false, props.divider, 'divider')
 
-  const annotationWithoutDivider = (
+  const annotationWithoutDivider = () => (
     <>
       {DefaultAnnotation && (
         <div className="annatation-wrapper">
@@ -65,9 +64,9 @@ export const Annotation = (props) => {
     </>
   );
 
-  const annotationWithDivider = (
+  const annotationWithDivider = () => (
     <>
-      {DefaultAnnotation && (
+      {DefaultAnnotation &&  (
         <div className="annatation-wrapper" style={{width: props.width}}>
           <div
             className={`arrow ${props.direction === "right" ? "rotate" : ""}`}
@@ -78,7 +77,7 @@ export const Annotation = (props) => {
             <div
               className={`annotation-text WithDivider ${props.noWeight ? "noWeight" : ""}`}
             >
-            <div className="annotation-header"><span>{props.header.id}</span><span>{props.header.procent}</span></div>
+            <div className="annotation-header"><span className="annotation-id">{props.header.id}</span><span>{props.header.procent}</span></div>
               {props.text}
             </div>
             <div
@@ -90,7 +89,7 @@ export const Annotation = (props) => {
           </div>
         </div>
       )}
-      {MobileAnnotation && (
+      {MobileAnnotation &&  (
         <div className="annatation-wrapper-mobile">
             <div className="annotation-header">{props.header}</div>
           <div className={`arrow ${props.noArrow ? "no-arrow" : ""}`}></div>
@@ -107,7 +106,6 @@ export const Annotation = (props) => {
         </div>
       )}
     </>
-  );
-
-  return props.text2 ? annotationWithDivider : annotationWithoutDivider;
+      );
+  return !props.divider ? annotationWithoutDivider() : annotationWithDivider();
 };

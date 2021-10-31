@@ -2,7 +2,6 @@
 
 .annotation-block {
   @include noselect;
-  max-height: 350px;
 }
 
 .annotation-block,
@@ -13,6 +12,10 @@
   border-radius: 20px;
   z-index: 12;
   display: flex;
+}
+
+.annotation-id {
+  margin-right: 12px;
 }
 
 .arrow {
@@ -30,7 +33,7 @@
 
 .annotation-text,
 .annotation-text-2 {
-  @include font-header-2nd-level;
+  @include font-text-black;
   font-weight: 600;
 }
 
