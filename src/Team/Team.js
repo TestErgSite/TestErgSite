@@ -73,7 +73,50 @@ export const Team = () => {
             onClick={() => dispatch(hidePopupDemoAsync())}
           ></div>
           {demo === "visible" || "animate" ? <PopupDemo /> : null}
-          <div className="team-header">{t("team-header")}</div>
+
+          <div className="team-wrapper team-wrapper-mobile">
+            <div className="team-header">{t("team-header")}</div>
+            <div className="platform-wrapper  platform-wrapper-mobile">
+              <div className="team-list" onClick={(e) => getDescription(e)}>
+                {selected[0] && (
+                  <>
+                  <UserSnippet user={team[0]} />
+                  <Annotation
+                      id={team[0].id}
+                      direction="right"
+                      noWeight
+                      divider
+                      header={{id: team[0].ennea.id, procent: team[0].ennea.procent}}
+                      text={team[0].ennea.personDesciption}
+                      text2={team[0].ennea.professionalSkillsDescription}
+                      width={292}
+                    />
+                    </>
+                )}
+                {selected[1] && (
+                  <UserSnippet user={team[1]} />
+                )}
+                {selected[2] && (
+                  <UserSnippet user={team[2]} />
+                )}
+                {selected[3] && (
+                  <UserSnippet user={team[3]} />
+                )}
+                {selected[4] && (
+                  <UserSnippet user={team[0]} />
+                )}
+              </div>
+              <div className="team-platform-footer">
+                <Barometer />
+                <div className="footer-text-wrapper">
+                  <div className="barometer-header">{t("barometer-header")}</div>
+                  <div className="barometer-procent">92%</div>
+                  <div className="barometer-experts">{t("barometer-experts")}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       )}
 

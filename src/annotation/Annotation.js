@@ -33,7 +33,7 @@ export const Annotation = (props) => {
   const styles = {
     transform: `translate(${translate}px, 0) matrix(${matrix})`
   };
-  console.log(props.divider === false, props.divider, 'divider')
+  console.log(props)
 
   const annotationWithoutDivider = () => (
     <>
@@ -90,19 +90,24 @@ export const Annotation = (props) => {
         </div>
       )}
       {MobileAnnotation &&  (
-        <div className="annatation-wrapper-mobile">
-            <div className="annotation-header">{props.header}</div>
+        <div className="annatation-wrapper-mobile" style={{width: props.width}}>
           <div className={`arrow ${props.noArrow ? "no-arrow" : ""}`}></div>
 
-          <div className="annotation-block-mobile">
-            <div className="annotation-text-mobile">{props.text}</div>
-          </div>
-          <div className="annotation-header">{t("profSkills")}</div>
+          <div className="annotation-block-mobile  annotation-block-WithDivider">
           <div
+              className={`annotation-text WithDivider ${props.noWeight ? "noWeight" : ""}`}
+            >
+            <div className="annotation-header"><span className="annotation-id">{props.header.id}</span><span>{props.header.procent}</span></div>
+              {props.text}
+            </div>
+
+           <div
               className={`annotation-text-2  WithDivider ${props.noWeight ? "noWeight" : ""}`}
             >
+            <div className="annotation-header">{t("profSkills")}</div>
               {props.text2}
             </div>
+        </div>
         </div>
       )}
     </>

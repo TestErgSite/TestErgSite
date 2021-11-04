@@ -42,6 +42,10 @@
   box-sizing: border-box;
 }
 
+.about-us-container-mobile .what-is-ergonza-mobile {
+  padding-top: 0;
+}
+
 .menu-nav-wrapper-mobile {
   @include wrap-content-mobile;
   font-family: "Proxima Nova Thin", sans-serif;

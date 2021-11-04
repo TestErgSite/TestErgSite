@@ -24,8 +24,8 @@
 }
 
 .span-header {
-    @include font-header-2nd-level;
-    margin-bottom: 20px;
+  @include font-header-2nd-level;
+  margin-bottom: 20px;
 }
 
 .what-is-ergonza-images {
@@ -47,54 +47,96 @@
 }
 
 .ergonza-text {
-    display: flex;
-    flex-direction: column;
-    @include font-text-black;
-    font-size: 20px!important;
-    align-items: self-start;
-    margin-top: 50px;
-    width: 60%;
+  display: flex;
+  flex-direction: column;
+  @include font-text-black;
+  font-size: 20px !important;
+  align-items: self-start;
+  margin-top: 50px;
+  width: 60%;
 }
 
 .ergonza-logo-circle {
-    position: absolute;
-    width: 253px;
-    height: 253px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ffffff;
-    box-sizing: border-box;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 50%;
-    z-index: 10;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+  position: absolute;
+  width: 253px;
+  height: 253px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 50%;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .approach-text-item-3.ergonza-text,
 .approach-text-item-4.ergonza-text {
-    margin-top: 260px;
+  margin-top: 260px;
 }
 
 .approach-img-1.border {
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .approach-img-2.border {
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .approach-img-3.border {
-    border-right: 1px solid white;
-    border-top: 1px solid white;
-    border-bottom: 2px solid white;
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  border-bottom: 2px solid white;
 }
 
 .approach-img-4.border {
-    border-left: 1px solid white;
-    border-top: 1px solid white;
-    border-bottom: 2px solid white;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-bottom: 2px solid white;
+}
+
+//mobile
+.what-is-ergonza-wrapper-mobile {
+  @include wrap-content-mobile;
+}
+
+.what-is-ergonza-page-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.erg-p {
+  max-height: 180px;
+}
+
+.ergonza-logo-mobile {
+  background-size: contain;
+  width: 113px;
+  height: 93px;
+}
+
+.ergonza-logo-circle-mobile {
+  z-index: 10000;
+  top: 100%;
+  width: 133px;
+  height: 133px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.erg-checkboxes-mobile {
+  bottom: 95px;
+  justify-content: space-between;
+  display: flex;
+  width: 172px;
+}
+
+.what-is-ergonza-mobile-block {
+  margin-bottom: 90px;
 }

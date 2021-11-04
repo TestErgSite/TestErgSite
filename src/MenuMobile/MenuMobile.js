@@ -97,7 +97,7 @@ export const MenuMobile = () => {
                       </div>
                     </Link>
                     <Link to="/what-is-ergonza">
-                      <div className="what-is-ergonza mob-hov">
+                      <div className="what-is-ergonza what-is-ergonza-mobile mob-hov">
                         {t("what-is-ergonza")}
                       </div>
                     </Link>

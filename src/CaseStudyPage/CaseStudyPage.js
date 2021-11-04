@@ -262,7 +262,7 @@ export const CaseStudyPage = () => {
                       <div className="ergonza-item-header-mobile ergonza-assessment">
                         {t("ergonza-assessment")}
                       </div>
-                      <div className="ergonza-text-mobile ergonza-text ergonza-text-item-2">
+                      <div className="ergonza-text-mobile ergonza-text-item-2">
                         {t("ergonza-text-item-2")}
                       </div>
                     </div>
@@ -271,7 +271,7 @@ export const CaseStudyPage = () => {
                       <div className="ergonza-item-header-mobile ergonza-recruitment">
                         {t("ergonza-recruitment")}
                       </div>
-                      <div className="ergonza-text-mobile ergonza-text ergonza-text-item-3">
+                      <div className="ergonza-text-mobile ergonza-text-item-3">
                         {t("ergonza-text-item-3")}
                       </div>
                     </div>
@@ -280,7 +280,7 @@ export const CaseStudyPage = () => {
                       <div className="ergonza-item-header-mobile ergonza-education">
                         {t("ergonza-education")}
                       </div>
-                      <div className="ergonza-text-mobile ergonza-text ergonza-text-item-4">
+                      <div className="ergonza-text-mobile ergonza-text-item-4">
                         {t("ergonza-text-item-4")}
                       </div>
                     </div>
@@ -388,25 +388,25 @@ export const CaseStudyPage = () => {
                     </div>
                   </div>
                   <div className="list-item">
-                    <div className="round"></div>
+                  <div width="30px"><div className="round"></div></div>
                     <div className="list-item-text">
                       {t("list-item-text-5")}
                     </div>
                   </div>
                   <div className="list-item">
-                    <div className="round"></div>
+                  <div width="30px"><div className="round"></div></div>
                     <div className="list-item-text">
                       {t("list-item-text-6")}
                     </div>
                   </div>
                   <div className="list-item">
-                    <div className="round"></div>
+                  <div width="30px"><div className="round"></div></div>
                     <div className="list-item-text">
                       {t("list-item-text-7")}
                     </div>
                   </div>
                   <div className="list-item">
-                    <div className="round"></div>
+                    <div width="30px"><div className="round"></div></div>
                     <div className="list-item-text">
                       {t("list-item-text-8")}
                     </div>

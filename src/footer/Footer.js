@@ -107,6 +107,7 @@ export const Footer = () => {
                   </Link>
 
                   <ChangeLanguageButton footerMobile={true} />
+              
                 </div>
                 <div className="logo-wrapper-mobile">
                   <Link to="/">
