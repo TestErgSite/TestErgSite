@@ -609,7 +609,7 @@ export const CaseStudyPage = () => {
                     <div className="ergonza-item-header ergonza-structure">
                       {t("ergonza-structure")}
                     </div>
-                    <div className="ergonza-text ergonza-text-item-1">
+                    <div className=" ergonza-text-item-1">
                       {t("ergonza-text-item-1")}
                     </div>
                   </div>
@@ -618,7 +618,7 @@ export const CaseStudyPage = () => {
                     <div className="ergonza-item-header ergonza-assessment">
                       {t("ergonza-assessment")}
                     </div>
-                    <div className="ergonza-text ergonza-text ergonza-text-item-2">
+                    <div className=" ergonza-text-item-2">
                       {t("ergonza-text-item-2")}
                     </div>
                   </div>
@@ -627,7 +627,7 @@ export const CaseStudyPage = () => {
                     <div className="ergonza-item-header ergonza-recruitment">
                       {t("ergonza-recruitment")}
                     </div>
-                    <div className="ergonza-text ergonza-text ergonza-text-item-3">
+                    <div className=" ergonza-text-item-3">
                       {t("ergonza-text-item-3")}
                     </div>
                   </div>
@@ -636,7 +636,7 @@ export const CaseStudyPage = () => {
                     <div className="ergonza-item-header ergonza-education">
                       {t("ergonza-education")}
                     </div>
-                    <div className="ergonza-text ergonza-text ergonza-text-item-4">
+                    <div className=" ergonza-text-item-4">
                       {t("ergonza-text-item-4")}
                     </div>
                   </div>

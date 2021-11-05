@@ -65,11 +65,11 @@ export const WhatIsErgonza = () => {
     });
   };
 
-  const renderCheckbox = (i, firstCheckboxes) => {
+  const renderCheckbox = (i) => {
     return (
       <>
         <div
-          onClick={() => onCheckboxClick(i, firstCheckboxes)}
+          onClick={() => onCheckboxClick(i)}
           className={
             "comparison-checkbox white " + (checkboxes[i] ? "active" : "")
           }
@@ -170,10 +170,10 @@ export const WhatIsErgonza = () => {
                   </div>
                 </div>
                 <div className="hybrid-checkboxes-mobile erg-checkboxes-mobile">
-                  {renderCheckbox(0, false)}
-                  {renderCheckbox(1, false)}
-                  {renderCheckbox(2, false)}
-                  {renderCheckbox(3, false)}
+                  {renderCheckbox(0)}
+                  {renderCheckbox(1)}
+                  {renderCheckbox(2)}
+                  {renderCheckbox(3)}
                 </div>
               </div>
             </div>

@@ -23,7 +23,6 @@
   border-radius: 40px;
   width: 1160px;
   height: 954px;
-  margin-bottom: 40px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -51,8 +50,8 @@
 }
 
 .barometer-header {
- @include font-header-mobile-white;
- padding-bottom: 7px;
+  @include font-header-mobile-white;
+  padding-bottom: 7px;
 }
 
 .barometer-procent {
@@ -75,13 +74,58 @@
   width: 53%;
 }
 
-//mobile 
+//mobile
 
-.team-wrapper {
+.team-wrapper-mobile {
   @include wrap-content-mobile;
+  padding-bottom: 40px;
 }
 
 .platform-wrapper-mobile {
   width: 100%;
   height: 100%;
+}
+
+.team-list-mobile {
+  padding-bottom: 460px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-header-mobile {
+  @include font-header-mobile-black;
+  padding-top: 40px;
+}
+
+.team-platform-footer-mobile {
+  flex-direction: column-reverse;
+  height: 430px;
+}
+
+.footer-text-wrapper-mobile {
+  @include wrap-content-mobile;
+  width: 100%;
+  padding-top: 20px;
+  height: 40%;
+}
+
+.checkboxes-erginza-mobile {
+  position: absolute;
+  top: 190px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.barometer-header-mobile,
+.barometer-procent-mobile {
+  @include font-header-mobile-white;
+  line-height: 44px;
+}
+
+.barometer-header-mobile {
+  padding-bottom: 0;
+}
+
+.barometer-experts-mobile {
+  @include font-text-white-mobile;
 }

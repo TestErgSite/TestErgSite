@@ -135,8 +135,12 @@
   justify-content: space-between;
   display: flex;
   width: 172px;
+  z-index: 999;
 }
 
 .what-is-ergonza-mobile-block {
-  margin-bottom: 90px;
+  padding-bottom: 90px;
+  padding-top: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
 }

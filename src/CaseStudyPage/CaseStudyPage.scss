@@ -517,6 +517,16 @@
   width: 50%;
 }
 
+.ru .ergonza-text-item-1,
+.ru .ergonza-text-item-2,
+.ru .ergonza-text-item-3,
+.ru .ergonza-text-item-4,
+.ru .ergonza-text-item-5 {
+  @include font-text-black;
+  font-size: 18px;
+  line-height: 30px;
+}
+
 //mobile
 
 .new-member-img-mobile {

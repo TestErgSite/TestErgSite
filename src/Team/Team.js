@@ -35,6 +35,7 @@ export const Team = () => {
     });
     return teamArrray;
   };
+
   const [selected, setSelected] = useState({
     0: true,
     1: false,
@@ -57,6 +58,34 @@ export const Team = () => {
     });
   };
 
+  const renderCheckbox = (i) => {
+    return (
+      <>
+        <div
+          onClick={() => onCheckboxClick(i)}
+          className={
+            "comparison-checkbox white " + (selected[i] ? "active" : "")
+          }
+        >
+          <div className="comparison-checkbox__inner comparison-checkbox__inner_white"></div>
+        </div>
+      </>
+    );
+  };
+
+  const onCheckboxClick = (i) => {
+    setSelected({
+      0: false,
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+      ...{
+        [i]: true,
+      },
+    });
+  };
+
   return (
     <>
       <Header />
@@ -75,43 +104,46 @@ export const Team = () => {
           {demo === "visible" || "animate" ? <PopupDemo /> : null}
 
           <div className="team-wrapper team-wrapper-mobile">
-            <div className="team-header">{t("team-header")}</div>
+            <div className="team-header team-header-mobile">{t("team-header")}</div>
             <div className="platform-wrapper  platform-wrapper-mobile">
-              <div className="team-list" onClick={(e) => getDescription(e)}>
-                {selected[0] && (
-                  <>
-                  <UserSnippet user={team[0]} />
-                  <Annotation
-                      id={team[0].id}
+
+            <div className="checkboxes checkboxes-erginza-mobile">
+              {renderCheckbox(0)}
+              {renderCheckbox(1)}
+              {renderCheckbox(2)}
+              {renderCheckbox(3)}
+              {renderCheckbox(4)}
+            </div>
+
+              <div className="team-list team-list-mobile" onClick={(e) => getDescription(e)}>
+              {team.map((person, id) => {
+                if (selected[id]) {
+                  return (
+                    <>
+                    <UserSnippet user={team[id]} />
+                    <Annotation
+                      id={id}
                       direction="right"
                       noWeight
                       divider
-                      header={{id: team[0].ennea.id, procent: team[0].ennea.procent}}
-                      text={team[0].ennea.personDesciption}
-                      text2={team[0].ennea.professionalSkillsDescription}
+                      mbtiColor={person.ennea.mbtiColor}
+                      header={{id: person.ennea.id, procent: person.ennea.procent}}
+                      text={person.ennea.personDesciption}
+                      text2={person.ennea.professionalSkillsDescription}
+                      key={person.first_name}
                       width={292}
                     />
                     </>
-                )}
-                {selected[1] && (
-                  <UserSnippet user={team[1]} />
-                )}
-                {selected[2] && (
-                  <UserSnippet user={team[2]} />
-                )}
-                {selected[3] && (
-                  <UserSnippet user={team[3]} />
-                )}
-                {selected[4] && (
-                  <UserSnippet user={team[0]} />
-                )}
+                  );
+                } else return null;
+              })}
               </div>
-              <div className="team-platform-footer">
+              <div className="team-platform-footer team-platform-footer-mobile">
                 <Barometer />
-                <div className="footer-text-wrapper">
-                  <div className="barometer-header">{t("barometer-header")}</div>
-                  <div className="barometer-procent">92%</div>
-                  <div className="barometer-experts">{t("barometer-experts")}</div>
+                <div className="footer-text-wrapper footer-text-wrapper-mobile">
+                  <div className="barometer-header barometer-header-mobile">{t("barometer-header")}</div>
+                  <div className="barometer-procent barometer-procent-mobile">92%</div>
+                  <div className="barometer-experts barometer-experts-mobile">{t("barometer-experts")}</div>
                 </div>
               </div>
             </div>
@@ -148,6 +180,7 @@ export const Team = () => {
                       direction={direction}
                       noWeight
                       divider
+                      mbtiColor={person.ennea.mbtiColor}
                       header={{id: person.ennea.id, procent: person.ennea.procent}}
                       text={person.ennea.personDesciption}
                       text2={person.ennea.professionalSkillsDescription}
@@ -158,7 +191,7 @@ export const Team = () => {
                 } else return null;
               })}
               <div className="team-platform-footer">
-                <Barometer />
+                <Barometer/>
                 <div className="footer-text-wrapper">
                   <div className="barometer-header">{t("barometer-header")}</div>
                   <div className="barometer-procent">92%</div>

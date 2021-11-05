@@ -77,7 +77,7 @@ export const Annotation = (props) => {
             <div
               className={`annotation-text WithDivider ${props.noWeight ? "noWeight" : ""}`}
             >
-            <div className="annotation-header"><span className="annotation-id">{props.header.id}</span><span>{props.header.procent}</span></div>
+            <div className="annotation-header"><span className="annotation-id">{props.header.id}</span><span>{props.header.procent}</span><div className="mbti-circle-id" style={{backgroundColor: `${props.mbtiColor}`}}></div></div>
               {props.text}
             </div>
             <div
@@ -91,20 +91,22 @@ export const Annotation = (props) => {
       )}
       {MobileAnnotation &&  (
         <div className="annatation-wrapper-mobile" style={{width: props.width}}>
-          <div className={`arrow ${props.noArrow ? "no-arrow" : ""}`}></div>
+          <div
+            className={`arrow ${props.direction === "right" ? "rotate" : ""}`}
+          ></div>
 
           <div className="annotation-block-mobile  annotation-block-WithDivider">
           <div
-              className={`annotation-text WithDivider ${props.noWeight ? "noWeight" : ""}`}
+              className={`annotation-text annotation-text-mobile-wrapper WithDivider ${props.noWeight ? "noWeight" : ""}`}
             >
-            <div className="annotation-header"><span className="annotation-id">{props.header.id}</span><span>{props.header.procent}</span></div>
+            <div className="annotation-header annotation-header-mobile"><span className="annotation-id">{props.header.id}</span><span>{props.header.procent}</span><div className="mbti-circle-id" style={{backgroundColor: `${props.mbtiColor}`}}></div></div>
               {props.text}
             </div>
 
            <div
-              className={`annotation-text-2  WithDivider ${props.noWeight ? "noWeight" : ""}`}
+              className={` annotation-text-2-mobile annotation-text-mobile-wrapper WithDivider ${props.noWeight ? "noWeight" : ""}`}
             >
-            <div className="annotation-header">{t("profSkills")}</div>
+            <div className="annotation-header annotation-header-mobile-2 annotation-header-mobile">{t("profSkills")}</div>
               {props.text2}
             </div>
         </div>

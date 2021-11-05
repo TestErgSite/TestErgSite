@@ -195,6 +195,7 @@
 
 .methodology-block-13 {
   padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 .methodology-block-9-wrapper {
@@ -479,6 +480,11 @@
 .methodology-block-13-mobile {
   @include wrap-content-mobile;
   margin: 20px 0;
+}
+
+.methodology-block-13-mobile {
+  margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .brands-img-1-mobile {
