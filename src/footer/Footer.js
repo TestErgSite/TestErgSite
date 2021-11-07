@@ -80,19 +80,52 @@ export const Footer = () => {
               </div>
 
               <div className="participant-mobile">
-                <div className="participant-text-mobile">{t("participant-text")}</div>
-                <div style={{display: "flex", justifyContent: "space-between", width: "100%"}}>
-                <a
-                  href="https://starthub.moscow/starthub_moscow/"
-                  target="blank"
-                >
-                  <div className="star-hub-img"></div>
-                  </a>
-                  <div className="star-hub-img"></div>
-                  <div className="star-hub-img"></div>
-             </div>
-              </div>
+                <div className="participant-text-mobile">
+                  {t("participant-text")}
+                </div>
 
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                    flexWrap: "wrap"
+                  }}>
+                  <a
+                        href="https://starthub.moscow/starthub_moscow/"
+                        target="blank"
+                      >
+                        <div className="star-hub-img footer-particapent-mobile-imgs"></div>
+                      </a>
+                      <a href="https://a2121.ru/" target="blank">
+                        <div className="arch-img footer-particapent-mobile-imgs"></div>
+                      </a>
+                      <a href="https://asi.ru/news/184058/" target="blank">
+                        <div className="asi-img footer-particapent-mobile-imgs"></div>
+                      </a>
+
+                      <a
+                        href="https://i.moscow/tech_contests/saasfactory"
+                        target="blank"
+                      >
+                        <div className="msk-img footer-particapent-mobile-imgs"></div>
+                      </a>
+                   
+                      <a href="https://molpred.moscow/" target="blank">
+                        <div className="bw-img footer-particapent-mobile-imgs"></div>
+                      </a>
+
+                      <a href="https://ed2.tech/" target="blank">
+                        <div className="ed-img footer-particapent-mobile-imgs"></div>
+                      </a>
+                      <a
+                        href="https://whitenightstartup.ru/whitenightstartup2021"
+                        target="blank"
+                      >
+                        <div className="wns-img footer-particapent-mobile-imgs"></div>
+                      </a>
+                      </div>
+              </div>
             </div>
             <div className="footer-info-mobile">
               <div className="footer-info-wrapper-mobile">
@@ -170,31 +203,54 @@ export const Footer = () => {
                 </Link>
 
                 <div className="participant">
-                <div className="participant-text">
-                      {t("participant-text")}
+                  <div className="participant-text">
+                    {t("participant-text")}
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      width: "100%",
+                      marginRight: "20px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <div style={{display:"flex", marginBottom: "20px"}}>
+                      <a
+                        href="https://starthub.moscow/starthub_moscow/"
+                        target="blank"
+                      >
+                        <div className="star-hub-img"></div>
+                      </a>
+                      <a href="https://a2121.ru/" target="blank">
+                        <div className="arch-img"></div>
+                      </a>
+                      <a href="https://asi.ru/news/184058/" target="blank">
+                        <div className="asi-img"></div>
+                      </a>
+
+                      <a
+                        href="https://i.moscow/tech_contests/saasfactory"
+                        target="blank"
+                      >
+                        <div className="msk-img"></div>
+                      </a>
                     </div>
-                    <div style={{display: "flex", justifyContent: "space-between", width: "100%", marginRight: "20px"}}>
-                  <a
-                    href="https://starthub.moscow/starthub_moscow/"
-                    target="blank"
-                  >
-                   
-                    <div className="star-hub-img"></div>
-                  </a>
-                  <a
-                    href="https://starthub.moscow/starthub_moscow/"
-                    target="blank"
-                  >
-                   
-                    <div className="star-hub-img"></div>
-                  </a>
-                  <a
-                    href="https://starthub.moscow/starthub_moscow/"
-                    target="blank"
-                  >
-                   
-                    <div className="star-hub-img"></div>
-                  </a>
+                    <div style={{display:"flex"}}>
+                      <a href="https://molpred.moscow/" target="blank">
+                        <div className="bw-img"></div>
+                      </a>
+
+                      <a href="https://ed2.tech/" target="blank">
+                        <div className="ed-img"></div>
+                      </a>
+                      <a
+                        href="https://whitenightstartup.ru/whitenightstartup2021"
+                        target="blank"
+                      >
+                        <div className="wns-img"></div>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
