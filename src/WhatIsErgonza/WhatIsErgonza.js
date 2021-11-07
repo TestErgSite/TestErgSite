@@ -1,5 +1,5 @@
 import "./WhatIsErgonza.scss";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../i18n";
 import { useMediaQuery } from "react-responsive";
@@ -37,12 +37,10 @@ export const WhatIsErgonza = () => {
 
   const handleMouseEvent = (e) => {
     let id;
-    console.log(e.target);
     if (e.target.className === "layout-img") {
       id = e.target.id;
     } else {
       id = e.target.parentNode.id;
-      console.log(e.target.parentNode.id, "else");
     }
     setSelected({
       1: false,
@@ -56,7 +54,6 @@ export const WhatIsErgonza = () => {
   };
 
   const onLeave = (e) => {
-    const id = e.target.id;
     setSelected({
       1: true,
       2: true,

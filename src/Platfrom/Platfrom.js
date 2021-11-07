@@ -36,7 +36,7 @@ export const Platfrom = () => {
                 {lang === "en" ? (
                   <div className="video-en-v-mobile video-v-mobile-p">
                     <div className="iframe">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                   </div>
                 ) : (
@@ -138,7 +138,7 @@ export const Platfrom = () => {
                 {lang === "en" ? (
                   <div className="video-en-v video-platform">
                     <div className="iframe">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BtpcP9H89a0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                   </div>
                 ) : (

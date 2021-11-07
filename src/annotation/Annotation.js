@@ -33,7 +33,6 @@ export const Annotation = (props) => {
   const styles = {
     transform: `translate(${translate}px, 0) matrix(${matrix})`
   };
-  console.log(props)
 
   const annotationWithoutDivider = () => (
     <>

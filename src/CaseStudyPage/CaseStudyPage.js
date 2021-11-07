@@ -661,13 +661,13 @@ export const CaseStudyPage = () => {
               <div className="images-approach-wrapper">
                 <div className="hybrid-office-item">
                   <div className="approach-text-item-1 hybrid">
-                    <b class="bold">1</b>
+                    <b className="bold">1</b>
                     {t("hybrid-office-text-item-1")}
                   </div>
                 </div>
                 <div className="hybrid-office-item">
                   <div className="approach-text-item-2 hybrid">
-                    <b class="bold">2</b>
+                    <b className="bold">2</b>
                     {t("hybrid-office-text-item-2")}
                   </div>
                 </div>
@@ -675,7 +675,7 @@ export const CaseStudyPage = () => {
               <div className="images-approach-wrapper">
                 <div className="hybrid-office-item">
                   <div className="approach-text-item-3 hybrid">
-                    <b class="bold">3</b>
+                    <b className="bold">3</b>
                     {t("hybrid-office-text-item-3")}
                   </div>
                 </div>

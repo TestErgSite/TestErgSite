@@ -17,6 +17,7 @@ export const InfoBlock = (props) => {
             <div className="info-block-col">
               <img
                 src={props.img1 ? props.img1 : ""}
+                alt="eye"
                 className="info-block-col-img"
               ></img>
               <div className="info-block-col-text">
@@ -26,6 +27,7 @@ export const InfoBlock = (props) => {
             <div className="info-block-col">
               <img
                 src={props.img2 ? props.img2 : ""}
+                alt="diagram"
                 className="info-block-col-img"
               ></img>
               <div className="info-block-col-text">
@@ -35,6 +37,7 @@ export const InfoBlock = (props) => {
             <div className="info-block-col">
               <img
                 src={props.img3 ? props.img3 : ""}
+                alt="notes"
                 className="info-block-col-img"
               ></img>
               <div className="info-block-col-text">
@@ -54,6 +57,7 @@ export const InfoBlock = (props) => {
               <img
                 src={props.img1 ? props.img1 : ""}
                 className="info-block-col-img"
+                alt="eye"
                 width="72px"
                 height="72px"
               ></img>
@@ -65,6 +69,7 @@ export const InfoBlock = (props) => {
               <img
                 src={props.img2 ? props.img2 : ""}
                 className="info-block-col-img"
+                alt="diagram"
                 width="72px"
                 height="72px"
               ></img>
@@ -75,6 +80,7 @@ export const InfoBlock = (props) => {
             <div className="info-block-col-mobile">
               <img
                 src={props.img3 ? props.img3 : ""}
+                alt="notes"
                 className="info-block-col-img"
                 width="72px"
                 height="72px"

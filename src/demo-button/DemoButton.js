@@ -10,7 +10,6 @@ export const DemoButton = () => {
   const DefaultDemoButton = useMediaQuery({ query: "(min-width: 429px)" });
   const MobileDemoButton = useMediaQuery({ query: "(max-width: 428px)" });
 
-  const url = useSelector((state) => state.url);
   const demo = useSelector((state) => state.demo);
 
   const { t } = useTranslation();

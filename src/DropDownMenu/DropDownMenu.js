@@ -6,7 +6,7 @@ import "./DropDownMenu.scss";
 import { Link } from "react-router-dom";
 
 export const DropDownMenu = (props) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
   const toggle = () => setIsActive(!isActive);

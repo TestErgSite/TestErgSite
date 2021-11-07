@@ -18,7 +18,6 @@ export const Header = () => {
 
   const isActive = useSelector((state) => state.isActive);
   const demo = useSelector((state) => state.demo);
-  const url = useSelector((state) => state.url);
   const dispatch = useDispatch();
 
   const [isSticky, setSticky] = useState(false);

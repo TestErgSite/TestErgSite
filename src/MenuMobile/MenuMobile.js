@@ -24,7 +24,6 @@ export const MenuMobile = () => {
   const MobileMenu = useMediaQuery({ query: "(max-width: 428px)" });
 
   const demo = useSelector((state) => state.demo);
-  const url = useSelector((state) => state.url);
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
 

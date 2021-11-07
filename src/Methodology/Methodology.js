@@ -1,5 +1,5 @@
 import "./Methodology.scss";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../i18n";
 import { useMediaQuery } from "react-responsive";

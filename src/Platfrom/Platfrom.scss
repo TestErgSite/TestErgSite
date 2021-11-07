@@ -241,7 +241,7 @@
 .v-p-m .iframe {
   width: 100%;
   height: 100%;
-  justify-content: start;
+  justify-content: flex-start;
   display: flex;
 }
 
@@ -312,7 +312,7 @@
   height: 72px;
 }
 
-.ergonza-platform-org-chart-img-mobile{
+.ergonza-platform-org-chart-img-mobile {
   background-image: url("./images/mobile/img-2-mobile.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -344,13 +344,12 @@
   height: 65px;
 }
 
-
 .ergonza-platform-employers-header-mobile,
 .ergonza-platform-org-chart-header-mobile,
 .ergonza-platform-barometer-header-mobile,
 .ergonza-platform-enneagram-header-mobile,
 .ergonza-platform-mbti-header-mobile {
-  @include font-header-mobile-black; 
+  @include font-header-mobile-black;
 }
 
 .ergonza-platform-item-mobile {

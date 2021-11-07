@@ -30,7 +30,6 @@ const reducer = (state = initialState, action) => {
           };
 
         case "HANDLE_POPUP_DEMO":
-          console.log(action.payload.demo)
           return {
             ...state,
             demo: action.payload.demo,

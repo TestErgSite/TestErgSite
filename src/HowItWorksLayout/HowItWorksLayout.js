@@ -33,7 +33,6 @@ export const HowItWorksLayout = () => {
 
   const timeoutCallback = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
-      console.log('timeout called')
       setActiveCheckbox((activeCheckbox) => activeCheckbox === 3 ? 1 : (activeCheckbox + 1));
       timeoutCallback();
     }, 5000);
@@ -42,7 +41,6 @@ export const HowItWorksLayout = () => {
   useEffect(() => {
     timeoutCallback();
     return () => {
-      console.log('stop timeout');
       clearTimeout(timeoutRef.current);
     };
   }, []);

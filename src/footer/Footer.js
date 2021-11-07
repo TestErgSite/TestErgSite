@@ -12,7 +12,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   showPopupAsync,
   hidePopupAsync,
-  showPopupDemoAsync,
   hidePopupDemoAsync,
 } from "../redux/actions";
 import { DropDownMenu } from "../DropDownMenu/DropDownMenu";
@@ -23,7 +22,6 @@ export const Footer = () => {
 
   const { t } = useTranslation();
 
-  const url = useSelector((state) => state.url);
   const isActive = useSelector((state) => state.isActive);
   const dispatch = useDispatch();
   const demo = useSelector((state) => state.demo);
@@ -64,7 +62,7 @@ export const Footer = () => {
             className={`opacity ${isActive !== "none" ? "overlay" : ""}`}
             onClick={() => dispatch(hidePopupAsync())}
           ></div>
-           <div
+          <div
             className={`opacity ${demo !== "none" ? "overlay" : ""}`}
             onClick={() => dispatch(hidePopupDemoAsync())}
           ></div>
@@ -80,6 +78,21 @@ export const Footer = () => {
                   handlePopup={() => dispatch(showPopupAsync())}
                 />
               </div>
+
+              <div className="participant-mobile">
+                <div className="participant-text-mobile">{t("participant-text")}</div>
+                <div style={{display: "flex", justifyContent: "space-between", width: "100%"}}>
+                <a
+                  href="https://starthub.moscow/starthub_moscow/"
+                  target="blank"
+                >
+                  <div className="star-hub-img"></div>
+                  </a>
+                  <div className="star-hub-img"></div>
+                  <div className="star-hub-img"></div>
+             </div>
+              </div>
+
             </div>
             <div className="footer-info-mobile">
               <div className="footer-info-wrapper-mobile">
@@ -107,7 +120,6 @@ export const Footer = () => {
                   </Link>
 
                   <ChangeLanguageButton footerMobile={true} />
-              
                 </div>
                 <div className="logo-wrapper-mobile">
                   <Link to="/">
@@ -117,7 +129,7 @@ export const Footer = () => {
                   </Link>
                   <div className="copyright-mobile">
                     <div className="ergonza-year-mobile">
-                      &#169; {new Date().getFullYear()}  Ergonza
+                      &#169; {new Date().getFullYear()} Ergonza
                     </div>
                     <div className="ergonza-mail">info@ergonza.com</div>
                   </div>
@@ -154,12 +166,38 @@ export const Footer = () => {
                 <Link to="/" onClick={scrollUp}>
                   <div className="logo">
                     <div className="logo-footer"></div>
-                    <div className="participant">
-                      <div className="star-hub-text">{t("star-hub-text")}</div>
-                      <div className="star-hub-img"></div>
-                    </div>
                   </div>
                 </Link>
+
+                <div className="participant">
+                <div className="participant-text">
+                      {t("participant-text")}
+                    </div>
+                    <div style={{display: "flex", justifyContent: "space-between", width: "100%", marginRight: "20px"}}>
+                  <a
+                    href="https://starthub.moscow/starthub_moscow/"
+                    target="blank"
+                  >
+                   
+                    <div className="star-hub-img"></div>
+                  </a>
+                  <a
+                    href="https://starthub.moscow/starthub_moscow/"
+                    target="blank"
+                  >
+                   
+                    <div className="star-hub-img"></div>
+                  </a>
+                  <a
+                    href="https://starthub.moscow/starthub_moscow/"
+                    target="blank"
+                  >
+                   
+                    <div className="star-hub-img"></div>
+                  </a>
+                  </div>
+                </div>
+
                 <div
                   className="nav-footer"
                   onMouseLeave={() => handleHoverOff()}
@@ -202,11 +240,12 @@ export const Footer = () => {
                     </div>
                   </Link>
                   <div
-                  onMouseOver={() => handleHover(4)}
-                  className={`about-us-drow-down about-us-drow-down-footer ${
-                    navs[4] ? "" : "hovered"
-                  }`}>
-              <DropDownMenu footer={true}/>
+                    onMouseOver={() => handleHover(4)}
+                    className={`about-us-drow-down about-us-drow-down-footer ${
+                      navs[4] ? "" : "hovered"
+                    }`}
+                  >
+                    <DropDownMenu footer={true} />
                   </div>
                 </div>
                 <div className="copyright">

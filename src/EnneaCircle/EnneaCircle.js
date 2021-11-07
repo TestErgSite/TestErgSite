@@ -55,7 +55,6 @@ export const EnneaCircle = () => {
 
   let typeHeader = <div>{t(`type-header-${activeColor2}`)}</div>;
 
-  console.log(i18n.language);
 
   const getDescription = (page = 0) => {
     let description = null;
